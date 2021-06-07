@@ -234,7 +234,7 @@ WITH erc20_transfer AS (
     tr.value AS amount,
     contract_address
     FROM erc20."ERC20_evt_Transfer" tr
-    ), 
+), 
 
 treasury_erc20_holding AS (
     SELECT
