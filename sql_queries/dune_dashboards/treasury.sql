@@ -244,7 +244,7 @@ treasury_erc20_holding AS (
         amount as balance,
         contract_address
     FROM erc20_transfer
-    WHERE address = '\xf26d1Bb347a59F6C283C53156519cC1B1ABacA51'
+    WHERE address = '\xf26d1Bb347a59F6C283C53156519cC1B1ABacA51'    -- Bankless DAO treasury address
     ORDER BY evt_block_time DESC
 )
 
@@ -257,11 +257,29 @@ SELECT
         ELSE balance/1e18
     END AS balance,
     CASE 
-        WHEN tr.contract_address = '\x2d94aa3e47d9d5024503ca8491fce9a2fb4da198' THEN 'BANK'
+        WHEN tr.contract_address = '\x2d94aa3e47d9d5024503ca8491fce9a2fb4da198' THEN 'BANK'  -- BANK token currently not listed in Dune Analytics (yet)
         ELSE tok.symbol
     END AS token,
     evt_tx_hash
 FROM treasury_erc20_holding tr
 LEFT JOIN erc20.tokens tok ON tr.contract_address = tok.contract_address
 
-/* */
+/*************************  ERC721 Token Txns *************************/
+/* Query link: https://duneanalytics.com/queries/51004/100630 */
+WITH erc721_transfer AS (
+SELECT 
+    evt_tx_hash,
+    evt_block_time,
+    tr."from" AS from_addr,
+    tr."to" AS to_addr,
+    "tokenId" AS token_id
+FROM erc721."ERC721_evt_Transfer" tr
+)
+SELECT
+    evt_tx_hash,
+    evt_block_time,
+    from_addr,
+    to_addr,
+    token_id
+FROM erc721_transfer
+WHERE to_addr = '\xf26d1Bb347a59F6C283C53156519cC1B1ABacA51' -- Bankless Treasury address
