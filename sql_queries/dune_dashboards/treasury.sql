@@ -213,6 +213,55 @@ SELECT * FROM erc20_table
 UNION ALL
 SELECT * FROM eth_table
 
-/* */
+/*************************  ERC20 Token Txns *************************/
+/* Query Link: https://duneanalytics.com/queries/50995/100608 */
+
+WITH erc20_transfer AS (
+    SELECT 
+    evt_tx_hash,
+    evt_block_time,
+    tr."from" AS address,
+    -tr.value AS amount,
+    contract_address
+    FROM erc20."ERC20_evt_Transfer" tr
+
+    UNION ALL
+
+    SELECT 
+    evt_tx_hash,
+    evt_block_time,
+    tr."to" AS address,
+    tr.value AS amount,
+    contract_address
+    FROM erc20."ERC20_evt_Transfer" tr
+    ), 
+
+treasury_erc20_holding AS (
+    SELECT
+        evt_tx_hash,
+        evt_block_time,
+        address,
+        amount as balance,
+        contract_address
+    FROM erc20_transfer
+    WHERE address = '\xf26d1Bb347a59F6C283C53156519cC1B1ABacA51'
+    ORDER BY evt_block_time DESC
+)
+
+SELECT 
+    evt_block_time,
+    address,
+    CASE 
+        WHEN tr.contract_address = '\xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'
+        THEN balance/1e6 
+        ELSE balance/1e18
+    END AS balance,
+    CASE 
+        WHEN tr.contract_address = '\x2d94aa3e47d9d5024503ca8491fce9a2fb4da198' THEN 'BANK'
+        ELSE tok.symbol
+    END AS token,
+    evt_tx_hash
+FROM treasury_erc20_holding tr
+LEFT JOIN erc20.tokens tok ON tr.contract_address = tok.contract_address
 
 /* */
