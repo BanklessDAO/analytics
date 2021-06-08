@@ -120,10 +120,45 @@ df %>%
     geom_smooth(method = "lm")
 
 
+# engagement only
+df %>%
+    select(Date, engagements) %>%
+    ggplot(aes(x = Date, y = engagements)) +
+    geom_area()
+
+
 # breakdown engagement into sub-components and chart stacked area graph
 df %>%
     select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
     pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
     ggplot(aes(x = Date, y = count, fill = variable)) +
-    geom_area(stat = "identity", position = "stack")
+    geom_area(stat = "identity", position = "stack") +
+    theme(legend.position = "bottom")
 
+# marginal distribution with ggplot2 and ggExtra
+# impressions and engagements
+library(ggExtra)
+
+# basic scatter
+p <- df %>%
+    select(impressions, engagements) %>%
+    ggplot(aes(x = impressions, y = engagements)) +
+    geom_point() +
+    theme(legend.position = "none")
+
+
+ggMarginal(p, type = "histogram", size = 10)
+ggMarginal(p, type="histogram", fill = "slateblue", xparams = list(  bins=10))
+ggMarginal(p, margins = 'x', color="purple", size=4)
+
+
+# Multi density chart
+
+# basic density plot
+df %>%
+    select(Date, engagements) %>%
+    ggplot(aes(y = engagements)) + 
+    geom_density() +
+    coord_flip()
+
+# try ggridges next
