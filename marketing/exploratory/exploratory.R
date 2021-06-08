@@ -91,10 +91,16 @@ df %>%
     stat_density_2d(aes(fill = ..level..), geom = "polygon") + 
     scale_fill_gradientn(colors = c("#FFEDA0", "#FEB24C", "#F03B20"))
     
-    
+# reshape data (pivot_longer)
+# works with geom_line, not geom_col or geom_bar
 
-
-
-
+df %>% 
+    select(1, 3:4) %>%
+    rename(
+        date = `Date`
+    ) %>%
+    pivot_longer(!date, names_to = 'variable', values_to = 'number') %>%
+    ggplot(aes(x = date, y = number, color = variable)) +
+    geom_line()
 
 
