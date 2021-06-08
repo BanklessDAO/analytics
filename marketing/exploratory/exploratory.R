@@ -108,3 +108,22 @@ df %>%
 # remove scientific notation
 options(scipen=999)
 
+# See if (number) Tweets published is related to either Impressions or Engagement
+df %>%
+    select(1:4) %>%
+    rename(
+        date = Date,
+        num = `Tweets published`
+    ) %>%
+    ggplot(aes(x = num, y = engagements)) +    #change to engagements
+    geom_point() +
+    geom_smooth(method = "lm")
+
+
+# breakdown engagement into sub-components and chart stacked area graph
+df %>%
+    select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
+    pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
+    ggplot(aes(x = Date, y = count, fill = variable)) +
+    geom_area(stat = "identity", position = "stack")
+
