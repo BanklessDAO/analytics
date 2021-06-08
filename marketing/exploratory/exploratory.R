@@ -101,6 +101,10 @@ df %>%
     ) %>%
     pivot_longer(!date, names_to = 'variable', values_to = 'number') %>%
     ggplot(aes(x = date, y = number, color = variable)) +
-    geom_line()
+    geom_line() +
+    # change y-axis to logarithm scale
+    scale_y_log10()
 
+# remove scientific notation
+options(scipen=999)
 
