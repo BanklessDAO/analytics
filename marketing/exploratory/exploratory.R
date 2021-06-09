@@ -94,6 +94,17 @@ df %>%
 # reshape data (pivot_longer)
 # works with geom_line, not geom_col or geom_bar
 
+# y-axis normal scale
+df %>% 
+    select(1, 3:4) %>%
+    rename(
+        date = `Date`
+    ) %>%
+    pivot_longer(!date, names_to = 'variable', values_to = 'number') %>%
+    ggplot(aes(x = date, y = number, color = variable)) +
+    geom_line()
+
+# y-axis log-scale
 df %>% 
     select(1, 3:4) %>%
     rename(
@@ -161,4 +172,31 @@ df %>%
     geom_density() +
     coord_flip()
 
-# try ggridges next
+# basic histogram
+
+# sample dataframe
+data.frame(
+    type = c( rep("variable 1", 1000), rep("variable 2", 1000) ),
+    value = c( rnorm(1000), rnorm(1000, mean=4) )
+)
+
+# impressions & engagement histogram on same axis
+df %>%
+    select(Date, engagements, impressions) %>%
+    pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
+    select(variable, count) %>%
+    ggplot(aes(x = count, fill = variable)) +
+    geom_histogram(color="#e9ecef", alpha=0.6, position = 'identity') +
+    scale_fill_manual(values=c("#69b3a2", "#404080"))
+
+
+# try ggridges next - multiple histograms 
+library(ggridges)
+
+
+df %>%
+    select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
+    pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
+    ggplot(aes(x = count, y = variable, fill = variable)) +
+    geom_density_ridges()
+
