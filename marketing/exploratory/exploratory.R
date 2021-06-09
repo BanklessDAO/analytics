@@ -31,7 +31,7 @@ df %>%
         subtitle = "May 8th - June 7th, 2021",
         x = "",
         y = "Impressions",
-        caption = "Data: Twitter | Graphics: @paulapivat"
+        caption = "Data: Twitter | Analytics: @paulapivat"
     )
     
 
@@ -55,7 +55,7 @@ df %>%
         subtitle = "May 8th - June 7th, 2021",
         x = "",
         y = "Engagements",
-        caption = "Data: Twitter | Graphics: @paulapivat"
+        caption = "Data: Twitter | Analytics: @paulapivat"
     )
 
 
@@ -75,7 +75,7 @@ df %>%
         subtitle = "Relationship between Engagement & Impressions",
         x = "Impressions",
         y = "Engagements",
-        caption = "Data: Twitter | Graphics: @paulapivat"
+        caption = "Data: Twitter | Analytics: @paulapivat"
     )
     
     
@@ -124,7 +124,18 @@ df %>%
     ggplot(aes(x = impressions, y = engagements)) +
     geom_point(color = "lightgray") +
     stat_density_2d(aes(fill = ..level..), geom = "polygon") + 
-    scale_fill_gradientn(colors = c("#FFEDA0", "#FEB24C", "#F03B20"))
+    scale_fill_gradientn(colors = c("#FFEDA0", "#FEB24C", "#F03B20")) +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Activity (May, 2021)",
+        subtitle = "How most Tweets are performing",
+        x = "Impressions",
+        y = "Engagements",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
     
 # reshape data (pivot_longer)
 # works with geom_line, not geom_col or geom_bar
@@ -137,7 +148,20 @@ df %>%
     ) %>%
     pivot_longer(!date, names_to = 'variable', values_to = 'number') %>%
     ggplot(aes(x = date, y = number, color = variable)) +
-    geom_line()
+    geom_line(size = 1.2) +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Impressions & Engagements Numbers (May, 2021)",
+        subtitle = "Normal Scale (y-axis)",
+        y = "Count",
+        x = "",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
 
 # y-axis log-scale
 df %>% 
@@ -147,9 +171,26 @@ df %>%
     ) %>%
     pivot_longer(!date, names_to = 'variable', values_to = 'number') %>%
     ggplot(aes(x = date, y = number, color = variable)) +
-    geom_line() +
+    geom_line(size = 1.2) +
+    scale_x_date(date_breaks = '1 day') +
     # change y-axis to logarithm scale
-    scale_y_log10()
+    scale_y_log10() +
+    theme_minimal() +
+    theme(
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Impressions & Engagements Numbers (May, 2021)",
+        subtitle = "Log Scale (y-axis)",
+        y = "Count",
+        x = "",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
+
+
+
+
 
 # remove scientific notation
 options(scipen=999)
@@ -179,8 +220,25 @@ df %>%
     pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
     ggplot(aes(x = Date, y = count, fill = variable)) +
     geom_area(stat = "identity", position = "stack") +
-    theme(legend.position = "bottom")
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Engagement Breakdown",
+        subtitle = "May 2021",
+        x = "",
+        y = "Count",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
+    
 
+    
+    
+    
+    
 # marginal distribution with ggplot2 and ggExtra
 # impressions and engagements
 library(ggExtra)
@@ -233,5 +291,20 @@ df %>%
     select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
     pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
     ggplot(aes(x = count, y = variable, fill = variable)) +
-    geom_density_ridges()
+    geom_density_ridges() +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Various Engagement Metrics",
+        subtitle = "May 2021",
+        x = "Count",
+        y = "Various Engagement Metrics",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
+    
+    
+    
+    
 
