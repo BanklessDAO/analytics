@@ -20,7 +20,20 @@ df %>%
         date = `Date`
     ) %>%
     ggplot() +
-    geom_area(aes(x = date, y = impressions), fill = "pink")
+    geom_area(aes(x = date, y = impressions), fill = "pink") +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Impressions",
+        subtitle = "May 8th - June 7th, 2021",
+        x = "",
+        y = "Impressions",
+        caption = "Data: Twitter | Graphics: @paulapivat"
+    )
+    
 
 
 # engagements
@@ -31,7 +44,19 @@ df %>%
         date = `Date`
     ) %>%
     ggplot() +
-    geom_area(aes(x = date, y = engagements), fill = "light blue")
+    geom_area(aes(x = date, y = engagements), fill = "light blue") +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Engagements",
+        subtitle = "May 8th - June 7th, 2021",
+        x = "",
+        y = "Engagements",
+        caption = "Data: Twitter | Graphics: @paulapivat"
+    )
 
 
 # impressions & engagements
@@ -43,7 +68,17 @@ df %>%
     ) %>%
     ggplot(aes(x = impressions, y = engagements)) +
     geom_point() +
-    geom_smooth(method = "lm")
+    geom_smooth(method = "lm", se = FALSE) +
+    theme_minimal() +
+    labs(
+        title = "Bankless DAO Twitter Metrics (May, 2021)",
+        subtitle = "Relationship between Engagement & Impressions",
+        x = "Impressions",
+        y = "Engagements",
+        caption = "Data: Twitter | Graphics: @paulapivat"
+    )
+    
+    
 
 # impressions & engagements with color gradient
 df %>%
