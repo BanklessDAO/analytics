@@ -62,6 +62,9 @@ df4 %>%
 
 # --- Combine all dataframes into one --- #
 
+# select first two columns from each data frame
+# add third column to label community call number (i.e., CC1, CC2, CC3, CC4)
+# rbind all dataframes
 
 
     
