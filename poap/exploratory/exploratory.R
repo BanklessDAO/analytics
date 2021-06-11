@@ -93,4 +93,37 @@ c4 <- df4 %>%
 # rbind all dataframes
 
 combine <- rbind(c1, c2, c3, c4)
+
+
+#------- Wrangle and Visualize Combined Data Frame ---------#
+
+# Number of Poaps Claimed by Addresses
+combine %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    rename(
+        public_address = Owner,
+        poaps_claimed = n
+    ) %>%
+    group_by(poaps_claimed) %>%
+    tally(sort = TRUE) %>%
+    rename(
+        num_addresses = n
+    ) %>%
+    arrange(poaps_claimed) %>%
+    ggplot(aes(x = poaps_claimed, y = num_addresses, fill = 'red')) +
+    geom_col() +
+    geom_text(aes(label = num_addresses), vjust = -0.50) +
+    theme_minimal() +
+    theme(legend.position = "none") +
+    labs(
+        title = "Bankless DAO Community Calls #1-4",
+        subtitle = "POAPs claimed through first four calls",
+        x = "Number of POAPs claimed",
+        y = "Number of Addresses",
+        caption = "Data: poap.gallery | Analytics: @paulapivat"
+    )
+
+
+
     
