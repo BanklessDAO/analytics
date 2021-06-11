@@ -117,12 +117,35 @@ combine %>%
     theme_minimal() +
     theme(legend.position = "none") +
     labs(
-        title = "Bankless DAO Community Calls #1-4",
-        subtitle = "POAPs claimed through first four calls",
+        title = "Bankless DAO Engagement",
+        subtitle = "Community Calls #1-4",
         x = "Number of POAPs claimed",
         y = "Number of Addresses",
         caption = "Data: poap.gallery | Analytics: @paulapivat"
     )
+
+# Number of POAPs claimed by Date
+
+main_dates <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021")
+
+
+combine %>%
+    group_by(`Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    arrange(`Claim Date`) %>%
+    rename(
+        poaps_claimed = n,
+        Date = `Claim Date`
+    ) %>%
+    ggplot(aes(x = Date,  y = poaps_claimed, fill = ifelse(Date %in% main_dates, 'red', 'black'))) +
+    geom_col() +
+    theme_minimal() +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none"
+    )
+
+
 
 
 
