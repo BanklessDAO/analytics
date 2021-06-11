@@ -117,8 +117,8 @@ combine %>%
     theme_minimal() +
     theme(legend.position = "none") +
     labs(
-        title = "Bankless DAO Engagement",
-        subtitle = "Community Calls #1-4",
+        title = "Bankless DAO Community Call Engagement",
+        subtitle = "Order by Number of POAPs claimed",
         x = "Number of POAPs claimed",
         y = "Number of Addresses",
         caption = "Data: poap.gallery | Analytics: @paulapivat"
@@ -139,10 +139,18 @@ combine %>%
     ) %>%
     ggplot(aes(x = Date,  y = poaps_claimed, fill = ifelse(Date %in% main_dates, 'red', 'black'))) +
     geom_col() +
+    geom_text(aes(label = poaps_claimed), vjust = -0.50) +
     theme_minimal() +
     theme(
         axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none"
+    ) +
+    labs(
+        title = "Bankless DAO Community Call Engagement",
+        subtitle = "POAPs claimed by Date",
+        x = "",
+        y = 'Number of POAPs Claimed',
+        caption = "Data: poap.gallery | Analytics: @paulapivat"
     )
 
 
