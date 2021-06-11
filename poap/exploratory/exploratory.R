@@ -62,9 +62,35 @@ df4 %>%
 
 # --- Combine all dataframes into one --- #
 
-# select first two columns from each data frame
-# add third column to label community call number (i.e., CC1, CC2, CC3, CC4)
+# select Owner (public address) and Claim Date from each dataframe
+
+# Claim Date: 5/14/2021
+c1 <- df %>%
+    select(Owner, `Claim Date`)
+
+# see c2
+df2 %>%
+    select(ID, Owner, `Claim Date`) %>%
+    group_by(ID, Owner)
+
+# Claim Date: 5/21/2021
+c2 <- df2a %>%
+    mutate(
+        `Claim Date` = "5/21/2021"
+    ) %>%
+    select(1,3)
+
+# Claim Date: 5/28/2021
+c3 <- df3 %>%
+    select(Owner, `Claim Date`)
+
+
+# Claim Date: 6/4/2021
+c4 <- df4 %>%
+    select(Owner, `Claim Date`)
+
+
 # rbind all dataframes
 
-
+combine <- rbind(c1, c2, c3, c4)
     
