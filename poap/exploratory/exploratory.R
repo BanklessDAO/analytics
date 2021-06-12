@@ -152,47 +152,6 @@ c4 %>%
 combine <- rbind(c1, c2, c3, c4)
 
 
-# group_by address
-combine %>%
-    group_by(Owner) %>%
-    tally(sort = TRUE) %>%
-    ungroup() %>%
-    group_by(n) %>%
-    tally(sort = TRUE) %>%
-    ungroup()
-
-# separate categories into group
-# see how many addresses are contained
-# step 1: pivot wider,
-# step 2: save as combine2
-# step 3: split out columns 1,2,3,4
-# step 4: use %in% to check if addresses in one column of combine2 are contained in another column
-
-combine2 <- combine %>%
-    group_by(Owner) %>%
-    tally(sort = TRUE) %>%
-    ungroup() %>%
-    mutate(
-        nn = 1
-    ) %>%
-    pivot_wider(names_from = n, values_from = nn)
-
-
-# step 3: split out columns 1,2,3,4
-combine2$Owner[1:54] %>% view()   # 4 -- 54
-
-combine2$Owner[55:104] %>% view() # 3 -- 50
-
-combine2$Owner[105:175] %>% view() # 2 -- 71
-
-combine2$Owner[176:338] %>% view() # 1 -- 163
- 
-# step 4: use %in% to check if addresses in one column of combine2 are contained in another column
-combine2$Owner[1:54] %in% combine2$Owner[1:54]
-
-combine2$Owner[1:54] %in% combine2$Owner[55:104] 
-
-combine2$Owner[55:104] %in% combine2$Owner[105:175]
 
 
 #------- Wrangle and Visualize Combined Data Frame ---------#
@@ -254,7 +213,141 @@ combine %>%
     )
 
 
+########### PARK ###########
 
+
+# group_by address
+combine %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    ungroup() %>%
+    group_by(n) %>%
+    tally(sort = TRUE) %>%
+    ungroup()
+
+# separate categories into group
+# see how many addresses are contained
+# step 1: pivot wider,
+# step 2: save as combine2
+# step 3: split out columns 1,2,3,4
+# step 4: use %in% to check if addresses in one column of combine2 are contained in another column
+
+combine2 <- combine %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    ungroup() %>%
+    mutate(
+        nn = 1
+    ) %>%
+    pivot_wider(names_from = n, values_from = nn)
+
+
+# step 3: split out columns 1,2,3,4
+
+combine2$Owner[1:54] %>% view()   # 4 -- 54
+
+combine2$Owner[55:104] %>% view() # 3 -- 50
+
+combine2$Owner[105:175] %>% view() # 2 -- 71
+
+combine2$Owner[176:338] %>% view() # 1 -- 163
+
+# Save vector to a variable
+one <- combine2$Owner[176:338]
+one2 <- combine2$Owner[176:338]
+
+# all TRUE
+one %in% one2
+
+
+two <- combine2$Owner[105:175]
+
+# True (should be in two)
+'0xc3464cff62431e7bc561fd46fae981206a6220a5' %in% two
+
+# True (should be in one)
+'0x94adb25a1e5232bd69ffc9c16d728372c3b8730c' %in% one
+
+# What's in two *should* be in one
+# But is NOT
+'0xc3464cff62431e7bc561fd46fae981206a6220a5' %in% one
+
+# group_by collapses instances where we'd expect to see an address 2,3 or 4 into ONE address
+# after group_by, there won't be overlap between the groupings (those with one vs two POAPs)
+# to test '%in%' we must use the original columns df, df2, df3, df4
+
+# CC1 -> CC2   163 - 71, expect TRUE: 71, FALSE: 92
+
+# Fundamental Problem -> Some People Claims CC1 *after* CC2 had started (v. late claimers)
+# SOLUTION: Arrange in Desc by `Claim Date`, then artificially create bins based on dates
+
+
+# OR Occam's Razor, see discrepancy between those with 3 POAP vs 4 POAPs
+# WHO has FOUR CCs, but NOT THREE CCs POAPs
+
+
+
+table_count <- combine %>%
+    count(Owner) %>%
+    rename(
+        num_appear = n
+    )
+
+# DO a Table Join
+
+left_join(table_count, combine, by = 'Owner') 
+
+
+
+
+four <- combine2$Owner[1:54]   # -- appear four times
+
+three <- combine2$Owner[55:104] # -- should appear 50 times
+
+
+four %in% combine$Owner # checks out 54 true
+three %in% combine$Owner # checks out 50 true
+two %in% combine$Owner # checks out 71 true
+one %in% combine$Owner # checks out 163
+
+three %in% four
+
+combine %>%
+    arrange(desc(`Claim Date`)) %>% 
+    
+    combine %>%
+    group_by(Owner) %>%
+    count()
+
+# Fundamental Problem -> Some People Claims CC1 *after* CC2 had started (v. late claimers)
+# re-create c1-4, with ID, then count
+
+
+
+
+# What does add up is POAPs claimed by Date adds up to combine of n = 671
+
+one_two <- c1$Owner %in% c2$Owner
+
+length(one_two[one_two==FALSE])  #95
+
+sum(one_two) # another way to count
+table(one_two)["FALSE"] # another way to count
+
+
+
+
+# step 4: use %in% to check if addresses in one column of combine2 are contained in another column
+
+# CC1 -> CC2   163 - 71, expect TRUE: 71, FALSE: 92
+combine2$Owner[176:338] %in% combine2$Owner[105:175]
+
+
+combine2$Owner[1:54] %in% combine2$Owner[1:54]
+
+combine2$Owner[1:54] %in% combine2$Owner[55:104] 
+
+combine2$Owner[55:104] %in% combine2$Owner[105:175]
 
 
     
