@@ -60,39 +60,66 @@ df4 %>%
     group_by(Owner) %>%
     tally(sort = TRUE)
 
-# --- Combine all dataframes into one --- #
+# --------------------- Combine all dataframes into one ----------------------- #
 
 # select Owner (public address) and Claim Date from each dataframe
 
 # Claim Date: 5/14/2021
 c1 <- df %>%
-    select(Owner, `Claim Date`)
-
-# see c2
-df2 %>%
-    select(ID, Owner, `Claim Date`) %>%
-    group_by(ID, Owner)
+    select(Owner, `Claim Date`) %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE)
 
 # Claim Date: 5/21/2021
-c2 <- df2a %>%
-    mutate(
-        `Claim Date` = "5/21/2021"
-    ) %>%
-    select(1,3)
+# note: n column shows duplicates (n = 2) - eliminated via group_by
+c2 <- df2 %>%
+    select(Owner, `Claim Date`) %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE)
+
 
 # Claim Date: 5/28/2021
 c3 <- df3 %>%
-    select(Owner, `Claim Date`)
+    select(Owner, `Claim Date`) %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) 
 
 
 # Claim Date: 6/4/2021
 c4 <- df4 %>%
-    select(Owner, `Claim Date`)
+    select(Owner, `Claim Date`) %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE)
 
+
+#------Before Combine, do another group_by without `Claim Date` to eliminate any potential duplicates -----#
+c1 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+
+c2 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+c3 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+c4 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
 
 # rbind all dataframes
 
 combine <- rbind(c1, c2, c3, c4)
+
+
+
 
 
 #------- Wrangle and Visualize Combined Data Frame ---------#
