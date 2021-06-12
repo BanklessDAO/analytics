@@ -9,6 +9,7 @@ df <- read_csv("../raw/Bankless DAO Community Call #1.csv")
 df2 <- read_csv("../raw/Bankless DAO Community Call #2.csv")
 df3 <- read_csv("../raw/Bankless DAO Community Call #3.csv")
 df4 <- read_csv("../raw/Bankless DAO Community Call #4.csv")
+df5 <- read_csv("../raw/Bankless DAO Community Call #5.csv")
 
 # column names
 df %>% names()
@@ -92,6 +93,12 @@ c4 <- df4 %>%
     tally(sort = TRUE)
 
 
+c5 <- df5 %>%
+    select(Owner, `Claim Date`) %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE)
+
+
 #------Before Combine, do another group_by without `Claim Date` to eliminate any potential duplicates -----#
 
 # n = 162
@@ -117,6 +124,13 @@ c4 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
+
+# n = 286
+c5 %>% 
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
 
 
 #------ Group by WITH `Claim Date` to check the same address claimed more than once per call -----#
@@ -146,12 +160,35 @@ c4 %>%
     view()
 
 
+# n = 286
+c5 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
 
 # rbind all dataframes
 
-combine <- rbind(c1, c2, c3, c4)
+combine_wk4 <- rbind(c1, c2, c3, c4)
+
+combine_wk5 <- rbind(c1, c2, c3, c4, c5)
+
+# NOTE numbers can change because the pool is not fixed
+# every community call could be someone's first POAP claim
+# the it's someone's second call out of the (current) total of only 5 calls
+# and it's someone's third call out of 5 and so forth
+# with every new call, the previous call could've also been someone's last POAP claim (they didn't claim the most recent one)
 
 
+combine_wk4 %>%
+    group_by(Owner) %>%
+    count(sort = TRUE) %>%
+    view()
+
+
+combine_wk5 %>%
+    group_by(Owner) %>%
+    count(sort = TRUE) %>%
+    view()
 
 
 #------- Wrangle and Visualize Combined Data Frame ---------#
@@ -187,16 +224,18 @@ combine %>%
 
 main_dates <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021")
 
+main_dates_wk5 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021")
 
-combine %>%
+# NOTE: Date (x-axis) not in correct order
+combine_wk5 %>%
     group_by(`Claim Date`) %>%
     tally(sort = TRUE) %>%
-    arrange(`Claim Date`) %>%
+    arrange(desc(`Claim Date`)) %>%
     rename(
         poaps_claimed = n,
         Date = `Claim Date`
-    ) %>%
-    ggplot(aes(x = Date,  y = poaps_claimed, fill = ifelse(Date %in% main_dates, 'red', 'black'))) +
+    ) %>% view()
+    ggplot(aes(x = Date,  y = poaps_claimed, fill = ifelse(Date %in% main_dates_wk5, 'red', 'black'))) +
     geom_col() +
     geom_text(aes(label = poaps_claimed), vjust = -0.50) +
     theme_minimal() +
