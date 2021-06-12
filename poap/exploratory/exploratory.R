@@ -93,33 +93,106 @@ c4 <- df4 %>%
 
 
 #------Before Combine, do another group_by without `Claim Date` to eliminate any potential duplicates -----#
+
+# n = 162
 c1 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
 
-
+# n = 166
 c2 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
 
+# n = 171
 c3 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
 
+# n = 172
 c4 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
+
+
+#------ Group by WITH `Claim Date` to check the same address claimed more than once per call -----#
+
+# n = 162
+c1 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+# n = 166
+c2 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+# n = 171
+c3 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+# n = 172
+c4 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+
 
 # rbind all dataframes
 
 combine <- rbind(c1, c2, c3, c4)
 
 
+# group_by address
+combine %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    ungroup() %>%
+    group_by(n) %>%
+    tally(sort = TRUE) %>%
+    ungroup()
 
+# separate categories into group
+# see how many addresses are contained
+# step 1: pivot wider,
+# step 2: save as combine2
+# step 3: split out columns 1,2,3,4
+# step 4: use %in% to check if addresses in one column of combine2 are contained in another column
+
+combine2 <- combine %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    ungroup() %>%
+    mutate(
+        nn = 1
+    ) %>%
+    pivot_wider(names_from = n, values_from = nn)
+
+
+# step 3: split out columns 1,2,3,4
+combine2$Owner[1:54] %>% view()   # 4 -- 54
+
+combine2$Owner[55:104] %>% view() # 3 -- 50
+
+combine2$Owner[105:175] %>% view() # 2 -- 71
+
+combine2$Owner[176:338] %>% view() # 1 -- 163
+ 
+# step 4: use %in% to check if addresses in one column of combine2 are contained in another column
+combine2$Owner[1:54] %in% combine2$Owner[1:54]
+
+combine2$Owner[1:54] %in% combine2$Owner[55:104] 
+
+combine2$Owner[55:104] %in% combine2$Owner[105:175]
 
 
 #------- Wrangle and Visualize Combined Data Frame ---------#
