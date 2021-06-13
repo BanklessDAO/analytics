@@ -226,17 +226,23 @@ main_dates <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021")
 
 main_dates_wk5 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021")
 
-# NOTE: Date (x-axis) not in correct order
+
+# Fix Date Ordering so that 6/11/2021 is the most recent date
+
+
 combine_wk5 %>%
-    group_by(`Claim Date`) %>%
-    tally(sort = TRUE) %>%
-    arrange(desc(`Claim Date`)) %>%
+    # change Claim Date from Char to Date
+    mutate(
+        Date = as.Date(`Claim Date`, "%m/%d/%Y")
+    ) %>% 
+    group_by(Date) %>%
+    tally() %>% 
     rename(
-        poaps_claimed = n,
-        Date = `Claim Date`
-    ) %>% view()
-    ggplot(aes(x = Date,  y = poaps_claimed, fill = ifelse(Date %in% main_dates_wk5, 'red', 'black'))) +
+        poaps_claimed = n
+    ) %>%
+    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk5, "%m/%d/%Y"), 'red', 'green'))) +
     geom_col() +
+    scale_x_date(date_breaks = '2 day') +
     geom_text(aes(label = poaps_claimed), vjust = -0.50) +
     theme_minimal() +
     theme(
@@ -250,7 +256,12 @@ combine_wk5 %>%
         y = 'Number of POAPs Claimed',
         caption = "Data: poap.gallery | Analytics: @paulapivat"
     )
-
+    
+    
+    
+    
+    
+    
 
 ########### PARK ###########
 
