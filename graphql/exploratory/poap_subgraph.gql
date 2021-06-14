@@ -54,3 +54,29 @@
     hasIndexingErrors
   }
 }
+
+# Query just event where { id: 2655 }
+{
+  events(where: { id: 2655 }) {
+    # Event id: 2655, Bankless DAO Community Call #4, source: https://poap.gallery/event/2655
+    id
+    tokens {
+      id
+      owner {
+        id
+      }
+      transfers {
+        id
+        from {
+          id
+        }
+        to {
+          id
+        }
+      }
+    }
+  }
+  _meta {
+    hasIndexingErrors
+  }
+}
