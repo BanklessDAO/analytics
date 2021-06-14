@@ -1,0 +1,54 @@
+# initial query from poap subgraph
+
+# NOTE: There are better ways to query graphql with python. This is a test file to store example queries.
+# See: thegraph.com/explorer
+
+# POAP GraphQL Schema:
+# Token
+# Account
+# Event
+# Transfer
+# _Meta_     (access to subgraph metadata)
+
+{
+  tokens(first: 5) {
+    id
+    owner {
+      id
+    }
+    event {
+      id
+    }
+    transfers {
+      id
+    }
+  }
+  accounts(first: 5) {
+    id
+    tokens {
+      id
+    }
+    tokensOwned
+  }
+  events(where: { id: 2655 }) {
+    id
+    tokens {
+      id
+      owner {
+        id
+      }
+      transfers {
+        id
+        from {
+          id
+        }
+        to {
+          id
+        }
+      }
+    }
+  }
+  _meta {
+    hasIndexingErrors
+  }
+}
