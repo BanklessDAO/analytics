@@ -31,6 +31,7 @@
     tokensOwned
   }
   events(where: { id: 2655 }) {
+    # Event id: 2655, Bankless DAO Community Call #4, source: https://poap.gallery/event/2655
     id
     tokens {
       id
