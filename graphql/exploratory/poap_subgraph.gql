@@ -1,7 +1,8 @@
-# initial query from poap subgraph
+# initial query for poap subgraph
 
 # NOTE: There are better ways to query graphql with python. This is a test file to store example queries.
-# See: thegraph.com/explorer
+# See The Graph explorer: https://thegraph.com/explorer/subgraph/poap-xyz/poap-xdai
+# See xDai Chain explorer on blockscout: https://blockscout.com/xdai/mainnet/tokens/0x22c1f6050e56d2876009903609a2cc3fef83b415/instance/317221/token-transfers
 
 # POAP GraphQL Schema:
 # Token
