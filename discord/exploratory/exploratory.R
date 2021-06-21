@@ -47,14 +47,15 @@ df3 %>%
 # unable to print out Emojis
 
 # Top 30 Discord Channels by Messages
+# note: arrange before slice
 # note: duplicate - "general", one is in archive
 # note: By Date: 2021-06-08
 
-
 df4 %>%
     select(channel_name, messages) %>%
-    slice(1:30) %>% 
-    arrange(desc(messages)) %>% 
+    # note: arrange before slice
+    arrange(desc(messages)) %>%
+    slice(1:30) %>%
     ggplot(aes(x = messages, y = reorder(channel_name, messages), fill = channel_name)) +
     geom_col() +
     geom_text(aes(label = messages), hjust = -0.1) +
@@ -71,11 +72,16 @@ df4 %>%
     )
 
 
+
+
+
 # Top 30 Discord Channels by Readers
+
 df4 %>%
     select(channel_name, readers) %>%
-    slice(1:30) %>% 
+    # note: arrange before slice
     arrange(desc(readers)) %>% 
+    slice(1:30) %>% 
     ggplot(aes(x = readers, y = reorder(channel_name, readers), fill = channel_name)) +
     geom_col() +
     geom_text(aes(label = readers), hjust = -0.1) +
@@ -91,11 +97,12 @@ df4 %>%
         x = "Number of Readers"
     )
 
-
+# Top 30 Discord Channels by Chatters
 df4 %>%
     select(channel_name, chatters) %>%
-    slice(1:30) %>% 
+    # note: arrange before slice
     arrange(desc(chatters)) %>% 
+    slice(1:30) %>% 
     ggplot(aes(x = chatters, y = reorder(channel_name, chatters), fill = channel_name)) +
     geom_col() +
     geom_text(aes(label = chatters), hjust = -0.1) +
