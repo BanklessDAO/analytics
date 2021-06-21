@@ -68,7 +68,7 @@ df3 %>%
 # NOTE: At the moment, unclear how to interpret total membership in relation to new_members, visitors, pct_retained,
 # so we'll explore each variable separately
 
-
+# Bankless DAO discord at a glance
 df %>%
     left_join(df1, by = "interval_start_timestamp") %>%
     left_join(df2, by = "interval_start_timestamp") %>%
@@ -117,11 +117,11 @@ df4 %>%
         legend.position = "none"
     ) +
     labs(
-        title = "Top 30 Discord Channels by Messages",
+        title = "Top 30 Discord Channels by Number of Messages",
         subtitle = "Bankless DAO (by June 8th)",
         caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
-        y = "Channels",
-        x = "Number of Messages"
+        y = "",
+        x = ""
     )
 
 
@@ -143,12 +143,14 @@ df4 %>%
         legend.position = "none"
     ) +
     labs(
-        title = "Top 30 Discord Channels by Readers",
+        title = "Top 30 Discord Channels by Number of Readers",
         subtitle = "Bankless DAO (by June 8th)",
         caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
-        y = "Channels",
-        x = "Number of Readers"
+        y = "",
+        x = ""
     )
+
+
 
 # Top 30 Discord Channels by Chatters
 df4 %>%
@@ -164,11 +166,11 @@ df4 %>%
         legend.position = "none"
     ) +
     labs(
-        title = "Top 30 Discord Channels by Chatters",
+        title = "Top 30 Discord Channels by Number of Chatters",
         subtitle = "Bankless DAO (by June 8th)",
         caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
-        y = "Channels",
-        x = "Number of Chatters"
+        y = "",
+        x = ""
     )
 
 
