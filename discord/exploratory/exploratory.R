@@ -119,7 +119,7 @@ df4 %>%
     labs(
         title = "Top 30 Discord Channels by Number of Messages",
         subtitle = "Bankless DAO (by June 8th)",
-        caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
+        caption = "Data: Bankless DAO | @frogmonkee | Analytics: @paulapivat",
         y = "",
         x = ""
     )
@@ -145,7 +145,7 @@ df4 %>%
     labs(
         title = "Top 30 Discord Channels by Number of Readers",
         subtitle = "Bankless DAO (by June 8th)",
-        caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
+        caption = "Data: Bankless DAO | @frogmonkee | Analytics: @paulapivat",
         y = "",
         x = ""
     )
@@ -168,7 +168,7 @@ df4 %>%
     labs(
         title = "Top 30 Discord Channels by Number of Chatters",
         subtitle = "Bankless DAO (by June 8th)",
-        caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
+        caption = "Data: Bankless DAO | @frogmonkee | Analytics: @paulapivat",
         y = "",
         x = ""
     )
