@@ -1,6 +1,16 @@
 # library
 library(tidyverse)
 
+# new library for emoji
+install.packages("emojifont")
+library(emojifont)
+
+# NOTE: UNABLE TO DISPLAY EMOJIs.
+library(ggtext)
+# install.packages("emo") ‘emo’ is not available (for R version 4.0.2)
+remotes::install_github("hadley/emo")
+library(emo)
+
 # load raw data
 
 df <- read_csv("../raw/guild-total-membership.csv") 
@@ -30,8 +40,11 @@ df3 %>%
     geom_col()
 
 # popular text channels (SINGLE DATE time-stamp)
+# arrange in descending order by number of messages
 df4 %>%
     select(channel_name, messages) %>%
+    slice(1:30) %>% 
+    arrange(desc(messages)) %>% 
     ggplot(aes(x = messages, y = reorder(channel_name, messages))) +
     geom_col()
 
