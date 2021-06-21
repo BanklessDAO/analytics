@@ -45,6 +45,18 @@ df4 %>%
     select(channel_name, messages) %>%
     slice(1:30) %>% 
     arrange(desc(messages)) %>% 
-    ggplot(aes(x = messages, y = reorder(channel_name, messages))) +
-    geom_col()
+    ggplot(aes(x = messages, y = reorder(channel_name, messages), fill = channel_name)) +
+    geom_col() +
+    geom_text(aes(label = messages), hjust = -0.1) +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    ) +
+    labs(
+        title = "Top 30 Discord Channels by Messages",
+        subtitle = "Bankless DAO",
+        caption = "Data: BanklessDAO | @frogmonkee | Analytics: @paulapivat",
+        y = "Channels",
+        x = "Number of Messages"
+    )
 
