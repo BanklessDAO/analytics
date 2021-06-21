@@ -44,31 +44,55 @@ df3 %>%
 
 # ----------- Exploratory DAO WIDE  ----------------#
 
-# NOTE: At the moment, unclear how to interpret total membership in relation to new_members, vistors, pct_retained,
+# 1 combine doa-wide data individually, then plot together
+# 2 combine three channel plots together
+# 3 list all major channels, create a vector of those names, filter by vector
+# 4 plot all variables for the top-10 channels: readers, chatters, messages
+# TBD -- do this later -- (Top: Research, Legal, Design, AV, Translator, Marketing, Writer's, Education, Developer, Analytics, Ops, Treasury)
+
+# 1. research-general   Research Guild
+# 2. general-legal          Legal Guild
+# 3. design                    Design Guild
+# 4. av-general              AV Guild
+# 5. translation-general   Translator’s Guild
+# 6. marketing-general    Marketing Guild
+# 7. writer-general           Writer’s Guild
+# 8. values                       Education Guild
+# 9. onboard                    Education Guild
+# 9. dev-guild                   Developer’s Guild
+# 10. analytics                  Analytics Guild
+# 11. ops-general             OPS Guild
+# 12. treasury                   Treasury Guild
+
+
+# NOTE: At the moment, unclear how to interpret total membership in relation to new_members, visitors, pct_retained,
 # so we'll explore each variable separately
 
 
-# Try compare Total Membership & Speaking Minutes
-df %>%
-    left_join(df3, by = "interval_start_timestamp") %>%
-    pivot_longer(!interval_start_timestamp, names_to = "category", values_to = "count") %>%
-    ggplot(aes(x = interval_start_timestamp, y = count, fill = category)) +
-    geom_bar(position = "dodge", stat = "identity")
-
-
-# Try Total membership, New members, Visitors
 df %>%
     left_join(df1, by = "interval_start_timestamp") %>%
     left_join(df2, by = "interval_start_timestamp") %>%
-    select(interval_start_timestamp, total_membership, visitors, new_members) %>%
+    left_join(df3, by = "interval_start_timestamp") %>%
+    select(interval_start_timestamp, total_membership, new_members, visitors, speaking_minutes) %>%
     pivot_longer(!interval_start_timestamp, names_to = "category", values_to = "count") %>%
-    ggplot(aes(x = interval_start_timestamp, y = count, fill = category)) +
-    geom_bar(position = "fill", stat = "identity")
+    ggplot(aes(x = interval_start_timestamp, y = count, color = category)) +
+    geom_line(size = 2) +
+    theme_minimal() +
+    theme(
+        legend.position = "bottom"
+    ) +
+    labs(
+        title = "Bankless DAO discord at-a-glance",
+        subtitle = "May, 2021",
+        x = "",
+        y = "",
+        caption = "Data: Bankless DAO | @frogmonkee | Analytics: @paulapivat"
+    )
 
 
-df1
-df2
-df3
+
+
+
 
 
 # ----------- Exploratory DISCORD CHANNELS ----------------#
@@ -150,6 +174,23 @@ df4 %>%
 
 # ----------------- Parking Lot ----------------- #
 
+
+# Compare Total Membership & Speaking Minutes
+df %>%
+    left_join(df3, by = "interval_start_timestamp") %>%
+    pivot_longer(!interval_start_timestamp, names_to = "category", values_to = "count") %>%
+    ggplot(aes(x = interval_start_timestamp, y = count, fill = category)) +
+    geom_bar(position = "dodge", stat = "identity")
+
+
+# Compare Total membership, New members, Visitors
+df %>%
+    left_join(df1, by = "interval_start_timestamp") %>%
+    left_join(df2, by = "interval_start_timestamp") %>%
+    select(interval_start_timestamp, total_membership, visitors, new_members) %>%
+    pivot_longer(!interval_start_timestamp, names_to = "category", values_to = "count") %>%
+    ggplot(aes(x = interval_start_timestamp, y = count, fill = category)) +
+    geom_bar(position = "fill", stat = "identity")
 
 
 
