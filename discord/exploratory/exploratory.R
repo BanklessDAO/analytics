@@ -42,7 +42,36 @@ df3 %>%
 # popular text channels (SINGLE DATE time-stamp)
 # arrange in descending order by number of messages
 
-# ----------- DISCORD CHANNELS ----------------#
+# ----------- Exploratory DAO WIDE  ----------------#
+
+# NOTE: At the moment, unclear how to interpret total membership in relation to new_members, vistors, pct_retained,
+# so we'll explore each variable separately
+
+
+# Try compare Total Membership & Speaking Minutes
+df %>%
+    left_join(df3, by = "interval_start_timestamp") %>%
+    pivot_longer(!interval_start_timestamp, names_to = "category", values_to = "count") %>%
+    ggplot(aes(x = interval_start_timestamp, y = count, fill = category)) +
+    geom_bar(position = "dodge", stat = "identity")
+
+
+# Try Total membership, New members, Visitors
+df %>%
+    left_join(df1, by = "interval_start_timestamp") %>%
+    left_join(df2, by = "interval_start_timestamp") %>%
+    select(interval_start_timestamp, total_membership, visitors, new_members) %>%
+    pivot_longer(!interval_start_timestamp, names_to = "category", values_to = "count") %>%
+    ggplot(aes(x = interval_start_timestamp, y = count, fill = category)) +
+    geom_bar(position = "fill", stat = "identity")
+
+
+df1
+df2
+df3
+
+
+# ----------- Exploratory DISCORD CHANNELS ----------------#
 
 # unable to print out Emojis
 
@@ -119,7 +148,12 @@ df4 %>%
     )
 
 
-# ----------------- APPENDIX ----------------- #
+# ----------------- Parking Lot ----------------- #
+
+
+
+
+# ----------------- APPENDIX -------------------- #
 
 # Try modern text features tidyverse
 emojis <- "👩🏾‍💻🔥📊"
