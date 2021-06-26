@@ -11,6 +11,7 @@ df3 <- read_csv("../raw/Bankless DAO Community Call #3.csv")
 df4 <- read_csv("../raw/Bankless DAO Community Call #4.csv")
 df5 <- read_csv("../raw/Bankless DAO Community Call #5.csv")
 df6 <- read_csv("../raw/Bankless DAO Community Call #6.csv")
+df7 <- read_csv("../raw/BDAO Community Call #7.csv")
 
 # column names
 df %>% names()
@@ -106,6 +107,11 @@ c6 <- df6 %>%
     tally(sort = TRUE)
 
 
+# Claim Date: 6/25/2021
+c7 <- df7 %>%
+    select(Owner, `Claim Date`) %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE)
 
 
 #------Before Combine, do another group_by without `Claim Date` to eliminate any potential duplicates -----#
@@ -142,6 +148,12 @@ c5 %>%
 
 # n = 246
 c6 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+# n = 223
+c7 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
@@ -185,6 +197,12 @@ c6 %>%
     tally(sort = TRUE) %>%
     view()
 
+# n = 223
+c7 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
 # rbind all dataframes
 
 combine_wk4 <- rbind(c1, c2, c3, c4)
@@ -192,6 +210,8 @@ combine_wk4 <- rbind(c1, c2, c3, c4)
 combine_wk5 <- rbind(c1, c2, c3, c4, c5)
 
 combine_wk6 <- rbind(c1, c2, c3, c4, c5, c6)
+
+combine_wk7 <- rbind(c1, c2, c3, c4, c5, c6, c7)
 
 # NOTE numbers can change because the pool is not fixed
 # every community call could be someone's first POAP claim
@@ -219,7 +239,7 @@ combine_wk6 %>%
 #------- Wrangle and Visualize Combined Data Frame ---------#
 
 # Number of Poaps Claimed by Addresses
-combine_wk6 %>%
+combine_wk7 %>%      # change weekly
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     rename(
@@ -253,14 +273,14 @@ main_dates_wk5 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/202
 
 main_dates_wk6 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021", "6/18/2021")
 
-
+main_dates_wk7 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021", "6/18/2021", "6/25/2021")
 
 
 
 # Fix Date Ordering so that 6/11/2021 is the most recent date
 
 
-combine_wk6 %>%      # change weekly
+combine_wk7 %>%      # change weekly
     # change Claim Date from Char to Date
     mutate(
         Date = as.Date(`Claim Date`, "%m/%d/%Y")
@@ -271,7 +291,7 @@ combine_wk6 %>%      # change weekly
         poaps_claimed = n
     ) %>%
     # change main_dates_x every week
-    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk6, "%m/%d/%Y"), 'red', 'green'))) +  
+    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk7, "%m/%d/%Y"), 'red', 'green'))) +  
     geom_col() +
     scale_x_date(date_breaks = '2 day') +
     geom_text(aes(label = poaps_claimed), vjust = -0.50) +
