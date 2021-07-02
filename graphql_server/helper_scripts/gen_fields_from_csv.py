@@ -59,4 +59,12 @@ def generate_entity_fields(column_headers):
 
 # simply copy console output and merge it into entity class
 # add typing information for each field manually
-generate_entity_fields(daily_tweet_activity_columns)
+if __name__ == '__main__':
+    import sys
+    import os
+    print(os.getcwd())
+
+    if len(sys.argv) > 1:
+        generate_entity_fields(daily_tweet_activity_columns)
+    else:
+        print('usage: python gen_fields_from_csv.py path_to_analytics.csv')

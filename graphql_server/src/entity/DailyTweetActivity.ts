@@ -1,158 +1,272 @@
-import { Field, Float, Int, ObjectType } from "type-graphql"
+import { Field, Float, InputType, Int, ObjectType } from "type-graphql"
 import { Entity, Column, BaseEntity, PrimaryColumn } from "typeorm"
 
 @ObjectType()
 @Entity()
 export class DailyTweetActivity extends BaseEntity {
   @Field()
-  @PrimaryColumn({ type: "date" })
+  @PrimaryColumn({ type: "datetime" })
   date: Date
 
-  @Field(() => Int)
-  @Column()
-  tweets_published: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  tweets_published?: number
 
-  @Field(() => Int)
-  @Column()
-  impressions: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  impressions?: number
 
-  @Field(() => Int)
-  @Column()
-  engagements: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  engagements?: number
 
-  @Field(() => Float)
-  @Column()
-  engagement_rate: number
+  @Field(() => Float, { nullable: true })
+  @Column({ nullable: true })
+  engagement_rate?: number
 
-  @Field(() => Int)
-  @Column()
-  retweets: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  retweets?: number
 
-  @Field(() => Int)
-  @Column()
-  replies: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  replies?: number
 
-  @Field(() => Int)
-  @Column()
-  likes: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  likes?: number
 
-  @Field(() => Int)
-  @Column()
-  user_profile_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  user_profile_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  url_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  url_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  hashtag_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  hashtag_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  detail_expands: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  detail_expands?: number
 
-  @Field(() => Int)
-  @Column()
-  permalink_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  permalink_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  app_opens: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  app_opens?: number
 
-  @Field(() => Int)
-  @Column()
-  app_installs: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  app_installs?: number
 
-  @Field(() => Int)
-  @Column()
-  follows: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  follows?: number
 
-  @Field(() => Int)
-  @Column()
-  email_tweet: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  email_tweet?: number
 
-  @Field(() => Int)
-  @Column()
-  dial_phone: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  dial_phone?: number
 
-  @Field(() => Int)
-  @Column()
-  media_views: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  media_views?: number
 
-  @Field(() => Int)
-  @Column()
-  media_engagements: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  media_engagements?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_impressions: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_impressions?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_engagements: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_engagements?: number
 
-  @Field(() => Float)
-  @Column()
-  promoted_engagement_rate: number
+  @Field(() => Float, { nullable: true })
+  @Column({ nullable: true })
+  promoted_engagement_rate?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_retweets: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_retweets?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_replies: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_replies?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_likes: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_likes?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_user_profile_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_user_profile_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_url_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_url_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_hashtag_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_hashtag_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_detail_expands: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_detail_expands?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_permalink_clicks: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_permalink_clicks?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_app_opens: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_app_opens?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_app_installs: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_app_installs?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_follows: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_follows?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_email_tweet: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_email_tweet?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_dial_phone: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_dial_phone?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_media_views: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_media_views?: number
 
-  @Field(() => Int)
-  @Column()
-  promoted_media_engagements: number
+  @Field(() => Int, { nullable: true })
+  @Column({ nullable: true })
+  promoted_media_engagements?: number
+}
+
+@InputType()
+export class DailyTweetActivityInput {
+  @Field(() => Int, { nullable: true })
+  tweets_published?: number
+
+  @Field(() => Int, { nullable: true })
+  impressions?: number
+
+  @Field(() => Int, { nullable: true })
+  engagements?: number
+
+  @Field(() => Float, { nullable: true })
+  engagement_rate?: number
+
+  @Field(() => Int, { nullable: true })
+  retweets?: number
+
+  @Field(() => Int, { nullable: true })
+  replies?: number
+
+  @Field(() => Int, { nullable: true })
+  likes?: number
+
+  @Field(() => Int, { nullable: true })
+  user_profile_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  url_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  hashtag_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  detail_expands?: number
+
+  @Field(() => Int, { nullable: true })
+  permalink_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  app_opens?: number
+
+  @Field(() => Int, { nullable: true })
+  app_installs?: number
+
+  @Field(() => Int, { nullable: true })
+  follows?: number
+
+  @Field(() => Int, { nullable: true })
+  email_tweet?: number
+
+  @Field(() => Int, { nullable: true })
+  dial_phone?: number
+
+  @Field(() => Int, { nullable: true })
+  media_views?: number
+
+  @Field(() => Int, { nullable: true })
+  media_engagements?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_impressions?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_engagements?: number
+
+  @Field(() => Float, { nullable: true })
+  promoted_engagement_rate?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_retweets?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_replies?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_likes?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_user_profile_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_url_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_hashtag_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_detail_expands?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_permalink_clicks?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_app_opens?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_app_installs?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_follows?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_email_tweet?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_dial_phone?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_media_views?: number
+
+  @Field(() => Int, { nullable: true })
+  promoted_media_engagements?: number
 }

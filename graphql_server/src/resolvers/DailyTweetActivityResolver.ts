@@ -1,11 +1,14 @@
-import { DailyTweetActivity } from "../entity/DailyTweetActivity"
+import { DailyTweetActivity, DailyTweetActivityInput } from "../entity/DailyTweetActivity"
 import { Arg, Mutation, Query, Resolver } from "type-graphql"
 
 @Resolver()
 export class DailyTweetActivityResolver {
-  @Mutation(() => DailyTweetActivity)
-  async importDailyTweetActivity(@Arg("date") date: Date) {
-    await DailyTweetActivity.create({ date })
+  @Mutation(() => Boolean)
+  async importDailyTweetActivity(
+    @Arg("date") date: Date,
+    @Arg("input", () => DailyTweetActivityInput) input: DailyTweetActivityInput
+  ) {
+    await DailyTweetActivity.create({ date, ...input }).save()
     return true
   }
 
