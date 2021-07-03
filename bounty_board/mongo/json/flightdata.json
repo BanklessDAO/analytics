@@ -1,0 +1,33 @@
+
+[
+    {
+        "_id" : ObjectId("60deb32e5cd4235117240295"),
+        "departureAirport" : "MUC",
+        "arrivalAirport" : "SFO",
+        "aircraft" : "Airbus A380",
+        "distance" : 12000,
+        "intercontinental" : true,
+        "status" : {
+                "description" : "on-time",
+                "lastUpdated" : "1 hour ago",
+                "details" : {
+                        "responsible" : "Paul Apivat"
+                }
+        }
+},
+{
+        "_id" : ObjectId("60deb32e5cd4235117240296"),
+        "departureAirport" : "LHR",
+        "arrivalAirport" : "TXL",
+        "aircraft" : "Airbus A320",
+        "distance" : 950,
+        "intercontinental" : false,
+        "status" : {
+                "description" : "on-time",
+                "lastUpdated" : "1 hour ago",
+                "details" : {
+                        "responsible" : "Paul Apivat"
+                }
+        }
+}
+]

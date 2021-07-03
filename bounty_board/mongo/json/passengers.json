@@ -1,0 +1,120 @@
+
+[
+    {
+        "_id" : ObjectId("60dec8715cd4235117240297"),
+        "name" : "Max Schwarzmueller",
+        "age" : 29
+},
+{
+        "_id" : ObjectId("60dec8715cd4235117240298"),
+        "name" : "Manu Lorenz",
+        "age" : 30
+},
+{
+        "_id" : ObjectId("60dec8715cd4235117240299"),
+        "name" : "Chris Hayton",
+        "age" : 35
+},
+{
+        "_id" : ObjectId("60dec8715cd423511724029a"),
+        "name" : "Sandeep Kumar",
+        "age" : 28
+},
+{
+        "_id" : ObjectId("60dec8715cd423511724029b"),
+        "name" : "Maria Jones",
+        "age" : 30
+},
+{
+        "_id" : ObjectId("60dec8715cd423511724029c"),
+        "name" : "Alexandra Maier",
+        "age" : 27
+},
+{
+        "_id" : ObjectId("60dec8715cd423511724029d"),
+        "name" : "Dr. Phil Evans",
+        "age" : 47
+},
+{
+        "_id" : ObjectId("60dec8715cd423511724029e"),
+        "name" : "Sandra Brugge",
+        "age" : 33
+},
+{
+        "_id" : ObjectId("60dec8715cd423511724029f"),
+        "name" : "Elisabeth Mayr",
+        "age" : 29
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a0"),
+        "name" : "Frank Cube",
+        "age" : 41
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a1"),
+        "name" : "Karandeep Alun",
+        "age" : 48
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a2"),
+        "name" : "Michaela Drayer",
+        "age" : 39
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a3"),
+        "name" : "Bernd Hoftstadt",
+        "age" : 22
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a4"),
+        "name" : "Scott Tolib",
+        "age" : 44
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a5"),
+        "name" : "Freddy Melver",
+        "age" : 41
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a6"),
+        "name" : "Alexis Bohed",
+        "age" : 35
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a7"),
+        "name" : "Melanie Palace",
+        "age" : 27
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a8"),
+        "name" : "Armin Glutch",
+        "age" : 35
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402a9"),
+        "name" : "Klaus Arber",
+        "age" : 53,
+        "hobbies" : [
+                {
+                        "area" : "sports"
+                },
+                {
+                        "area" : "cooking"
+                }
+        ]
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402aa"),
+        "name" : "Albert Twostone",
+        "age" : 68,
+        "hobbies" : [
+                "sports",
+                "cooking"
+        ]
+},
+{
+        "_id" : ObjectId("60dec8715cd42351172402ab"),
+        "name" : "Gordon Black",
+        "age" : 38
+}
+]
