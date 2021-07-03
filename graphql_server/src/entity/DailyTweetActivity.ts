@@ -1,12 +1,12 @@
-import { Field, Float, InputType, Int, ObjectType } from "type-graphql"
-import { Entity, Column, BaseEntity, PrimaryColumn } from "typeorm"
+import { Field, Float, InputType, Int, ObjectType } from 'type-graphql'
+import { Entity, Column, BaseEntity, PrimaryColumn } from 'typeorm'
 
 @ObjectType()
 @Entity()
 export class DailyTweetActivity extends BaseEntity {
   @Field()
-  @PrimaryColumn({ type: "datetime" })
-  date: Date
+  @PrimaryColumn({ type: 'date' })
+  date: string
 
   @Field(() => Int, { nullable: true })
   @Column({ nullable: true })
