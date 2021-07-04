@@ -1,0 +1,30 @@
+[
+    {
+        "bountyTitle": "A new About Us webpage",
+        "bountyDescription": "Description of webpage",
+        "doneCriteria": "A completed bounty has the following...",
+        "bountyReward": 500,
+        "applicableGuilds": [
+            {"guildName": "Marketing Guild"},
+            {"guildName": "Treasury Guild"},
+            {"guildName": "Developer's Guild"},
+            {"guildName": "Analytics Guild"},
+            {"guildName": "Writer's Guild"}
+        ],
+        "bountyCreatedBy": "Marketing Guild",
+        "bountyCreatedAt": "2021-07-10T13:49:51.141Z",
+        "bountyActivatedAt": "2021-07-12T13:49:51.141Z",
+        "bountyClaimedBy": [
+            {"guildName": "Marketing Guild"},
+            {"guildName": "Treasury Guild"},
+            {"guildName": "Developer's Guild"},
+            {"guildName": "Analytics Guild"},
+            {"guildName": "Writer's Guild"}
+        ],
+        "bountyClaimedAt": "2021-07-11T13:49:51.141Z",
+        "bountySubmittedBy": "Developer's Guild",
+        "bountySubmittedAt": "2021-08-11T13:49:51.141Z",
+        "bountySubmissionLink": "https://example.org/rels/v1/bounty_submission",
+        "bountyStatus": ["Open", "Draft", "In-Progress", "In-Review", "Completed", "Closed"]
+    }
+]
