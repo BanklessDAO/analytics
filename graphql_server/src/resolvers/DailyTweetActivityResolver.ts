@@ -22,7 +22,7 @@ export class DailyTweetActivityResolver {
   }
 
   @Query(() => [DailyTweetActivity])
-  dailyTweetActivity() {
+  allDailyTweetActivity() {
     return DailyTweetActivity.find()
   }
 }

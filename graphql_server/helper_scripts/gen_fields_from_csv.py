@@ -1,70 +1,31 @@
-# simple helper script to convert csv column headers to entity class fields
+# simple helper script to convert csv column headers to entity class field names
 
-# todo: - use csv parser to read in the column headers
-#       - get path to csv from args
-
-daily_tweet_activity_columns = [
-    'Date',
-    'Tweets published',
-    'impressions',
-    'engagements',
-    'engagement rate',
-    'retweets',
-    'replies',
-    'likes',
-    'user profile clicks',
-    'url clicks',
-    'hashtag clicks',
-    'detail expands',
-    'permalink clicks',
-    'app opens',
-    'app installs',
-    'follows',
-    'email tweet',
-    'dial phone',
-    'media views',
-    'media engagements',
-    'promoted impressions',
-    'promoted engagements',
-    'promoted engagement rate',
-    'promoted retweets',
-    'promoted replies',
-    'promoted likes',
-    'promoted user profile clicks',
-    'promoted url clicks',
-    'promoted hashtag clicks',
-    'promoted detail expands',
-    'promoted permalink clicks',
-    'promoted app opens',
-    'promoted app installs',
-    'promoted follows',
-    'promoted email tweet',
-    'promoted dial phone',
-    'promoted media views',
-    'promoted media engagements'
-]
-
+import csv
+import sys
+import os
 
 def field_name_format(header):
     return header.lower().replace(' ', '_')
 
-
 def generate_entity_fields(column_headers):
     for header in column_headers:
-        print('@Field()')
-        print('@Column()')
-        print(f'{field_name_format(header)}: any')
-        print()
+        print(field_name_format(header))
 
-
-# simply copy console output and merge it into entity class
+# simply copy console output and put it into entity class
 # add typing information for each field manually
 if __name__ == '__main__':
-    import sys
-    import os
-    print(os.getcwd())
+    if len(sys.argv) == 2:
+        cwd = os.getcwd()
+        path = sys.argv[1]
+        csvpath = os.path.join(cwd, path)
 
-    if len(sys.argv) > 1:
-        generate_entity_fields(daily_tweet_activity_columns)
+        with open(csvpath) as csvfile:
+          reader = csv.reader(csvfile, delimiter=',')
+          column_headers = reader.__next__()
+
+        generate_entity_fields(column_headers)
     else:
         print('usage: python gen_fields_from_csv.py path_to_analytics.csv')
+
+# todo: use this script combined with an array of type info
+# to generate a complete entity class and input type

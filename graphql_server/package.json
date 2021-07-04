@@ -1,13 +1,13 @@
 {
-  "name": "graphql_helloworld",
-  "version": "1.0.0",
+  "name": "graphql-server",
+  "version": "0.1.0",
   "author": "baerlux@pm.me",
   "private": true,
   "scripts": {
     "test": "rimraf db/test_db.sqlite && jest -i",
     "dev": "ts-node-dev src/index.ts",
     "build": "tsc",
-    "import-data": "ts-node import_scripts/import_csv.ts"
+    "import-dta": "ts-node import_scripts/import_daily_tweet_activity.ts"
   },
   "jest": {
     "preset": "ts-jest"

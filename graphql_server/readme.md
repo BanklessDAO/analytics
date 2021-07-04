@@ -1,6 +1,8 @@
-# GraphQL Hello World
+# Bankless DAO GraphQL API
 
-This template provides a basic GraphQL API and unit testing.
+GraphQL API to store and fetch various Bankless DAO analytics into a DB.
+
+Goal of this Project is to gradually automate and organize the DAOs data processes.
 
 ## Example
 
@@ -11,7 +13,7 @@ This template provides a basic GraphQL API and unit testing.
 ### 1. install dependencies
 
 ```
-cd graphql-api-template
+cd graphql_server
 npm install
 ```
 
@@ -26,3 +28,17 @@ npm run test
 ```
 npm run dev
 ```
+
+### 4. import daily tweet activity csv
+
+```
+npm run import-dta
+```
+
+## Learning resources
+
+TypeORM tutorial series by Ben Awad:
+https://www.youtube.com/playlist?list=PLN3n1USn4xlmlo0GtSjIeWGXe_Ndo9sYd
+
+TypeGraphQL tutorial series by Ben Awad:
+https://www.youtube.com/playlist?list=PLN3n1USn4xlma1bBu3Tloe4NyYn9Ko8Gs
