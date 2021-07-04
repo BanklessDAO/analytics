@@ -1,0 +1,42 @@
+
+[
+    {
+        "_id" : ObjectId("60e01cc55cd42351172402ac"),
+        "firstName" : "Pete",
+        "lastName" : "Pistol",
+        "age" : 35,
+        "history" : [
+                {
+                        "disease" : "covid19",
+                        "treatment" : "sinovac"
+                }
+        ]
+},
+{
+        "_id" : ObjectId("60e01df15cd42351172402ad"),
+        "firstName" : "Mary",
+        "lastName" : "Monroe",
+        "age" : 47,
+        "history" : [
+                {
+                        "disease" : "covid19",
+                        "treatment" : "moderna"
+                }
+        ]
+},
+{
+        "_id" : ObjectId("60e01f305cd42351172402ae"),
+        "firstName" : "Draymond",
+        "lastName" : "Green",
+        "age" : 29,
+        "history" : [
+                {
+                        "disease" : "covid19",
+                        "treatment" : "pfizer"
+                },
+                {
+                        "location" : "hospital"
+                }
+        ]
+}
+]
