@@ -315,10 +315,10 @@ df1a <- df %>%
 # RBIND df1a + df2 to combine datasets with no overlapping dates
 # Use newer version of June 5-7
 
-rbind(df1a, df2) %>% view()
+df2a <- rbind(df1a, df2)
 
-# impressions [check] May 8th - June 7th 2021
-df2 %>%
+# impressions May 8th - July 2nd, 2021
+df2a %>%
     select(1:4) %>%
     rename(
         num_tweets = `Tweets published`,
@@ -333,13 +333,119 @@ df2 %>%
     ) +
     labs(
         title = "Bankless DAO Twitter Impressions",
-        subtitle = "June 5th - July 2nd, 2021",
+        subtitle = "May 8th - July 2nd, 2021",
         x = "",
         y = "Impressions",
         caption = "Data: Twitter | Analytics: @paulapivat"
     )
     
 
+# engagements May 8th - July 2nd, 2021
+df2a %>%
+    select(1:4) %>%
+    rename(
+        num_tweets = `Tweets published`,
+        date = `Date`
+    ) %>%
+    ggplot() +
+    geom_area(aes(x = date, y = engagements), fill = "light blue") +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Engagements",
+        subtitle = "May 8th - July 2th, 2021",
+        x = "",
+        y = "Engagements",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
 
-### NOTE: remove overlap with previous raw data - slice off June 5th & 6th
 
+# impressions & engagements Relationship May 8th - July 2nd, 2021
+df2a %>%
+    select(1:4) %>%
+    rename(
+        num_tweets = `Tweets published`,
+        date = `Date`
+    ) %>%
+    ggplot(aes(x = impressions, y = engagements)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE) +
+    theme_minimal() +
+    labs(
+        title = "Bankless DAO Twitter Metrics (May - June, 2021)",
+        subtitle = "Relationship between Engagement & Impressions",
+        x = "Impressions",
+        y = "Engagements",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
+
+# How Most Tweets are Performing (June, 2021),
+# Different geometry and change in gradient color
+# NOTE: df2 NOT df2a
+
+df2 %>%
+    select(1:4) %>%
+    rename(
+        num_tweets = `Tweets published`,
+        date = `Date`
+    ) %>%
+    ggplot(aes(x = impressions, y = engagements)) +
+    geom_point(color = "lightgray") +
+    stat_density_2d(aes(fill = ..level..), geom = "polygon") + 
+    scale_fill_gradientn(colors = c("#FFEDA0", "#FEB24C", "#F03B20")) +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Activity (June, 2021)",
+        subtitle = "How most Tweets are performing",
+        x = "Impressions",
+        y = "Engagements",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
+
+# breakdown engagement into sub-components and chart stacked area graph May 8th - July 2nd, 2021
+df2a %>%
+    select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
+    pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
+    ggplot(aes(x = Date, y = count, fill = variable)) +
+    geom_area(stat = "identity", position = "stack") +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Engagement Breakdown",
+        subtitle = "May - June 2021",
+        x = "",
+        y = "Count",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
+
+
+# try ggridges next - multiple histograms [check]
+library(ggridges)
+
+
+df2a %>%
+    select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
+    pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
+    ggplot(aes(x = count, y = variable, fill = variable)) +
+    geom_density_ridges() +
+    theme_minimal() +
+    theme(
+        legend.position = "none"
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Various Engagement Metrics",
+        subtitle = "May - June 2021",
+        x = "Count",
+        y = "Various Engagement Metrics",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
