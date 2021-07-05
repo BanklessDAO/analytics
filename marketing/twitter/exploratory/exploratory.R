@@ -3,6 +3,7 @@ library(tidyverse)
 
 # load data
 df <- read_csv("../raw/daily_tweet_activity_metrics_banklessDAO_20210508_20210608_en.csv")
+df2 <- read_csv("../raw/daily_tweet_activity_metrics_banklessDAO_20210605_20210703_en.csv")
 
 # Exploratory: Broad
 df %>% summary()
@@ -12,7 +13,7 @@ df %>% names()
 
 # Exploratory: Date, Tweets Published, Impressions, Engagements
 
-# impressions
+# impressions [check] May 8th - June 7th 2021
 df %>%
     select(1:4) %>%
     rename(
@@ -36,7 +37,7 @@ df %>%
     
 
 
-# engagements
+# engagements [check]
 df %>%
     select(1:4) %>%
     rename(
@@ -59,7 +60,7 @@ df %>%
     )
 
 
-# impressions & engagements
+# impressions & engagements [check]
 df %>%
     select(1:4) %>%
     rename(
@@ -114,7 +115,7 @@ df %>%
     geom_point(color = "lightgray") +
     geom_density_2d()
 
-# Different geometry and change in gradient color
+# Different geometry and change in gradient color [check]
 df %>%
     select(1:4) %>%
     rename(
@@ -140,7 +141,7 @@ df %>%
 # reshape data (pivot_longer)
 # works with geom_line, not geom_col or geom_bar
 
-# y-axis normal scale
+# y-axis normal scale [check]
 df %>% 
     select(1, 3:4) %>%
     rename(
@@ -163,7 +164,7 @@ df %>%
         caption = "Data: Twitter | Analytics: @paulapivat"
     )
 
-# y-axis log-scale
+# y-axis log-scale [check]
 df %>% 
     select(1, 3:4) %>%
     rename(
@@ -214,7 +215,7 @@ df %>%
     geom_area()
 
 
-# breakdown engagement into sub-components and chart stacked area graph
+# breakdown engagement into sub-components and chart stacked area graph [check]
 df %>%
     select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
     pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
@@ -283,7 +284,7 @@ df %>%
     scale_fill_manual(values=c("#69b3a2", "#404080"))
 
 
-# try ggridges next - multiple histograms 
+# try ggridges next - multiple histograms [check]
 library(ggridges)
 
 
@@ -304,7 +305,41 @@ df %>%
         caption = "Data: Twitter | Analytics: @paulapivat"
     )
     
+########----------------------- June 5th, 2021 / June 7th - July 2nd, 2021 -----------------------#########
+
+### NOTE: remove Last Three Rows from last month's data to prevent overlap with New raw data - slice off June 5 - 7th
+df1a <- df %>%
+    slice(1:28)
+
+
+# RBIND df1a + df2 to combine datasets with no overlapping dates
+# Use newer version of June 5-7
+
+rbind(df1a, df2) %>% view()
+
+# impressions [check] May 8th - June 7th 2021
+df2 %>%
+    select(1:4) %>%
+    rename(
+        num_tweets = `Tweets published`,
+        date = `Date`
+    ) %>%
+    ggplot() +
+    geom_area(aes(x = date, y = impressions), fill = "pink") +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Impressions",
+        subtitle = "June 5th - July 2nd, 2021",
+        x = "",
+        y = "Impressions",
+        caption = "Data: Twitter | Analytics: @paulapivat"
+    )
     
-    
-    
+
+
+### NOTE: remove overlap with previous raw data - slice off June 5th & 6th
 
