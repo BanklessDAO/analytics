@@ -1,9 +1,15 @@
 # load libraries
 library(tidyverse)
+library(lubridate) # reformat timestamp for tweet metrics analysis
 
-# load data
+# load daily tweet data (numeric)
 df <- read_csv("../raw/daily_tweet_activity_metrics_banklessDAO_20210508_20210608_en.csv")
 df2 <- read_csv("../raw/daily_tweet_activity_metrics_banklessDAO_20210605_20210703_en.csv")
+
+# load tweet activity metrics (string)
+df3 <- read_csv("../raw/tweet_activity_metrics_banklessDAO_20210605_20210703_en.csv")
+df4 <- read_csv("../raw/tweet_activity_metrics_banklessDAO_20210508_20210608_en.csv")
+
 
 # Exploratory: Broad
 df %>% summary()
@@ -336,7 +342,7 @@ df2a %>%
         subtitle = "May 8th - July 2nd, 2021",
         x = "",
         y = "Impressions",
-        caption = "Data: Twitter | Analytics: @paulapivat"
+        caption = "Data: Twitter, @frogmonkee | Analytics: @paulapivat"
     )
     
 
@@ -359,7 +365,7 @@ df2a %>%
         subtitle = "May 8th - July 2th, 2021",
         x = "",
         y = "Engagements",
-        caption = "Data: Twitter | Analytics: @paulapivat"
+        caption = "Data: Twitter, @frogmonkee | Analytics: @paulapivat"
     )
 
 
@@ -401,16 +407,17 @@ df2 %>%
         legend.position = "none"
     ) +
     labs(
-        title = "Bankless DAO Twitter Activity (June, 2021)",
-        subtitle = "How most Tweets are performing",
+        title = "Bankless DAO Twitter Activity",
+        subtitle = "How most Tweets are performing from June 5th - July 2nd",
         x = "Impressions",
         y = "Engagements",
-        caption = "Data: Twitter | Analytics: @paulapivat"
+        caption = "Data: Twitter, @frogmonkee | Analytics: @paulapivat"
     )
 
 # breakdown engagement into sub-components and chart stacked area graph May 8th - July 2nd, 2021
 df2a %>%
-    select(Date, engagements, retweets:`detail expands`, `media views`: `media engagements`) %>%
+    # engagement = function of (retweets, replies, likes, user profile clicks, url clicks, hashtags, detail expands, media view, media engagements)
+    select(Date, retweets:`detail expands`, `media views`: `media engagements`) %>%
     pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
     ggplot(aes(x = Date, y = count, fill = variable)) +
     geom_area(stat = "identity", position = "stack") +
@@ -422,11 +429,35 @@ df2a %>%
     ) +
     labs(
         title = "Bankless DAO Twitter Engagement Breakdown",
-        subtitle = "May - June 2021",
+        subtitle = "May 8th - July 2nd 2021",
         x = "",
         y = "Count",
-        caption = "Data: Twitter | Analytics: @paulapivat"
+        caption = "Data: Twitter, @frogmonkee | Analytics: @paulapivat"
     )
+
+
+# breakdown engagement with side-by-side bar charts for easier comparisons
+df2a %>%
+    # engagement = function of (retweets, replies, likes, user profile clicks, url clicks, hashtags, detail expands, media view, media engagements)
+    select(Date, retweets:`detail expands`, `media views`: `media engagements`) %>%
+    pivot_longer(!Date, names_to = "variable", values_to = "count") %>%
+    ggplot(aes(x = Date, y = count, fill = variable)) +
+    geom_col(position = "fill") +
+    scale_x_date(date_breaks = '1 day') +
+    theme_minimal() +
+    theme(
+        legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+    labs(
+        title = "Bankless DAO Twitter Engagement Breakdown (Percentage)",
+        subtitle = "May 8th - July 2nd 2021",
+        x = "",
+        y = "Percentage",
+        caption = "Data: Twitter, @frogmonkee | Analytics: @paulapivat"
+    )
+
+
 
 
 # try ggridges next - multiple histograms [check]
@@ -449,3 +480,54 @@ df2a %>%
         y = "Various Engagement Metrics",
         caption = "Data: Twitter | Analytics: @paulapivat"
     )
+
+###--------------------- How much is Daily Engagement correlated with Number of Daily Tweets? ---------------------###
+### ~ 0.70 correlation !!!
+
+cor(df2a$`Tweets published`, df2a$engagements)
+
+
+###--------------------- Explore Tweets from Days with >1000 Engagement--------------------###
+
+# NOTE: Dates with highest Engagement (> 1000) - NOT counting first 2 days (May 8 - 9)
+# May - 28, 14, 12, 11, 10, 29, 17, 30, 18
+# June - 4, 2, 1, 24, 9, 12, 11, 10, 13, 5
+
+# Reformat TimeStamp to YYYY-MM-DD (remove hour/mins)
+# Then can filter by Dates with highest Engagements
+
+# Need to RBIND df3 and df4 - while avoiding overlap (same as above)
+may <- df4 %>%
+    slice(11:234) 
+
+df5 <- rbind(df3, may) 
+
+# FILTER for specific dates with highest overall engagement
+# May - 28, 14, 12, 11, 10, 29, 17, 30, 18
+# June - 4, 2, 1, 24, 9, 12, 11, 10, 13, 5
+# NOTE: save as separate CSV for additional analyses
+df5 %>%
+    select(`Tweet permalink`,`Tweet text`, time, impressions, engagements, `engagement rate`) %>%
+    mutate(
+        date = as.Date(time)
+    ) %>% 
+    filter(date == as.Date("2021-05-28") | 
+           date == as.Date("2021-05-14") |
+           date == as.Date("2021-05-12") |
+           date == as.Date("2021-05-11") |
+           date == as.Date("2021-05-10") |
+           date == as.Date("2021-05-29") |
+           date == as.Date("2021-05-17") |
+           date == as.Date("2021-05-30") |
+           date == as.Date("2021-05-18") |
+           date == as.Date("2021-06-04") |
+           date == as.Date("2021-06-02") |
+           date == as.Date("2021-06-01") |
+           date == as.Date("2021-06-24") |
+           date == as.Date("2021-06-09") |
+           date == as.Date("2021-06-12") |
+           date == as.Date("2021-06-11") |
+           date == as.Date("2021-06-10") |
+           date == as.Date("2021-06-13") |
+           date == as.Date("2021-06-05")) %>%
+    write_csv("tweets_on_days_with_highest_engagement.csv")
