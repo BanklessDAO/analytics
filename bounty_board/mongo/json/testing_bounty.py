@@ -54,8 +54,7 @@ for x in range(length):
             start_date='today', end_date='+6m')),
         ('bountyClaimedBy', collections.OrderedDict([
             ('guildName', fake.word(ext_word_list=random_guilds)),
-            ('discordHandle', fake.word(ext_word_list=discord_handle)),
-            ('publicAddress', "0x2d94aa3e47d9d5024503ca8" + fake.pystr())
+            ('discordHandle', fake.word(ext_word_list=discord_handle))
         ])),
         ('bountyClaimedAt', fake.date_between(start_date='today', end_date='+4m')),
         ('bountySubmittedBy', fake.word(ext_word_list=random_guilds)),
