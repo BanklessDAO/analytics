@@ -34,7 +34,7 @@ for x in range(length):
         ('season', fake.random_int(0, 10)),
         ('bounty', fake.sentence()),
         ('bountyDescription', fake.sentence()),
-        ('doneCriteria', fake.sentence()),
+        ('bountyCriteria', fake.sentence()),
         ('bountyReward', collections.OrderedDict([
             ('currency', fake.word(ext_word_list=random_currencies)),
             ('amount', fake.random_int(0, 50000))
@@ -45,11 +45,11 @@ for x in range(length):
         ('bountyCreatedBy', collections.OrderedDict([
             ('isDaoMember', fake.pybool()),
             ('guildName', fake.word(ext_word_list=random_guilds)),
-            ('discordHandle', fake.word(ext_word_list=discord_handle)),
-            ('publicAddress', "0x2d94aa3e47d9d5024503ca8" + fake.pystr())
+            ('discordHandle', fake.word(ext_word_list=discord_handle))
         ])),
         ('bountyCreatedAt', fake.date_between(start_date='today', end_date='+3m')),
         ('bountyDueAt', fake.date_between(start_date='today', end_date='+1y')),
+        ('bountyImage', "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg"),
         ('bountyActivatedAt', fake.date_between(
             start_date='today', end_date='+6m')),
         ('bountyClaimedBy', collections.OrderedDict([

@@ -1,16 +1,16 @@
 [
     {
-        "season": 5,
-        "bounty": "Available message happy none reduce unit.",
-        "bountyDescription": "Citizen hospital take pick remain.",
-        "doneCriteria": "Accept how television him property lose data.",
+        "season": 3,
+        "bounty": "Where everyone two know place station gas.",
+        "bountyDescription": "Study remember these enjoy speak goal man.",
+        "bountyCriteria": "Traditional top provide within.",
         "bountyReward": {
             "currency": "BTC",
-            "amount": 38548
+            "amount": 19803
         },
         "applicableGuilds": [
             {
-                "guildName": "Marketing Guild"
+                "guildName": "Analytics Guild"
             },
             {
                 "guildName": "Analytics Guild"
@@ -19,41 +19,135 @@
         "bountyCreatedBy": {
             "isDaoMember": false,
             "guildName": "Treasury Guild",
-            "discordHandle": "@carol#5555",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8haZRvOBlIHmAWHCJhpex"
+            "discordHandle": "@carol#5555"
         },
-        "bountyCreatedAt": "2021-07-10",
-        "bountyDueAt": "2021-12-21",
-        "bountyActivatedAt": "2021-07-10",
+        "bountyCreatedAt": "2021-07-12",
+        "bountyDueAt": "2022-01-19",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2021-07-12",
         "bountyClaimedBy": {
-            "guildName": "Developer's Guild",
-            "discordHandle": "@delta#2222",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8aKInvWGzOCwGUyjbKDAm"
+            "guildName": "Analytics Guild",
+            "discordHandle": "@alice#1234",
+            "publicAddress": "0x2d94aa3e47d9d5024503ca8JadNswOtSZfKUDSVqojH"
         },
-        "bountyClaimedAt": "2021-07-10",
-        "bountySubmittedBy": "Marketing Guild",
-        "bountySubmittedAt": "2021-07-10",
-        "bountySubmissionLink": "www.example.com",
+        "bountyClaimedAt": "2021-07-12",
+        "bountySubmittedBy": "Treasury Guild",
+        "bountySubmittedAt": "2021-07-12",
+        "bountySubmissionLink": "www.example.org",
         "bountyStatus": [
             {
-                "status": "Completed",
-                "bountyStatusTime": "2022-03-19"
+                "status": "Deleted",
+                "bountyStatusTime": "2021-09-24"
             }
         ],
-        "bountyHash": "6f8b7f86262fcca5fa95770b59016b74",
+        "bountyHash": "7a431723d4b041f0832f116dcd461b17",
         "skillsRequired": [
-            "software development",
+            "team building",
             "grant writing"
         ]
     },
     {
-        "season": 7,
-        "bounty": "Establish this get very ok Mr structure.",
-        "bountyDescription": "Everybody explain front page summer.",
-        "doneCriteria": "Glass enter interesting trade throughout she issue.",
+        "season": 10,
+        "bounty": "South anyone every without.",
+        "bountyDescription": "Hotel nation consider election watch.",
+        "bountyCriteria": "Model fine fly goal line.",
+        "bountyReward": {
+            "currency": "ETH",
+            "amount": 423
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Treasury Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "bountyCreatedBy": {
+            "isDaoMember": false,
+            "guildName": "Treasury Guild",
+            "discordHandle": "@bob#8888"
+        },
+        "bountyCreatedAt": "2021-07-12",
+        "bountyDueAt": "2022-03-25",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2021-07-12",
+        "bountyClaimedBy": {
+            "guildName": "Writer's Guild",
+            "discordHandle": "@lambda#3333",
+            "publicAddress": "0x2d94aa3e47d9d5024503ca8FXyLDWgKAQPuCguWcJdZ"
+        },
+        "bountyClaimedAt": "2021-07-12",
+        "bountySubmittedBy": "Marketing Guild",
+        "bountySubmittedAt": "2021-07-12",
+        "bountySubmissionLink": "www.example.org",
+        "bountyStatus": [
+            {
+                "status": "Draft",
+                "bountyStatusTime": "2022-02-14"
+            }
+        ],
+        "bountyHash": "7e1579b0aa93ce866ca567340d429b46",
+        "skillsRequired": [
+            "marketing",
+            "writing"
+        ]
+    },
+    {
+        "season": 4,
+        "bounty": "Bed order benefit response people floor.",
+        "bountyDescription": "Bill room church.",
+        "bountyCriteria": "Not trouble adult let Republican part somebody treatment.",
+        "bountyReward": {
+            "currency": "BANK",
+            "amount": 5604
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Writer's Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "bountyCreatedBy": {
+            "isDaoMember": false,
+            "guildName": "Writer's Guild",
+            "discordHandle": "@alice#1234"
+        },
+        "bountyCreatedAt": "2021-07-12",
+        "bountyDueAt": "2022-03-14",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2021-07-12",
+        "bountyClaimedBy": {
+            "guildName": "Developer's Guild",
+            "discordHandle": "@alice#1234",
+            "publicAddress": "0x2d94aa3e47d9d5024503ca8aOjJePUjONIryNLSNTsS"
+        },
+        "bountyClaimedAt": "2021-07-12",
+        "bountySubmittedBy": "Analytics Guild",
+        "bountySubmittedAt": "2021-07-12",
+        "bountySubmissionLink": "www.example.com",
+        "bountyStatus": [
+            {
+                "status": "Deleted",
+                "bountyStatusTime": "2021-11-26"
+            }
+        ],
+        "bountyHash": "639bcb40aaec6f28ada6bfe5636886ce",
+        "skillsRequired": [
+            "marketing",
+            "design"
+        ]
+    },
+    {
+        "season": 4,
+        "bounty": "Cold past after father course.",
+        "bountyDescription": "Education matter to make difference six.",
+        "bountyCriteria": "Avoid peace election particularly nice.",
         "bountyReward": {
             "currency": "BTC",
-            "amount": 1331
+            "amount": 42025
         },
         "applicableGuilds": [
             {
@@ -65,173 +159,79 @@
         ],
         "bountyCreatedBy": {
             "isDaoMember": false,
-            "guildName": "Marketing Guild",
-            "discordHandle": "@delta#2222",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8IIeAvnHCuXTVXBytDJQF"
+            "guildName": "Analytics Guild",
+            "discordHandle": "@bob#8888"
         },
-        "bountyCreatedAt": "2021-07-10",
-        "bountyDueAt": "2022-04-17",
-        "bountyActivatedAt": "2021-07-10",
+        "bountyCreatedAt": "2021-07-12",
+        "bountyDueAt": "2021-10-22",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2021-07-12",
         "bountyClaimedBy": {
-            "guildName": "Developer's Guild",
+            "guildName": "Writer's Guild",
             "discordHandle": "@carol#5555",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8iqjDPmRLHnhuarljYOhY"
+            "publicAddress": "0x2d94aa3e47d9d5024503ca8LRUgPFPVmIsqDkpyskcY"
         },
-        "bountyClaimedAt": "2021-07-10",
-        "bountySubmittedBy": "Writer's Guild",
-        "bountySubmittedAt": "2021-07-10",
-        "bountySubmissionLink": "www.example.net",
+        "bountyClaimedAt": "2021-07-12",
+        "bountySubmittedBy": "Analytics Guild",
+        "bountySubmittedAt": "2021-07-12",
+        "bountySubmissionLink": "www.example.org",
         "bountyStatus": [
             {
-                "status": "Draft",
-                "bountyStatusTime": "2022-05-17"
+                "status": "Deleted",
+                "bountyStatusTime": "2022-01-29"
             }
         ],
-        "bountyHash": "f8a66b3e02078c1b07fc485ec5629bbe",
+        "bountyHash": "8b06ab4720e97a1abef67cf099d70e57",
         "skillsRequired": [
             "marketing",
-            "data analysis"
-        ]
-    },
-    {
-        "season": 5,
-        "bounty": "Lose probably often guess.",
-        "bountyDescription": "Industry election red science owner control.",
-        "doneCriteria": "Brother thousand lay choose around inside sometimes when.",
-        "bountyReward": {
-            "currency": "BTC",
-            "amount": 16940
-        },
-        "applicableGuilds": [
-            {
-                "guildName": "Marketing Guild"
-            },
-            {
-                "guildName": "Analytics Guild"
-            }
-        ],
-        "bountyCreatedBy": {
-            "isDaoMember": false,
-            "guildName": "Marketing Guild",
-            "discordHandle": "@delta#2222",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8avmWpTzCAbUQcWgxNJYb"
-        },
-        "bountyCreatedAt": "2021-07-10",
-        "bountyDueAt": "2021-10-15",
-        "bountyActivatedAt": "2021-07-10",
-        "bountyClaimedBy": {
-            "guildName": "Analytics Guild",
-            "discordHandle": "@delta#2222",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8wNmSHfndHvvLbctNTpNZ"
-        },
-        "bountyClaimedAt": "2021-07-10",
-        "bountySubmittedBy": "Analytics Guild",
-        "bountySubmittedAt": "2021-07-10",
-        "bountySubmissionLink": "www.example.net",
-        "bountyStatus": [
-            {
-                "status": "In-Review",
-                "bountyStatusTime": "2022-07-01"
-            }
-        ],
-        "bountyHash": "be7076fc65d71ede9ba51ea3a3e049be",
-        "skillsRequired": [
-            "grant writing",
             "marketing"
         ]
     },
     {
-        "season": 4,
-        "bounty": "Recognize environmental focus.",
-        "bountyDescription": "Miss true game somebody.",
-        "doneCriteria": "Not simple particularly speak and.",
+        "season": 1,
+        "bounty": "Owner people wall upon person president another.",
+        "bountyDescription": "Professional who pay green.",
+        "bountyCriteria": "Through move serve goal.",
         "bountyReward": {
-            "currency": "BANK",
-            "amount": 42203
+            "currency": "BTC",
+            "amount": 43083
         },
         "applicableGuilds": [
             {
-                "guildName": "Developer's Guild"
+                "guildName": "Treasury Guild"
             },
-            {
-                "guildName": "Developer's Guild"
-            }
-        ],
-        "bountyCreatedBy": {
-            "isDaoMember": false,
-            "guildName": "Analytics Guild",
-            "discordHandle": "@alice#1234",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8mAtNljVsPiWknmAExjcX"
-        },
-        "bountyCreatedAt": "2021-07-10",
-        "bountyDueAt": "2021-09-06",
-        "bountyActivatedAt": "2021-07-10",
-        "bountyClaimedBy": {
-            "guildName": "Marketing Guild",
-            "discordHandle": "@lambda#3333",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8JMVLhvgyAVKPKYeZzkkV"
-        },
-        "bountyClaimedAt": "2021-07-10",
-        "bountySubmittedBy": "Writer's Guild",
-        "bountySubmittedAt": "2021-07-10",
-        "bountySubmissionLink": "www.example.org",
-        "bountyStatus": [
-            {
-                "status": "Open",
-                "bountyStatusTime": "2022-05-25"
-            }
-        ],
-        "bountyHash": "ef0c7bfc389a2257e8a5dc75326be122",
-        "skillsRequired": [
-            "team building",
-            "proposal development"
-        ]
-    },
-    {
-        "season": 6,
-        "bounty": "Debate moment physical.",
-        "bountyDescription": "Place heavy easy need wide style church.",
-        "doneCriteria": "Trouble indicate analysis set happy.",
-        "bountyReward": {
-            "currency": "BANK",
-            "amount": 44444
-        },
-        "applicableGuilds": [
             {
                 "guildName": "Marketing Guild"
-            },
-            {
-                "guildName": "Analytics Guild"
             }
         ],
         "bountyCreatedBy": {
-            "isDaoMember": false,
-            "guildName": "Developer's Guild",
-            "discordHandle": "@delta#2222",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8fdQScCfXNsqrYMlaJvmx"
+            "isDaoMember": true,
+            "guildName": "Marketing Guild",
+            "discordHandle": "@lambda#3333"
         },
-        "bountyCreatedAt": "2021-07-10",
-        "bountyDueAt": "2022-03-11",
-        "bountyActivatedAt": "2021-07-10",
+        "bountyCreatedAt": "2021-07-12",
+        "bountyDueAt": "2021-07-20",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2021-07-12",
         "bountyClaimedBy": {
-            "guildName": "Analytics Guild",
-            "discordHandle": "@lambda#3333",
-            "publicAddress": "0x2d94aa3e47d9d5024503ca8TyLEyoTxpcCEuySHKTPc"
+            "guildName": "Developer's Guild",
+            "discordHandle": "@bob#8888",
+            "publicAddress": "0x2d94aa3e47d9d5024503ca8XBjSVtNXrHyIxjjrVQqt"
         },
-        "bountyClaimedAt": "2021-07-10",
-        "bountySubmittedBy": "Developer's Guild",
-        "bountySubmittedAt": "2021-07-10",
-        "bountySubmissionLink": "www.example.net",
+        "bountyClaimedAt": "2021-07-12",
+        "bountySubmittedBy": "Treasury Guild",
+        "bountySubmittedAt": "2021-07-12",
+        "bountySubmissionLink": "www.example.com",
         "bountyStatus": [
             {
-                "status": "Deleted",
-                "bountyStatusTime": "2021-11-13"
+                "status": "In-Progress",
+                "bountyStatusTime": "2021-10-10"
             }
         ],
-        "bountyHash": "84d64d32bde75ec145c62a36a5d6857c",
+        "bountyHash": "f555025e480b7783c5501ebe0d003d74",
         "skillsRequired": [
-            "team building",
-            "grant writing"
+            "strategic planning",
+            "software development"
         ]
     }
 ]
