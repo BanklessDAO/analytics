@@ -5,13 +5,15 @@ library(tidyverse)
 # community call # 1 
 df <- read_csv("../raw/Bankless DAO Community Call #1.csv")
 
-# community calls 2,3,4,5,6
+# community calls 2 - 9
 df2 <- read_csv("../raw/Bankless DAO Community Call #2.csv")
 df3 <- read_csv("../raw/Bankless DAO Community Call #3.csv")
 df4 <- read_csv("../raw/Bankless DAO Community Call #4.csv")
 df5 <- read_csv("../raw/Bankless DAO Community Call #5.csv")
 df6 <- read_csv("../raw/Bankless DAO Community Call #6.csv")
 df7 <- read_csv("../raw/BDAO Community Call #7.csv")
+df8 <- read_csv("../raw/Bankless DAO Community Call S1C1.csv")
+df9 <- read_csv("../raw/Bankless DAO Community Call S1C2.csv")
 
 # column names
 df %>% names()
@@ -113,6 +115,30 @@ c7 <- df7 %>%
     group_by(Owner, `Claim Date`) %>%
     tally(sort = TRUE)
 
+#------ COLUMN NAME CHANGE ---- #
+# 'Claim Date' -> 'Minting Date'
+# 'Owner' -> 'Collection'
+
+c8 <- df8 %>%
+    select(Collection, `Minting Date`) %>%
+    group_by(Collection, `Minting Date`) %>%
+    tally(sort = TRUE) %>%
+    # rename to be consistent with previous weeks
+    rename(
+        Owner = Collection,
+        `Claim Date` = `Minting Date`
+    )
+
+c9 <- df9 %>%
+    select(Collection, `Minting Date`) %>%
+    group_by(Collection, `Minting Date`) %>%
+    tally(sort = TRUE) %>%
+    # rename to be consistent with previous weeks
+    rename(
+        Owner = Collection,
+        `Claim Date` = `Minting Date`
+    )
+
 
 #------Before Combine, do another group_by without `Claim Date` to eliminate any potential duplicates -----#
 
@@ -157,6 +183,20 @@ c7 %>%
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     view()
+
+# n = 488
+c8 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+# n = 405
+c9 %>%
+    group_by(Owner) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+
 
 #------ Group by WITH `Claim Date` to check the same address claimed more than once per call -----#
 
@@ -203,6 +243,21 @@ c7 %>%
     tally(sort = TRUE) %>%
     view()
 
+
+# n = 488
+c8 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+# n = 405
+c9 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+
+
 # rbind all dataframes
 
 combine_wk4 <- rbind(c1, c2, c3, c4)
@@ -212,6 +267,8 @@ combine_wk5 <- rbind(c1, c2, c3, c4, c5)
 combine_wk6 <- rbind(c1, c2, c3, c4, c5, c6)
 
 combine_wk7 <- rbind(c1, c2, c3, c4, c5, c6, c7)
+
+combine_wk9 <- rbind(c1, c2, c3, c4, c5, c6, c7, c8, c9)
 
 # NOTE numbers can change because the pool is not fixed
 # every community call could be someone's first POAP claim
@@ -239,7 +296,7 @@ combine_wk6 %>%
 #------- Wrangle and Visualize Combined Data Frame ---------#
 
 # Number of Poaps Claimed by Addresses
-combine_wk7 %>%      # change weekly
+combine_wk9 %>%      # change weekly
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     rename(
@@ -275,12 +332,13 @@ main_dates_wk6 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/202
 
 main_dates_wk7 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021", "6/18/2021", "6/25/2021")
 
+main_dates_wk9 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021", "6/18/2021", "6/25/2021", "7/2/2021", "7/9/2021")
 
 
 # Fix Date Ordering so that 6/11/2021 is the most recent date
 
 
-combine_wk7 %>%      # change weekly
+combine_wk9 %>%      # change weekly
     # change Claim Date from Char to Date
     mutate(
         Date = as.Date(`Claim Date`, "%m/%d/%Y")
@@ -291,7 +349,7 @@ combine_wk7 %>%      # change weekly
         poaps_claimed = n
     ) %>%
     # change main_dates_x every week
-    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk7, "%m/%d/%Y"), 'red', 'green'))) +  
+    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk9, "%m/%d/%Y"), 'red', 'green'))) +  
     geom_col() +
     scale_x_date(date_breaks = '2 day') +
     geom_text(aes(label = poaps_claimed), vjust = -0.50) +

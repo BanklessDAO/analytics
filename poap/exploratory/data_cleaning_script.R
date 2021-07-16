@@ -8,6 +8,12 @@ df5 <- read_csv("Bankless DAO Community Call #5.csv")
 df6 <- read_csv("Bankless DAO Community Call #6.csv")
 df7 <- read_csv("BDAO Community Call #7.csv")
 
+# team has since filled ENS column with "NA" preserving user privacy
+df8 <- read_csv("Bankless DAO Community Call S1C1.csv")
+df9 <- read_csv("Bankless DAO Community Call S1C2.csv")
+
+
+
 # Clean data
 
 # Remove ENS columns from all Community Call data to preserve privacy
