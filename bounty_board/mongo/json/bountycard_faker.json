@@ -1,0 +1,207 @@
+[
+    {
+        "season": 1,
+        "bountyTitle": "Across price nature billion turn suggest start.",
+        "bountyDescription": "Hard conference throughout economic big decade hard.",
+        "bountyCriteria": "Free those leg could popular hotel small.",
+        "bountyReward": {
+            "currency": "BANK",
+            "amount": 45942
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Analytics Guild"
+            },
+            {
+                "guildName": "Writer's Guild"
+            }
+        ],
+        "bountyCreatedBy": "ObjectId(10e4868D200a40cac158a6D6)",
+        "bountyCreatedAt": "1987-10-10T04:01:53",
+        "bountyDueAt": "1975-10-17T08:48:54",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "1998-09-01T05:25:24",
+        "bountyClaimedBy": {
+            "user": "ObjectId(29e8435e009a14BDe172a3a7)"
+        },
+        "bountyClaimedAt": "1986-02-01T11:19:00",
+        "bountySubmittedBy": "Treasury Guild",
+        "bountySubmittedAt": "2012-09-30T22:17:24",
+        "bountySubmissionLink": "www.example.com",
+        "bountyStatus": [
+            {
+                "status": "Completed",
+                "bountyStatusTime": 1344053096
+            }
+        ],
+        "bountyHash": "ec44e300b39714f3a37bbe90146f7caf",
+        "skillsRequired": [
+            "team building",
+            "grant writing"
+        ]
+    },
+    {
+        "season": 9,
+        "bountyTitle": "Single feel mention economy eight.",
+        "bountyDescription": "Toward arrive myself.",
+        "bountyCriteria": "Happen find level put glass safe.",
+        "bountyReward": {
+            "currency": "BTC",
+            "amount": 4131
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Developer's Guild"
+            },
+            {
+                "guildName": "Analytics Guild"
+            }
+        ],
+        "bountyCreatedBy": "ObjectId(58a8424D772c24acB027c9a6)",
+        "bountyCreatedAt": "2002-12-02T02:02:17",
+        "bountyDueAt": "1994-08-16T19:04:35",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2004-06-07T17:41:32",
+        "bountyClaimedBy": {
+            "user": "ObjectId(37c1297a238c92aBc841B9c0)"
+        },
+        "bountyClaimedAt": "2021-01-30T23:48:53",
+        "bountySubmittedBy": "Writer's Guild",
+        "bountySubmittedAt": "1989-11-23T01:28:45",
+        "bountySubmissionLink": "www.example.org",
+        "bountyStatus": [
+            {
+                "status": "Completed",
+                "bountyStatusTime": 696198255
+            }
+        ],
+        "bountyHash": "f890ad50fafe2916c0707db4452f0a68",
+        "skillsRequired": [
+            "grant writing",
+            "proposal development"
+        ]
+    },
+    {
+        "season": 9,
+        "bountyTitle": "Stay especially trip I before seem.",
+        "bountyDescription": "Activity it every gas want common.",
+        "bountyCriteria": "Tend report form myself.",
+        "bountyReward": {
+            "currency": "ETH",
+            "amount": 27268
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Developer's Guild"
+            },
+            {
+                "guildName": "Marketing Guild"
+            }
+        ],
+        "bountyCreatedBy": "ObjectId(29B1760D708B82BDD475a8D9)",
+        "bountyCreatedAt": "2008-07-13T14:33:51",
+        "bountyDueAt": "2021-04-04T18:04:43",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "2010-06-14T22:53:53",
+        "bountyClaimedBy": {
+            "user": "ObjectId(32c4654c764c91eae067D3e3)"
+        },
+        "bountyClaimedAt": "1993-11-28T20:35:14",
+        "bountySubmittedBy": "Treasury Guild",
+        "bountySubmittedAt": "2004-11-28T08:41:34",
+        "bountySubmissionLink": "www.example.net",
+        "bountyStatus": [
+            {
+                "status": "In-Review",
+                "bountyStatusTime": 1300300671
+            }
+        ],
+        "bountyHash": "b4940cf6023cc419d159dadb4b0fa586",
+        "skillsRequired": [
+            "data analysis",
+            "grant writing"
+        ]
+    },
+    {
+        "season": 9,
+        "bountyTitle": "Rock performance first each though foot Mr.",
+        "bountyDescription": "Involve firm direction others.",
+        "bountyCriteria": "Response hand husband.",
+        "bountyReward": {
+            "currency": "ETH",
+            "amount": 4516
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Treasury Guild"
+            },
+            {
+                "guildName": "Treasury Guild"
+            }
+        ],
+        "bountyCreatedBy": "ObjectId(07a6129D125c19DcD920e6B1)",
+        "bountyCreatedAt": "2003-08-21T13:19:13",
+        "bountyDueAt": "2013-06-16T01:24:18",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "1987-02-10T20:10:49",
+        "bountyClaimedBy": {
+            "user": "ObjectId(82c7151e292D85eec845c6B9)"
+        },
+        "bountyClaimedAt": "2007-04-15T12:47:10",
+        "bountySubmittedBy": "Marketing Guild",
+        "bountySubmittedAt": "2007-06-08T21:11:44",
+        "bountySubmissionLink": "www.example.net",
+        "bountyStatus": [
+            {
+                "status": "Open",
+                "bountyStatusTime": 315958141
+            }
+        ],
+        "bountyHash": "241a31ac207edcfe62c437394dd75d59",
+        "skillsRequired": [
+            "data analysis",
+            "design"
+        ]
+    },
+    {
+        "season": 10,
+        "bountyTitle": "Describe seven community anything.",
+        "bountyDescription": "Serious summer start sing serious lose.",
+        "bountyCriteria": "Mr mind over rule long person focus.",
+        "bountyReward": {
+            "currency": "BANK",
+            "amount": 45593
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Writer's Guild"
+            },
+            {
+                "guildName": "Marketing Guild"
+            }
+        ],
+        "bountyCreatedBy": "ObjectId(44c9733e693B71cae089a9D9)",
+        "bountyCreatedAt": "2002-07-17T22:57:39",
+        "bountyDueAt": "1995-09-26T21:13:11",
+        "bountyImage": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "bountyActivatedAt": "1987-01-30T22:06:16",
+        "bountyClaimedBy": {
+            "user": "ObjectId(16D6572D713a46DBe558e3a1)"
+        },
+        "bountyClaimedAt": "2008-02-06T21:41:44",
+        "bountySubmittedBy": "Analytics Guild",
+        "bountySubmittedAt": "1998-11-28T19:21:11",
+        "bountySubmissionLink": "www.example.com",
+        "bountyStatus": [
+            {
+                "status": "Deleted",
+                "bountyStatusTime": 1318075308
+            }
+        ],
+        "bountyHash": "31ffde6bf3a81a8b255299e8be3f8828",
+        "skillsRequired": [
+            "writing",
+            "team building"
+        ]
+    }
+]
