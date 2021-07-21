@@ -2,17 +2,12 @@
     {
         "isDaoMember": false,
         "guildName": "Marketing Guild",
-        "discordHandle": "@carol#5555"
+        "discordHandle": "@delta#2222"
     },
     {
-        "isDaoMember": false,
+        "isDaoMember": true,
         "guildName": "Marketing Guild",
-        "discordHandle": "@delta#2222"
-    },
-    {
-        "isDaoMember": false,
-        "guildName": "Analytics Guild",
-        "discordHandle": "@delta#2222"
+        "discordHandle": "@lambda#3333"
     },
     {
         "isDaoMember": true,
@@ -20,8 +15,13 @@
         "discordHandle": "@delta#2222"
     },
     {
-        "isDaoMember": true,
+        "isDaoMember": false,
         "guildName": "Analytics Guild",
-        "discordHandle": "@carol#5555"
+        "discordHandle": "@lambda#3333"
+    },
+    {
+        "isDaoMember": false,
+        "guildName": "Analytics Guild",
+        "discordHandle": "@delta#2222"
     }
 ]
