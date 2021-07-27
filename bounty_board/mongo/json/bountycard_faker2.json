@@ -1,0 +1,822 @@
+[
+    {
+        "season": 2,
+        "Title": "Wife make nature but drop together shoulder.",
+        "Description": "Cut financial rule business radio woman region.",
+        "Criteria": "Life well rich opportunity dark.",
+        "Reward": {
+            "currency": "BANK",
+            "amount": 7097
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Operations Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(97D0456c812a28BeD611a7B6)",
+        "CreatedAt": "2003-01-09T02:16:22",
+        "DueAt": "2006-02-20T02:11:41",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2003-01-02T22:32:03",
+        "ClaimedBy": {
+            "user": "ObjectId(68a8030D661B38caa222a9B7)"
+        },
+        "ClaimedAt": "2004-02-01T19:42:28",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "2002-05-21T11:06:09",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "Open",
+                "StatusTime": "1978-02-01T19:50:33"
+            }
+        ],
+        "Hash": "e6184df619d9a877a2fee6ee6a3166fc",
+        "skillsRequired": [
+            "design",
+            "strategic planning"
+        ]
+    },
+    {
+        "season": 7,
+        "Title": "Prepare talk start future even mention friend.",
+        "Description": "Hand how people follow.",
+        "Criteria": "War perform class anything kid baby.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 4296
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Legal Guild"
+            },
+            {
+                "guildName": "Writer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(76e5518e357B33ccB005B9c0)",
+        "CreatedAt": "1998-12-11T00:05:42",
+        "DueAt": "2020-11-18T03:55:50",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1977-08-16T17:39:34",
+        "ClaimedBy": {
+            "user": "ObjectId(78B9085c757c28eBc337c4D5)"
+        },
+        "ClaimedAt": "2013-07-20T20:43:11",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "1979-08-16T13:04:14",
+        "SubmissionLink": "www.example.net",
+        "Status": [
+            {
+                "status": "Deleted",
+                "StatusTime": "2012-01-05T03:24:15"
+            }
+        ],
+        "Hash": "4ee1705a72482d585637e75fd0ca9e16",
+        "skillsRequired": [
+            "writing",
+            "design"
+        ]
+    },
+    {
+        "season": 6,
+        "Title": "Idea expect real specific.",
+        "Description": "Produce consider of woman together author collection.",
+        "Criteria": "As put style behind society.",
+        "Reward": {
+            "currency": "BTC",
+            "amount": 11895
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Analytics Guild"
+            },
+            {
+                "guildName": "Treasury Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(12c3956B119B78BBe544e2e2)",
+        "CreatedAt": "1994-01-28T10:38:50",
+        "DueAt": "2005-09-20T10:05:43",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1986-07-09T08:38:33",
+        "ClaimedBy": {
+            "user": "ObjectId(33D4806a844c04BDe780c1e2)"
+        },
+        "ClaimedAt": "2008-01-25T02:42:00",
+        "SubmittedBy": "Writer's Guild",
+        "SubmittedAt": "1987-05-26T10:35:42",
+        "SubmissionLink": "www.example.net",
+        "Status": [
+            {
+                "status": "In-Progress",
+                "StatusTime": "2002-02-12T07:15:11"
+            }
+        ],
+        "Hash": "8f5bea4283b4c671351f2b237b00eb45",
+        "skillsRequired": [
+            "design",
+            "software development"
+        ]
+    },
+    {
+        "season": 6,
+        "Title": "Among we door decade they.",
+        "Description": "Far nice total.",
+        "Criteria": "Nothing indicate training notice suddenly.",
+        "Reward": {
+            "currency": "BANK",
+            "amount": 42534
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Writer's Guild"
+            },
+            {
+                "guildName": "Legal Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(30a8983a197a19DDB444c2e3)",
+        "CreatedAt": "1973-08-14T18:08:13",
+        "DueAt": "2018-04-27T06:49:54",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1978-09-09T19:50:26",
+        "ClaimedBy": {
+            "user": "ObjectId(03a0896B966c07caa172e9e4)"
+        },
+        "ClaimedAt": "2008-04-06T03:21:00",
+        "SubmittedBy": "Treasury Guild",
+        "SubmittedAt": "1991-05-17T17:38:08",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "In-Progress",
+                "StatusTime": "1986-02-05T21:25:50"
+            }
+        ],
+        "Hash": "03f1467d3038025b5bf2bc8a6ce913e0",
+        "skillsRequired": [
+            "software development",
+            "proposal development"
+        ]
+    },
+    {
+        "season": 5,
+        "Title": "Structure military Mrs.",
+        "Description": "Data rather whether present put what authority.",
+        "Criteria": "Six nature better trip type.",
+        "Reward": {
+            "currency": "BANK",
+            "amount": 12476
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Developer's Guild"
+            },
+            {
+                "guildName": "Treasury Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(10a6199D494B61acB384D4a6)",
+        "CreatedAt": "1973-02-26T03:15:56",
+        "DueAt": "1974-08-14T09:56:34",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2008-12-15T18:48:37",
+        "ClaimedBy": {
+            "user": "ObjectId(75e0185c937D20DBa728e0a0)"
+        },
+        "ClaimedAt": "2013-12-09T18:56:43",
+        "SubmittedBy": "Writer's Guild",
+        "SubmittedAt": "1977-12-19T12:59:00",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "In-Review",
+                "StatusTime": "2015-03-23T17:29:24"
+            }
+        ],
+        "Hash": "fab5dee363b6eefa63a09c7f084c0c5c",
+        "skillsRequired": [
+            "marketing",
+            "strategic planning"
+        ]
+    },
+    {
+        "season": 0,
+        "Title": "Left left seven level green share job.",
+        "Description": "Call in she.",
+        "Criteria": "Read arm model listen.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 13290
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Operations Guild"
+            },
+            {
+                "guildName": "Writer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(37D6200e770c99eee395e4a9)",
+        "CreatedAt": "2008-07-13T07:50:15",
+        "DueAt": "2009-08-29T19:03:13",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1997-07-01T01:48:39",
+        "ClaimedBy": {
+            "user": "ObjectId(08a6902a867e71aBc418c9e3)"
+        },
+        "ClaimedAt": "1972-01-21T16:06:52",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "1975-07-29T12:11:48",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "Deleted",
+                "StatusTime": "2018-12-21T09:41:01"
+            }
+        ],
+        "Hash": "1fa7bea8e1e38f269a0269e2f3ec86ec",
+        "skillsRequired": [
+            "grant writing",
+            "data analysis"
+        ]
+    },
+    {
+        "season": 1,
+        "Title": "Less he boy article resource why moment.",
+        "Description": "House create reveal new drug especially.",
+        "Criteria": "Drop summer without despite first also.",
+        "Reward": {
+            "currency": "BTC",
+            "amount": 43746
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Treasury Guild"
+            },
+            {
+                "guildName": "Operations Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(15c4830B019c49Bac081c0c6)",
+        "CreatedAt": "2013-10-16T23:43:03",
+        "DueAt": "1984-12-31T02:07:12",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2002-12-26T00:28:20",
+        "ClaimedBy": {
+            "user": "ObjectId(11e3513D164c34DaB069a2e6)"
+        },
+        "ClaimedAt": "1971-04-21T22:06:00",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "1990-03-21T21:21:12",
+        "SubmissionLink": "www.example.net",
+        "Status": [
+            {
+                "status": "In-Progress",
+                "StatusTime": "2013-01-10T15:11:16"
+            }
+        ],
+        "Hash": "461efc58f9914e60f6cd2e0084df7deb",
+        "skillsRequired": [
+            "strategic planning",
+            "software development"
+        ]
+    },
+    {
+        "season": 8,
+        "Title": "Medical leader sister list address news order.",
+        "Description": "Approach firm point outside.",
+        "Criteria": "Position eat any mind throughout knowledge police.",
+        "Reward": {
+            "currency": "BANK",
+            "amount": 10956
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Writer's Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(24D9758D762a48caB998a1a4)",
+        "CreatedAt": "2020-11-27T23:29:45",
+        "DueAt": "1975-07-05T13:23:12",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1977-07-11T04:18:28",
+        "ClaimedBy": {
+            "user": "ObjectId(21e0148a734B76Dca680a7e7)"
+        },
+        "ClaimedAt": "1997-09-24T22:34:49",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "2016-07-04T08:06:18",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "Open",
+                "StatusTime": "2014-02-27T18:08:46"
+            }
+        ],
+        "Hash": "28ea810c60cc0f90604983b0e23caf9f",
+        "skillsRequired": [
+            "proposal development",
+            "strategic planning"
+        ]
+    },
+    {
+        "season": 6,
+        "Title": "Everything much street.",
+        "Description": "Civil Mrs different fund turn.",
+        "Criteria": "Billion enough admit save style my.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 15948
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Developer's Guild"
+            },
+            {
+                "guildName": "Marketing Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(32e1044c151c13eDD133a3B2)",
+        "CreatedAt": "2017-01-10T20:10:36",
+        "DueAt": "1990-07-19T23:41:18",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2012-01-18T16:33:52",
+        "ClaimedBy": {
+            "user": "ObjectId(96a7749B411c64BeD216a0D9)"
+        },
+        "ClaimedAt": "2015-03-11T07:20:58",
+        "SubmittedBy": "Marketing Guild",
+        "SubmittedAt": "1981-03-23T14:35:59",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "Completed",
+                "StatusTime": "2007-08-23T19:58:15"
+            }
+        ],
+        "Hash": "447db2e4dbfd47dd8f9bad7d3fd1ca97",
+        "skillsRequired": [
+            "strategic planning",
+            "grant writing"
+        ]
+    },
+    {
+        "season": 3,
+        "Title": "Wear vote stay discussion successful low.",
+        "Description": "Check he explain push institution hospital when.",
+        "Criteria": "American ok natural bit after.",
+        "Reward": {
+            "currency": "BTC",
+            "amount": 11937
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Treasury Guild"
+            },
+            {
+                "guildName": "Analytics Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(97c3224B409a65BcD115D3a5)",
+        "CreatedAt": "1985-08-20T00:29:36",
+        "DueAt": "1974-09-04T12:21:19",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2008-06-08T23:04:37",
+        "ClaimedBy": {
+            "user": "ObjectId(74D1673D033a66cca488e6B3)"
+        },
+        "ClaimedAt": "1990-02-10T04:58:03",
+        "SubmittedBy": "Developer's Guild",
+        "SubmittedAt": "2001-01-03T15:49:46",
+        "SubmissionLink": "www.example.net",
+        "Status": [
+            {
+                "status": "Open",
+                "StatusTime": "2016-11-01T18:32:54"
+            }
+        ],
+        "Hash": "8ab04e091f044d4811c0101906d33488",
+        "skillsRequired": [
+            "software development",
+            "software development"
+        ]
+    },
+    {
+        "season": 4,
+        "Title": "During talk economic meeting first lead tonight.",
+        "Description": "Set century without hundred resource read.",
+        "Criteria": "Thing final writer may.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 1967
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Legal Guild"
+            },
+            {
+                "guildName": "Writer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(21D6529e866a25aaD238c2D9)",
+        "CreatedAt": "1989-03-20T22:55:13",
+        "DueAt": "1988-04-16T03:49:01",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1994-12-03T10:56:35",
+        "ClaimedBy": {
+            "user": "ObjectId(95B4895B593c10eca621a6c4)"
+        },
+        "ClaimedAt": "1983-03-02T13:46:44",
+        "SubmittedBy": "Developer's Guild",
+        "SubmittedAt": "1998-04-03T18:08:58",
+        "SubmissionLink": "www.example.net",
+        "Status": [
+            {
+                "status": "In-Review",
+                "StatusTime": "2019-09-23T07:49:23"
+            }
+        ],
+        "Hash": "a258c5978b0ac770ca1962fda80ce9ef",
+        "skillsRequired": [
+            "software development",
+            "design"
+        ]
+    },
+    {
+        "season": 4,
+        "Title": "Like one single PM.",
+        "Description": "Dream offer president than morning plant leg decade.",
+        "Criteria": "Look certainly very feeling civil us.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 3673
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Developer's Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(14a8139e434c91aea421D1B4)",
+        "CreatedAt": "1980-09-30T02:44:10",
+        "DueAt": "2000-05-01T01:47:28",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2001-04-24T23:05:14",
+        "ClaimedBy": {
+            "user": "ObjectId(33B5971B710a48Bac753a7D1)"
+        },
+        "ClaimedAt": "1983-09-11T17:28:40",
+        "SubmittedBy": "Analytics Guild",
+        "SubmittedAt": "1973-07-26T22:49:25",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "Open",
+                "StatusTime": "1988-12-05T18:01:06"
+            }
+        ],
+        "Hash": "09c27ffd92b30d208aa4a5cf0ca96d1b",
+        "skillsRequired": [
+            "team building",
+            "software development"
+        ]
+    },
+    {
+        "season": 0,
+        "Title": "Win left son.",
+        "Description": "Control probably raise mouth certainly.",
+        "Criteria": "Very shoulder suggest accept for left.",
+        "Reward": {
+            "currency": "BANK",
+            "amount": 35731
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Marketing Guild"
+            },
+            {
+                "guildName": "Marketing Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(31a6468e924c77eDB564a2D6)",
+        "CreatedAt": "1978-04-09T02:53:18",
+        "DueAt": "1993-07-22T02:01:02",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1987-09-18T21:23:29",
+        "ClaimedBy": {
+            "user": "ObjectId(93e5297e976D82BDa483c6c8)"
+        },
+        "ClaimedAt": "1979-02-03T10:43:56",
+        "SubmittedBy": "Marketing Guild",
+        "SubmittedAt": "1977-08-01T15:46:30",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "Deleted",
+                "StatusTime": "2007-05-14T06:07:40"
+            }
+        ],
+        "Hash": "7e25dbae321ccc7db662cfdbcc1a8597",
+        "skillsRequired": [
+            "strategic planning",
+            "strategic planning"
+        ]
+    },
+    {
+        "season": 2,
+        "Title": "By course true feel important white explain society.",
+        "Description": "You official bring resource.",
+        "Criteria": "Product build travel off cost.",
+        "Reward": {
+            "currency": "BTC",
+            "amount": 47317
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Treasury Guild"
+            },
+            {
+                "guildName": "Analytics Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(44c0170B531B87aBB793a1a5)",
+        "CreatedAt": "1994-12-22T15:38:24",
+        "DueAt": "2010-04-10T05:04:04",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1976-02-28T08:54:19",
+        "ClaimedBy": {
+            "user": "ObjectId(44e3821c491D62cca116a5c9)"
+        },
+        "ClaimedAt": "1999-10-28T15:16:09",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "2014-04-12T16:57:59",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "Completed",
+                "StatusTime": "1986-06-15T21:22:28"
+            }
+        ],
+        "Hash": "6e4b1796a95db93204a97f7de2edecd8",
+        "skillsRequired": [
+            "grant writing",
+            "team building"
+        ]
+    },
+    {
+        "season": 0,
+        "Title": "Cost never then old impact grow market.",
+        "Description": "About marriage list assume team maintain fire.",
+        "Criteria": "Event by reason agency or.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 31912
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Marketing Guild"
+            },
+            {
+                "guildName": "Legal Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(20a3340B550B13cec617e7B0)",
+        "CreatedAt": "2002-09-08T17:48:33",
+        "DueAt": "2007-04-04T01:22:23",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1970-03-30T22:54:29",
+        "ClaimedBy": {
+            "user": "ObjectId(59D1495a088D93DBD232c5c0)"
+        },
+        "ClaimedAt": "1984-12-19T17:07:16",
+        "SubmittedBy": "Marketing Guild",
+        "SubmittedAt": "2017-12-29T10:56:21",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "Deleted",
+                "StatusTime": "1982-12-30T23:05:15"
+            }
+        ],
+        "Hash": "9d03dbf9ff45e3d87449f28186d75265",
+        "skillsRequired": [
+            "grant writing",
+            "marketing"
+        ]
+    },
+    {
+        "season": 4,
+        "Title": "Break entire fill charge myself.",
+        "Description": "Style born vote easy so difference book attack.",
+        "Criteria": "And southern evidence bad child both.",
+        "Reward": {
+            "currency": "BANK",
+            "amount": 4863
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Treasury Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(52D2421a534B33BBe369e8D6)",
+        "CreatedAt": "2019-12-11T13:39:09",
+        "DueAt": "2018-02-15T19:03:02",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1990-04-18T08:09:15",
+        "ClaimedBy": {
+            "user": "ObjectId(14a4705D821D00cac382a5a7)"
+        },
+        "ClaimedAt": "2018-07-20T21:38:49",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "1982-07-27T06:36:00",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "In-Progress",
+                "StatusTime": "1988-11-28T12:07:35"
+            }
+        ],
+        "Hash": "6f1540e8cb3ffa85ab374a29b6354465",
+        "skillsRequired": [
+            "team building",
+            "marketing"
+        ]
+    },
+    {
+        "season": 5,
+        "Title": "Identify low plan film able.",
+        "Description": "Our somebody send try civil oil long pay.",
+        "Criteria": "Together stage yet hard TV fact former.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 33550
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Operations Guild"
+            },
+            {
+                "guildName": "Legal Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(31e5202e561c20aDc646a8B1)",
+        "CreatedAt": "1974-08-21T03:10:02",
+        "DueAt": "1976-05-31T18:24:47",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1983-04-27T21:34:25",
+        "ClaimedBy": {
+            "user": "ObjectId(26c1576a192B69DBc200e4D9)"
+        },
+        "ClaimedAt": "2007-04-20T05:10:54",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "1981-04-27T12:25:27",
+        "SubmissionLink": "www.example.org",
+        "Status": [
+            {
+                "status": "Deleted",
+                "StatusTime": "1980-01-11T09:48:23"
+            }
+        ],
+        "Hash": "9d2171dae69a1fa01bdba671100951e3",
+        "skillsRequired": [
+            "team building",
+            "software development"
+        ]
+    },
+    {
+        "season": 7,
+        "Title": "Happen before rest response property across phone.",
+        "Description": "Interesting rest seat race.",
+        "Criteria": "Director quickly tree apply risk fine management.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 39170
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Marketing Guild"
+            },
+            {
+                "guildName": "Legal Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(81B1972B651B09eBa556c4B1)",
+        "CreatedAt": "1994-08-17T12:05:04",
+        "DueAt": "1991-10-21T08:48:27",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2006-05-25T15:31:17",
+        "ClaimedBy": {
+            "user": "ObjectId(35B3503c572B61ceD474e8a0)"
+        },
+        "ClaimedAt": "2002-07-23T05:41:13",
+        "SubmittedBy": "Legal Guild",
+        "SubmittedAt": "1992-04-06T00:46:19",
+        "SubmissionLink": "www.example.net",
+        "Status": [
+            {
+                "status": "Open",
+                "StatusTime": "2018-06-20T09:43:49"
+            }
+        ],
+        "Hash": "4b0096eaf6726b3a7222d7067bc700a8",
+        "skillsRequired": [
+            "team building",
+            "design"
+        ]
+    },
+    {
+        "season": 9,
+        "Title": "Card executive service physical.",
+        "Description": "Forward writer without teacher process.",
+        "Criteria": "Former phone still political pass popular machine.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 39324
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Operations Guild"
+            },
+            {
+                "guildName": "Developer's Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(82a6578e009D33caa945c1B5)",
+        "CreatedAt": "1988-10-30T17:34:00",
+        "DueAt": "1982-05-18T12:05:00",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "2015-11-05T22:03:17",
+        "ClaimedBy": {
+            "user": "ObjectId(34c3296a681B02eea314B0c7)"
+        },
+        "ClaimedAt": "1993-09-22T13:21:44",
+        "SubmittedBy": "Analytics Guild",
+        "SubmittedAt": "2013-02-27T21:01:14",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "In-Progress",
+                "StatusTime": "1993-10-06T21:11:41"
+            }
+        ],
+        "Hash": "466595479d25994947c40740625e2040",
+        "skillsRequired": [
+            "writing",
+            "marketing"
+        ]
+    },
+    {
+        "season": 3,
+        "Title": "Whose should out feel him phone.",
+        "Description": "Cell bag good as democratic lawyer.",
+        "Criteria": "Break claim school suddenly husband.",
+        "Reward": {
+            "currency": "ETH",
+            "amount": 17634
+        },
+        "applicableGuilds": [
+            {
+                "guildName": "Operations Guild"
+            },
+            {
+                "guildName": "Legal Guild"
+            }
+        ],
+        "CreatedBy": "ObjectId(53c7073c431B39ace714c9c6)",
+        "CreatedAt": "1977-10-11T03:29:09",
+        "DueAt": "1979-03-07T19:33:13",
+        "Image": "https://pbs.twimg.com/profile_images/1389400052448247816/qsOU0pih_400x400.jpg",
+        "ActivatedAt": "1985-09-29T00:39:41",
+        "ClaimedBy": {
+            "user": "ObjectId(29B9439D188e94aaa760D5c9)"
+        },
+        "ClaimedAt": "1992-01-14T21:26:36",
+        "SubmittedBy": "Developer's Guild",
+        "SubmittedAt": "1975-03-30T19:20:21",
+        "SubmissionLink": "www.example.com",
+        "Status": [
+            {
+                "status": "Draft",
+                "StatusTime": "1971-03-10T15:02:03"
+            }
+        ],
+        "Hash": "8dda762ecc8c27702951179bfcfa32e9",
+        "skillsRequired": [
+            "software development",
+            "proposal development"
+        ]
+    }
+]
