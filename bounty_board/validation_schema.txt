@@ -1,0 +1,106 @@
+NOTE: This Validation Schema was added to Mongo Compass (locally) and is on stand-by for main MongoDB integration after Bounty-Board MVP
+
+########## Test Document (conforms to Validation Schema) #########
+
+
+/** 
+* Paste one or more documents here
+*/
+{
+    "season": 1,
+    "Title": "test title",
+    "Description": "description",
+    "Criteria": "criteria",
+    "Reward": {
+        "currency": "BANK",
+        "amount": 100
+    },
+    "CreatedBy": {
+        "discordHandle": "Behold",
+        "discordId": "ihavenof***clue"
+    },
+    "CreatedAt": "2008-01-25T02:42:00”,
+    "DueAt": "2008-01-25T02:42:00"
+}
+
+
+
+############ Validation Schema ##############
+
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'season',
+      'Title',
+      'Description',
+      'Criteria',
+      'Reward',
+      'CreatedBy',
+      'CreatedAt',
+      'DueAt'
+    ],
+    properties: {
+      season: {
+        bsonType: 'int',
+        description: 'the current season of the DAO, nonzero integer, /^[0,9]+$/'
+      },
+      Title: {
+        bsonType: 'string',
+        description: 'a short title about the bounty'
+      },
+      Description: {
+        bsonType: 'string',
+        description: 'a short description of the bounty'
+      },
+      Criteria: {
+        bsonType: 'string',
+        description: 'must be an string and is required'
+      },
+      Reward: {
+        bsonType: 'object',
+        description: 'must be an object and is required',
+        required: [
+          'currency',
+          'amount'
+        ],
+        properties: {
+          currency: {
+            bsonType: 'string',
+            description: 'must be a string and is required'
+          },
+          amount: {
+            bsonType: 'int',
+            description: 'must be a double and is required'
+          }
+        }
+      },
+      CreatedBy: {
+        bsonType: 'object',
+        description: 'must be an object and is required',
+        required: [
+          'discordHandle',
+          'discordId'
+        ],
+        properties: {
+          discordHandle: {
+            bsonType: 'string',
+            description: 'the discord tag, i.e., hydrabolt#0001'
+          },
+          discordId: {
+            bsonType: 'string',
+            description: 'the discord internal id, i.e., 34343434343432222'
+          }
+        }
+      },
+      CreatedAt: {
+        bsonType: 'string',
+        description: 'ISO8601 date string for when bounty was created'
+      },
+      DueAt: {
+        bsonType: 'string',
+        description: 'ISO8601 date string for when bounty is due (default to end of season)'
+      }
+    }
+  }
+}
