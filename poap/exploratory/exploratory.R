@@ -15,6 +15,10 @@ df7 <- read_csv("../raw/BDAO Community Call #7.csv")
 df8 <- read_csv("../raw/Bankless DAO Community Call S1C1.csv")
 df9 <- read_csv("../raw/Bankless DAO Community Call S1C2.csv")
 
+# missing community calls: S1C3, S1C4
+df10 <- read_csv("../raw/Bankless DAO Community Call S1C5.csv")
+df11 <- read_csv("../raw/Bankless DAO Community Call S1C6.csv")
+
 # column names
 df %>% names()
 
@@ -87,7 +91,7 @@ c2 <- df2 %>%
 c3 <- df3 %>%
     select(Owner, `Claim Date`) %>%
     group_by(Owner, `Claim Date`) %>%
-    tally(sort = TRUE) 
+    tally(sort = TRUE)
 
 
 # Claim Date: 6/4/2021
@@ -119,6 +123,7 @@ c7 <- df7 %>%
 # 'Claim Date' -> 'Minting Date'
 # 'Owner' -> 'Collection'
 
+#S1C1
 c8 <- df8 %>%
     select(Collection, `Minting Date`) %>%
     group_by(Collection, `Minting Date`) %>%
@@ -129,6 +134,7 @@ c8 <- df8 %>%
         `Claim Date` = `Minting Date`
     )
 
+#S1C2
 c9 <- df9 %>%
     select(Collection, `Minting Date`) %>%
     group_by(Collection, `Minting Date`) %>%
@@ -139,6 +145,30 @@ c9 <- df9 %>%
         `Claim Date` = `Minting Date`
     )
 
+# MISSING: Community Calls S1C3 & S1C4
+
+#S1C5
+c10 <- df10 %>%
+    select(Collection, `Minting Date`) %>%
+    group_by(Collection, `Minting Date`) %>%
+    tally(sort = TRUE) %>%
+    # rename to be consistent with previous weeks
+    rename(
+        Owner = Collection,
+        `Claim Date` = `Minting Date`
+    )
+
+
+#S1C6
+c11 <- df11 %>%
+    select(Collection, `Minting Date`) %>%
+    group_by(Collection, `Minting Date`) %>%
+    tally(sort = TRUE) %>%
+    # rename to be consistent with previous weeks
+    rename(
+        Owner = Collection,
+        `Claim Date` = `Minting Date`
+    )
 
 #------Before Combine, do another group_by without `Claim Date` to eliminate any potential duplicates -----#
 
@@ -257,6 +287,20 @@ c9 %>%
     view()
 
 
+# n = 137
+c10 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+
+# n = 106
+c11 %>%
+    group_by(Owner, `Claim Date`) %>%
+    tally(sort = TRUE) %>%
+    view()
+
+
 
 # rbind all dataframes
 
@@ -269,6 +313,10 @@ combine_wk6 <- rbind(c1, c2, c3, c4, c5, c6)
 combine_wk7 <- rbind(c1, c2, c3, c4, c5, c6, c7)
 
 combine_wk9 <- rbind(c1, c2, c3, c4, c5, c6, c7, c8, c9)
+
+# combine up to S1C6: Missing S1C3 and S1C4
+# latest S1C6: Aug 6, 2021
+combine_wk13 <- rbind(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11)
 
 # NOTE numbers can change because the pool is not fixed
 # every community call could be someone's first POAP claim
@@ -293,10 +341,16 @@ combine_wk6 %>%
     count(sort = TRUE) %>%
     view()
 
+
+combine_wk13 %>%
+    group_by(Owner) %>%
+    count(sort = TRUE) %>%
+    view()
+
 #------- Wrangle and Visualize Combined Data Frame ---------#
 
 # Number of Poaps Claimed by Addresses
-combine_wk9 %>%      # change weekly
+combine_wk13 %>%      # change weekly
     group_by(Owner) %>%
     tally(sort = TRUE) %>%
     rename(
@@ -334,11 +388,14 @@ main_dates_wk7 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/202
 
 main_dates_wk9 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021", "6/18/2021", "6/25/2021", "7/2/2021", "7/9/2021")
 
+main_dates_wk13 <- c("5/14/2021", "5/21/2021", "5/28/2021", "6/4/2021", "6/11/2021", "6/18/2021", "6/25/2021", "7/2/2021", "7/9/2021", "7/30/2021", "8/6/2021")
+
+
 
 # Fix Date Ordering so that 6/11/2021 is the most recent date
 
 
-combine_wk9 %>%      # change weekly
+combine_wk13 %>%      # change weekly
     # change Claim Date from Char to Date
     mutate(
         Date = as.Date(`Claim Date`, "%m/%d/%Y")
@@ -349,7 +406,7 @@ combine_wk9 %>%      # change weekly
         poaps_claimed = n
     ) %>%
     # change main_dates_x every week
-    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk9, "%m/%d/%Y"), 'red', 'green'))) +  
+    ggplot(aes(x = Date, y = poaps_claimed, fill = ifelse(Date %in% as.Date(main_dates_wk13, "%m/%d/%Y"), 'red', 'green'))) +  
     geom_col() +
     scale_x_date(date_breaks = '2 day') +
     geom_text(aes(label = poaps_claimed), vjust = -0.50) +
