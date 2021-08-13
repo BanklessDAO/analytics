@@ -12,7 +12,11 @@ df7 <- read_csv("BDAO Community Call #7.csv")
 df8 <- read_csv("Bankless DAO Community Call S1C1.csv")
 df9 <- read_csv("Bankless DAO Community Call S1C2.csv")
 
+# ENS column back to showing addresses; remove before uploading
+# Missing: S1C3, S1C4
 
+df10 <- read_csv("Bankless DAO Community Call S1C5.csv")
+df11 <- read_csv("Bankless DAO Community Call S1C6.csv")
 
 # Clean data
 
@@ -47,4 +51,14 @@ df6 %>%
 df7 %>%
     select(-newstar.eth) %>%
     write_csv("BDAO Community Call #7.csv")
+
+# Erase all identifiable names
+df10 %>%
+    select(-ENS) %>%
+    write_csv("Bankless DAO Community Call S1C5.csv")
+
+
+df11 %>%
+    select(-abvavgjoe.eth) %>%
+    write_csv("Bankless DAO Community Call S1C6.csv")
 
