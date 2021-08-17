@@ -49,18 +49,21 @@ edge_df <- igraph::as_long_data_frame(token_transfer_graph)
 edge_df$bank_value <- round(as.numeric(edge_df$bank_value), 2)
 
 total_sent <- edge_df %>%
-           select(sending_address, bank_value) %>%
-           group_by(sending_address) %>%
-           summarise("total_bank_sent" = sum(bank_value))
+  select(sending_address, bank_value) %>%
+  group_by(sending_address) %>%
+  summarise("total_bank_sent" = sum(bank_value))
 total_received <- edge_df %>%
-                  select(receiving_address, bank_value) %>%
-                  group_by(receiving_address) %>%
-                  summarise("total_bank_received" = sum(bank_value))
+  select(receiving_address, bank_value) %>%
+  group_by(receiving_address) %>%
+  summarise("total_bank_received" = sum(bank_value))
+
+# df <- left_join(df,total_received, b = c("address" = "receiving_address")) %>%
+#   left_join(total_sent, b = c("address" = "sending_address")) %>%
+#   mutate("token_transfer_ratio" = df$out_degree-df$in_degree) %>%
+#   mutate("token_value_ratio" = df$total_bank_sent-df$total_bank_received)
 
 df <- left_join(df,total_received, b = c("address" = "receiving_address")) %>%
-      left_join(total_sent, b = c("address" = "sending_address")) %>%
-      mutate("token_transfer_ratio" = df$out_degree-df$in_degree) %>%
-      mutate("token_value_ratio" = df$total_bank_sent-df$total_bank_received)
+  left_join(total_sent, b = c("address" = "sending_address"))
 
 df <- clean_names(df)
 
