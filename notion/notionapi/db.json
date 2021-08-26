@@ -1,0 +1,257 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "page",
+      "id": "e942ac26-20d0-4f93-a1fd-03f091aebc3a",
+      "created_time": "2021-08-26T14:08:00.000Z",
+      "last_edited_time": "2021-08-26T14:08:00.000Z",
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "9f9164df-ad61-4231-8d72-c8f837e51317"
+      },
+      "archived": false,
+      "properties": {
+        "Value": { "id": "L%5CAj", "type": "rich_text", "rich_text": [] },
+        "Status": { "id": "Y%3Fw%5D", "type": "rich_text", "rich_text": [] },
+        "Description": { "id": "title", "type": "title", "title": [] }
+      },
+      "url": "https://www.notion.so/e942ac2620d04f93a1fd03f091aebc3a"
+    },
+    {
+      "object": "page",
+      "id": "0977995b-491c-47e5-99aa-65b47e181e6f",
+      "created_time": "2021-08-26T14:04:00.000Z",
+      "last_edited_time": "2021-08-26T14:30:00.000Z",
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "9f9164df-ad61-4231-8d72-c8f837e51317"
+      },
+      "archived": false,
+      "properties": {
+        "Value": {
+          "id": "L%5CAj",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": { "content": "Published", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Published",
+              "href": null
+            }
+          ]
+        },
+        "Status": {
+          "id": "Y%3Fw%5D",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": { "content": "Inactive", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Inactive",
+              "href": null
+            }
+          ]
+        },
+        "Description": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "Status", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Status",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Status-0977995b491c47e599aa65b47e181e6f"
+    },
+    {
+      "object": "page",
+      "id": "d5c80e9c-4007-4029-bba4-95db50da859b",
+      "created_time": "2021-08-26T14:04:00.000Z",
+      "last_edited_time": "2021-08-26T14:29:00.000Z",
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "9f9164df-ad61-4231-8d72-c8f837e51317"
+      },
+      "archived": false,
+      "properties": {
+        "Value": {
+          "id": "L%5CAj",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": { "content": "The Sovereign Individual", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The Sovereign Individual",
+              "href": null
+            }
+          ]
+        },
+        "Status": {
+          "id": "Y%3Fw%5D",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": { "content": "Active", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Active",
+              "href": null
+            }
+          ]
+        },
+        "Description": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "Title", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Title",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Title-d5c80e9c40074029bba495db50da859b"
+    },
+    {
+      "object": "page",
+      "id": "ea52d98b-28bd-4a06-8977-b748043b2a88",
+      "created_time": "2021-08-26T14:04:00.000Z",
+      "last_edited_time": "2021-08-26T14:29:00.000Z",
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "9f9164df-ad61-4231-8d72-c8f837e51317"
+      },
+      "archived": false,
+      "properties": {
+        "Value": {
+          "id": "L%5CAj",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "James Dale Davidson, William Rees-Mogg",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "James Dale Davidson, William Rees-Mogg",
+              "href": null
+            }
+          ]
+        },
+        "Status": {
+          "id": "Y%3Fw%5D",
+          "type": "rich_text",
+          "rich_text": [
+            {
+              "type": "text",
+              "text": { "content": "Active", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Active",
+              "href": null
+            }
+          ]
+        },
+        "Description": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "Author", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Author",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/Author-ea52d98b28bd4a068977b748043b2a88"
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}
