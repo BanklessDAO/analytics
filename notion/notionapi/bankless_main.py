@@ -1,7 +1,7 @@
 import requests
 import json
 
-# Resource Integration Token
+# DevOps Token
 token = 'bankless-dao-workspace-integration-token'
 
 # Retrieve Single User

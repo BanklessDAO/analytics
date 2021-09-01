@@ -1,0 +1,150 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "database",
+      "id": "6e19505b-c44b-4e0e-b77b-8e41b46e4a3b",
+      "cover": null,
+      "icon": null,
+      "created_time": "2021-05-24T02:23:00.000Z",
+      "last_edited_time": "2021-09-01T07:16:00.000Z",
+      "title": [
+        {
+          "type": "text",
+          "text": { "content": "Projects", "link": null },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Projects",
+          "href": null
+        }
+      ],
+      "properties": {
+        "Status": {
+          "id": "D%5CCb",
+          "name": "Status",
+          "type": "select",
+          "select": {
+            "options": [
+              {
+                "id": "dec753bc-29f7-41b8-8d0a-c572548901fa",
+                "name": "Active",
+                "color": "pink"
+              },
+              {
+                "id": "8ee4b3ea-1e43-479e-9828-0cc20ce56de5",
+                "name": "Scoping",
+                "color": "blue"
+              },
+              {
+                "id": "47604068-dc12-471c-a390-422d86c4e5f8",
+                "name": "Archived",
+                "color": "gray"
+              }
+            ]
+          }
+        },
+        "Summary": {
+          "id": "MmhE",
+          "name": "Summary",
+          "type": "rich_text",
+          "rich_text": {}
+        },
+        "Channel": {
+          "id": "kufR",
+          "name": "Channel",
+          "type": "rich_text",
+          "rich_text": {}
+        },
+        "Tech Stack": {
+          "id": "nZEF",
+          "name": "Tech Stack",
+          "type": "multi_select",
+          "multi_select": {
+            "options": [
+              {
+                "id": "7b3042a3-2719-4ad5-84f3-2aa1d88eba3a",
+                "name": "Javascript",
+                "color": "yellow"
+              },
+              {
+                "id": "2e31c229-c0e2-40b0-96c3-700896b7cf38",
+                "name": "React",
+                "color": "blue"
+              },
+              {
+                "id": "18d78c73-ca9b-40fd-a7cd-60bd166f6abe",
+                "name": "Typescript",
+                "color": "default"
+              },
+              {
+                "id": "9cb088f5-d866-4ae6-97ce-a5e73498bd2f",
+                "name": "Web3",
+                "color": "red"
+              },
+              {
+                "id": "71c5c89f-a42b-480b-88ff-b5b2ea0af6fe",
+                "name": "Next.js",
+                "color": "green"
+              }
+            ]
+          }
+        },
+        "Discord Channel": {
+          "id": "oeUN",
+          "name": "Discord Channel",
+          "type": "rich_text",
+          "rich_text": {}
+        },
+        "Gnosis Multisig Wallet": {
+          "id": "wRVt",
+          "name": "Gnosis Multisig Wallet",
+          "type": "url",
+          "url": {}
+        },
+        "Seasons": {
+          "id": "z~fg",
+          "name": "Seasons",
+          "type": "multi_select",
+          "multi_select": {
+            "options": [
+              {
+                "id": "2aaf7f37-25ec-421b-a8bd-1c3679185a58",
+                "name": "Season 0",
+                "color": "green"
+              },
+              {
+                "id": "067716ce-d8a5-48c9-878c-73ac07485ccf",
+                "name": "Season 1",
+                "color": "orange"
+              }
+            ]
+          }
+        },
+        "Champion": {
+          "id": "~p%3BG",
+          "name": "Champion",
+          "type": "rich_text",
+          "rich_text": {}
+        },
+        "Project": {
+          "id": "title",
+          "name": "Project",
+          "type": "title",
+          "title": {}
+        }
+      },
+      "parent": {
+        "type": "page_id",
+        "page_id": "2d36ac50-c026-40bd-a22f-bbf72069afe3"
+      }
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false
+}
