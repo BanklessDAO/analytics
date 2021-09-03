@@ -2,7 +2,7 @@ import requests
 import json
 
 # DevOps Token
-token = 'bankless-dao-workspace-integration-token'
+token = 'DevOps-Integration-Token'
 
 # Retrieve Single User
 # run listAllUsers first to get single userId
