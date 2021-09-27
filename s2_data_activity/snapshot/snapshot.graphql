@@ -1,0 +1,80 @@
+
+"""
+Explorer:  https://hub.snapshot.org/graphql
+"""
+
+"""
+Get a single space: "banklessvault.eth"
+NOTE: Can also download csv file for each proposal: https://snapshot.org/#/banklessvault.eth
+"""
+
+query {
+    space(id: "banklessvault.eth") {
+    id
+    name
+    about
+    network
+    symbol
+    members
+  }
+}
+
+"""
+Get Multiple Proposals 
+(All proposals, 10 so far, since Genesis with current status as "closed", voting completed)
+"""
+
+query {
+  proposals (
+    first: 20,
+    skip: 0,
+    where: {
+      space_in: ["banklessvault.eth"],
+      state: "closed"
+    },
+    orderBy: "created",
+    orderDirection: desc
+  ) {
+    id
+    title
+    choices
+    start
+    end
+    snapshot
+    state
+    author
+    space {
+      id
+      name
+    }
+  }
+}
+
+"""
+Get Votes for a specific proposal
+e.g., most recent 'Bankless DAO Season 2'
+NOTE: can also download csv directly
+"""
+
+query {
+  votes (
+    first: 7000
+    skip: 0
+    where: {
+      proposal: "QmSTXHWP7bjaxT9aAuoFNkaCn5Ptx7GajEDDekoBccd5Uf"
+    }
+    orderBy: "created",
+    orderDirection: desc
+  ) {
+    id
+    voter
+    created
+    proposal {
+      id
+    }
+    choice
+    space {
+      id
+    }
+  }
+}
