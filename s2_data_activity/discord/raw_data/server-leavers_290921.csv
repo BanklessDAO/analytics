@@ -1,0 +1,33 @@
+interval_start_timestamp,days_in_guild,leavers
+2021-06-07T00:00:00+00:00,'Members for 1 month+',31
+2021-06-07T00:00:00+00:00,'Members for < 1 month',42
+2021-06-14T00:00:00+00:00,'Members for 1 month+',30
+2021-06-14T00:00:00+00:00,'Members for < 1 month',53
+2021-06-21T00:00:00+00:00,'Members for 1 month+',34
+2021-06-21T00:00:00+00:00,'Members for < 1 month',57
+2021-06-28T00:00:00+00:00,'Members for 1 month+',24
+2021-06-28T00:00:00+00:00,'Members for < 1 month',33
+2021-07-05T00:00:00+00:00,'Members for 1 month+',36
+2021-07-05T00:00:00+00:00,'Members for < 1 month',50
+2021-07-12T00:00:00+00:00,'Members for 1 month+',35
+2021-07-12T00:00:00+00:00,'Members for < 1 month',51
+2021-07-19T00:00:00+00:00,'Members for 1 month+',25
+2021-07-19T00:00:00+00:00,'Members for < 1 month',27
+2021-07-26T00:00:00+00:00,'Members for 1 month+',38
+2021-07-26T00:00:00+00:00,'Members for < 1 month',47
+2021-08-02T00:00:00+00:00,'Members for 1 month+',40
+2021-08-02T00:00:00+00:00,'Members for < 1 month',181
+2021-08-09T00:00:00+00:00,'Members for 1 month+',39
+2021-08-09T00:00:00+00:00,'Members for < 1 month',34
+2021-08-16T00:00:00+00:00,'Members for 1 month+',35
+2021-08-16T00:00:00+00:00,'Members for < 1 month',49
+2021-08-23T00:00:00+00:00,'Members for 1 month+',54
+2021-08-23T00:00:00+00:00,'Members for < 1 month',107
+2021-08-30T00:00:00+00:00,'Members for 1 month+',61
+2021-08-30T00:00:00+00:00,'Members for < 1 month',74
+2021-09-06T00:00:00+00:00,'Members for 1 month+',46
+2021-09-06T00:00:00+00:00,'Members for < 1 month',72
+2021-09-13T00:00:00+00:00,'Members for 1 month+',67
+2021-09-13T00:00:00+00:00,'Members for < 1 month',127
+2021-09-20T00:00:00+00:00,'Members for 1 month+',57
+2021-09-20T00:00:00+00:00,'Members for < 1 month',164
