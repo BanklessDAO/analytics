@@ -8,6 +8,7 @@ first_activation <- read_csv("./raw_data/first-day-activation_290921.csv")
 next_retention <- read_csv("./raw_data/next-week-retention_290921.csv")
 visit_comm <- read_csv("./raw_data/visitors-communicators_290921.csv")
 msg_avg <- read_csv("./raw_data/message-avg-msg_290921.csv")
+voice_act <- read_csv("./raw_data/voice-activity_290921.csv")
 
 # visualize new_member ----
 
@@ -54,6 +55,31 @@ new_member %>%
 
 # basic line chart
 # bankless color scheme
+
+total_member %>%
+    rename(
+        time = "interval_start_timestamp",
+        total = "total_membership"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_line(aes(y = total), color = "red", size = 1.5) +
+    theme(
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Total membership over time",
+        y = "",
+        x = ""
+    )
+
 
 
 # visualize first day activation ----
@@ -232,4 +258,36 @@ msg_avg %>%
         x = "",
         color = "Legend"
     )
+
+# visualize voice activity ----
+
+voice_act %>%
+    rename(
+        time = "interval_start_timestamp",
+        speak = "speaking_minutes"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = speak), stat = "identity", fill = "white") +
+    theme(
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Voice Activity",
+        subtitle = "Speaking minutes",
+        y = "Values",
+        x = ""
+    )
+
+
+
+
+
 
