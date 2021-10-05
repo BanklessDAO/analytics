@@ -7,7 +7,7 @@ total_member <- read_csv("./raw_data/total-membership-joins_290921.csv")
 first_activation <- read_csv("./raw_data/first-day-activation_290921.csv")
 next_retention <- read_csv("./raw_data/next-week-retention_290921.csv")
 visit_comm <- read_csv("./raw_data/visitors-communicators_290921.csv")
-
+msg_avg <- read_csv("./raw_data/message-avg-msg_290921.csv")
 
 # visualize new_member ----
 
@@ -189,4 +189,47 @@ visit_comm %>%
         color = "Legend"
     )
 
+# visualize message avg msg ----
+
+# pivot longer - no need for double y-axis
+# two-sided Y-axis
+# one line + bar chart
+# one hard coded line (benchmark)
+# bankless color scheme
+
+msg_avg %>%
+    rename(
+        time = "interval_start_timestamp",
+        per = "messages_per_communicator"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = messages, color = "Messages sent"), stat = "identity", fill = "black") +
+    # conversion between two y-axis (similar to % conversion)
+    geom_line(aes(y = per*6000/12, color = "Messages per communicator"), size = 1.5) +
+    geom_line(y = 5000, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "Messages sent",
+        sec.axis = sec_axis(trans = ~./6000*12, name = "Message per ommunicator")
+    ) +
+    scale_color_manual(values = c("red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Message Activity",
+        x = "",
+        color = "Legend"
+    )
 
