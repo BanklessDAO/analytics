@@ -42,10 +42,10 @@ query($first: Int!, $skip: Int!)
 # )
 
 
-''' page_size = 1000
-skip = 0
+#page_size = 1000
+#skip = 0
 
-while True:
+'''while True:
     vars = {"first": page_size, "skip": skip}
     # run query on transport
     result = client.execute(query, variable_values=vars)
