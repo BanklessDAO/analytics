@@ -6,7 +6,7 @@ from pprint import pprint
 
 
 def run_query(q):
-    request = requests.post('http://localhost:3333/api/graphql'
+    request = requests.post('https://content-gateway-api.herokuapp.com/api/graphql'
                             '',
                             json={'query': query})
     if request.status_code == 200:
