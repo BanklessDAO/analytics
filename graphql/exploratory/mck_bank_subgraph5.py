@@ -10,6 +10,7 @@ from pprint import pprint
 
 # db_string = 'postgresql://user:password@localhost:port/mydatabase'
 # change password
+
 db_string = 'postgresql://user:password@localhost:port/mydatabase'
 
 db = create_engine(db_string)
@@ -48,10 +49,11 @@ with db.connect() as conn:
 # use max_tx_timestamp in parameter 'where: {timestamp_gte: max_tx_timestamp}'
 # this will return on-chain tx since latest timestamp (i.e., max_tx_timestamp)
 
+variables = {'input': max_tx_timestamp}
 
-query = """
-mutation ($input: [timestamp!]!) {
-    transferBanks(first: 1000, where: {timestamp_gte: $input}, orderBy: timestamp, orderDirection: asc, subgraphError: allow) {
+query = f"""
+{{
+  transferBanks(first: 1000, where: {{timestamp_gte:{max_tx_timestamp}}}, orderBy: timestamp, orderDirection: asc, subgraphError: allow) {{
     id
     from_address
     to_address
@@ -59,11 +61,11 @@ mutation ($input: [timestamp!]!) {
     amount_display
     timestamp
     timestamp_display
-    }
-}
+  }}
+}}
 """
 
-variables = {'input': max_tx_timestamp}
+# note: 'variables' defined above
 
 
 def run_query(q):
@@ -88,6 +90,20 @@ pprint(result)
 
 
 # write results from graphql json to pandas df
+
+result_items = result.items()
+result_list = list(result_items)
+lst_of_dict = result_list[0][1].get('transferBanks')
+df = pd.json_normalize(lst_of_dict)
+
+print(df)
+
+# TEST: write results from df into *new* stg_subgraph_bank_test through 'db' connection established above
+
+df.to_sql('stg_subgraph_bank_test', db)
+
+print('Test: df written to stg_subgraph_bank_test')
+
 # write results from df into stg_subgraph_bank in Postgres using INSERT INTO syntax with sqlalchemy
 # see pgAdmin script
 
