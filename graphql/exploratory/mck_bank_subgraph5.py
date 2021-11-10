@@ -40,9 +40,10 @@ with db.connect() as conn:
 
 variables = {'input': max_tx_timestamp}
 
+# note: timestamp_gt instead of timestamp_gte ('e', 'or equal to' duplicates rows)
 query = f"""
 {{
-  transferBanks(first: 1000, where: {{timestamp_gte:{max_tx_timestamp}}}, orderBy: timestamp, orderDirection: asc, subgraphError: allow) {{
+  transferBanks(first: 1000, where: {{timestamp_gt:{max_tx_timestamp}}}, orderBy: timestamp, orderDirection: asc, subgraphError: allow) {{
     id
     from_address
     to_address
