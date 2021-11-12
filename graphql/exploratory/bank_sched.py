@@ -14,6 +14,8 @@ import logging
 
 # Create Postgresql connection to existing table: stg_subgraph_bank_1
 # NOTE: need to use environment variables to separate password from this file
+# db_string = 'postgresql://user:password@localhost:port/mydatabase'
+
 db_string = 'postgresql://user:password@localhost:port/mydatabase'
 db = create_engine(db_string)
 
