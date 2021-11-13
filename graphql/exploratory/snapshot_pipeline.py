@@ -80,7 +80,9 @@ sub_df4 = sub_df3[['level_0', 'id', 'title', 'start', 'end']]  # remove index
 sub_df5 = sub_df4.rename(columns={'level_0': 'index'}, inplace=False)
 print(sub_df5)
 
+# write dataframe to CSV (one-time event)
+# sub_df5.to_csv('bankless_snapshot_proposals.csv')
+
 
 # capture list of proposal id
 # lst_proposal_id = list(df['id'])
-# sub_df5.to_csv('bankless_snapshot_proposals.csv')
