@@ -27,18 +27,6 @@ query = """
 }
 """
 
-query2 = """
-{
-        votes(first: 10000, where: {proposal: "QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS"}) {
-          id
-          voter
-          created
-          choice
-          __typename
-        }
-      }
-"""
-
 
 def run_query(q):
     request = requests.post('https://hub.snapshot.org/graphql'
@@ -54,7 +42,7 @@ def run_query(q):
 result = run_query(query)
 
 # print results
-print('Print Bank Subgraph Result - {}'.format(result))
+print('Print Snapshot Proposal Result - {}'.format(result))
 print('################')
 
 # pretty print
@@ -86,3 +74,23 @@ print(sub_df5)
 
 # capture list of proposal id
 # lst_proposal_id = list(df['id'])
+
+# Proposal ids
+# 0        QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS
+# 1        QmbCCAH3WbAFJS4FAUTvpWGmtgbaeMh1zoKgocdt3ZJmdr
+# 2        QmYvsZ7AU2XyhpBL8g4QRQbLRX6uU3t5CHNdFQbs5r7ypJ
+# 3        QmQX2DQcDTZzCpM6DTVNJutQJwWXtxJDTMpBoFjbnaM9i2
+# 4        QmXrfAHMoRcu5Vy3DsRTfokqLBTEKR6tqKVecLvkgw5NZf
+# 5        QmTCfpZirT9mUrJD8rMZKpguiCpDKASFCnGQFpk6eyUk77
+# 6        QmWoNKRmdn2hr1vKaoLkmuKWRQ611AiuB22JPpnDPae2m6
+# 7        QmZLGKBRQTUcdET7aPsnFNJJoY2Z885j3c1813trEsUGck
+# 8        QmSTXHWP7bjaxT9aAuoFNkaCn5Ptx7GajEDDekoBccd5Uf
+# 9        Qmdthz7Anz7g2aJJAewNqm3gQnssP5NkS2StNKELvArQkk
+# 10       QmYmHuawgkCZxVMo6EHq5s2WxQrSwTYZeBGRfFkc1xeW5f
+# 11       QmWwN1CeDPLcvCVkDuBiYmaaNcRhfrUzFYhBixF2B3ntJU
+# 12       QmcL7qZ4nA3NoTukMVXXZeramGA8QiqQSpdBFAuRRht5T6
+# 13       QmeUcnL5FTpF2ah2CCph6DZGqJzG19coT9b3ECLAvBxPH2
+# 14       QmVm6jzr7yDRiBmmkvCQ1MFw4jTaiJcME6ZNBp4QuU1DHA
+# 15       QmZhncmagTnWXjvX17Kmm1f25D33CPAw6f1UQBo7fzm6UQ
+# 16       QmWjyeUFLmvVLg3fYeNWLjPscy6u4JU2tv8A1E1qjfDi2L
+# 17    0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e
