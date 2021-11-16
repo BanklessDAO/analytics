@@ -1,3 +1,4 @@
+import os
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import text
@@ -7,13 +8,12 @@ import json
 import pandas as pd
 from pprint import pprint
 
-# establish postgres connection for DAO Dash
-# SELECT proposal_id FROM bankless_snapshot_header_1 ORDER BY id DESC LIMIT 1
-# save proposal_id as variables
-# query GraphQL endpoint for snapshot_votes, insert proposal_id
-# run query, convert json outout to dataframe
+# using python-dotenv method
+from dotenv import load_dotenv
+load_dotenv()
 
-# db_string = 'postgresql://user:password@localhost:port/mydatabase'
+
+db_string = os.environ.get('DB_STRING')
 db = create_engine(db_string)
 
 with db.connect() as conn:
@@ -60,7 +60,7 @@ query2 = f"""
 }}
 """
 
-# Second String interpolation attempt 
+# Second String interpolation attempt
 # note: f""" yield an error
 
 query3 = """
@@ -89,13 +89,13 @@ mutation createVote {
 # note: f""" yield an error
 
 variables = {
-  "input": {
-    "id": "0x0cfb9c3476157243303e1e5cef02e7719b261b566c377a1e23586915e8f604b3",
-    "voter": "0x4f8c2d5397262653Cd8956CB977A0bA3660210c7",
-    "created": "1635966410",
-    "__typename": "Vote",
-    "proposal": {"id": "0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e"}
-  }
+    "input": {
+        "id": "0x0cfb9c3476157243303e1e5cef02e7719b261b566c377a1e23586915e8f604b3",
+        "voter": "0x4f8c2d5397262653Cd8956CB977A0bA3660210c7",
+        "created": "1635966410",
+        "__typename": "Vote",
+        "proposal": {"id": "0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e"}
+    }
 }
 
 
@@ -114,7 +114,6 @@ mutation createUser($input: CreateUserInput!) {
   }
 }
 """
-
 
 
 def run_query(q):

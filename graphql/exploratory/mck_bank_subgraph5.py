@@ -1,4 +1,5 @@
 
+import os
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import text
@@ -8,11 +9,12 @@ import json
 import pandas as pd
 from pprint import pprint
 
-# Create connection Postgresql connection
-# db_string = 'postgresql://user:password@localhost:port/mydatabase'
-# NOTE: need to use environment variables to separate password from this file
+# using python-dotenv method
+from dotenv import load_dotenv
+load_dotenv()
 
-db_string = 'postgresql://user:password@localhost:port/mydatabase'
+
+db_string = os.environ.get('DB_STRING')
 db = create_engine(db_string)
 
 # NOTE: If first time, create a test table and insert data to ensure a connection to postgres is working.

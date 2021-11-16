@@ -1,4 +1,5 @@
 # libraries for pipeline
+import os
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import text
@@ -12,11 +13,16 @@ import sched
 import time
 import logging
 
+
+# using python-dotenv method
+from dotenv import load_dotenv
+load_dotenv()
+
 # Create Postgresql connection to existing table: stg_subgraph_bank_1
 # NOTE: need to use environment variables to separate password from this file
 # db_string = 'postgresql://user:password@localhost:port/mydatabase'
 
-db_string = 'postgresql://user:password@localhost:port/mydatabase'
+db_string = os.environ.get('DB_STRING')
 db = create_engine(db_string)
 
 # IMPORTANT: grab max_id to later reset_index() to properly append updated dataframe into existing table on primary key (id)
