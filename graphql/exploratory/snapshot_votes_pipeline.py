@@ -42,9 +42,22 @@ print('################')
 # convert to list, then df
 result_list = list(result.items())
 lst_of_dict = result_list[0][1].get('votes')
-df17 = pd.json_normalize(lst_of_dict)
+latest_df = pd.json_normalize(lst_of_dict)
 
-pprint(df17)
+pprint(latest_df)
+
+# reset index
+# increment index
+
+
+
+##-------------- ONE TIME EVENT ------------ ##
+
+# Manually run GraphQL query,
+# concatenate all dfs
+# reset_index() TWICE
+# change column names
+# write to csv
 
 # concatenate 17 dataframes into one
 
@@ -70,27 +83,23 @@ pprint(df17)
 # concat_frame 9127 rows
 
 
-# Manually run GraphQL query,
-# concatenate all dfs
-# reset_index() TWICE
-# change column names
-# write to csv
-
 # frames = [df, df1, df2, df3, df4, df5, df6, df7, df8, df9, df10, df11, df12, df13, df14, df15, df16, df17]
 # concat_frames = pd.concat(frames)
 
 # reset_index TWICE to get 0 - 9126 rows
-concat_frames_1 = concat_frames.reset_index()
-concat_frames_2 = concat_frames_1.reset_index()
+# concat_frames_1 = concat_frames.reset_index()
+# concat_frames_2 = concat_frames_1.reset_index()
 
-concat_frames_3 = concat_frames_2[[
-    'level_0', 'id', 'voter', 'created', 'choice', '__typename', 'proposal.id']]
+# concat_frames_3 = concat_frames_2[[
+#    'level_0', 'id', 'voter', 'created', 'choice', '__typename', 'proposal.id']]
 
 # change column names level_0 = id, id = vote_id, proposal.id = proposal_id
-concat_frames_4 = concat_frames_3.rename(
-    columns={'level_0': 'id', 'id': 'vote_id', 'proposal.id': 'proposal_id'}, inplace=False)
+# concat_frames_4 = concat_frames_3.rename(
+#    columns={'level_0': 'id', 'id': 'vote_id', 'proposal.id': 'proposal_id'}, inplace=False)
 
-print(concat_frames_4)
+# print(concat_frames_4)
 
 # write to csv
 # concat_frames_4.to_csv('bankless_snapshot_votes.csv')
+
+##-------------- ONE TIME EVENT ------------ ##
