@@ -14,7 +14,7 @@ from pprint import pprint
 # run query, convert json outout to dataframe
 
 # db_string = 'postgresql://user:password@localhost:port/mydatabase'
-
+db_string = 'postgresql://dao_dash_app:W6BlwLwv2foA1AvR@db-postgresql-nyc3-31688-do-user-9472067-0.b.db.ondigitalocean.com:25060/dao_dash'
 db = create_engine(db_string)
 
 with db.connect() as conn:
@@ -26,11 +26,28 @@ with db.connect() as conn:
         print("Most recent id :", max_id)
         print("Most recent created :", max_created)
 
-variables = {'input': max_id}
+# Hard coded version: works
 
-query = f"""
+query = """
+{
+        votes(first: 10000, where: {created: 1635966410}) {
+          id
+          voter
+          created
+          choice
+          __typename
+          proposal {
+            id
+          }
+        }
+}
+"""
+
+variables = {'created': max_created}
+
+query2 = f"""
 {{
-        votes(first: 10000, where: {{id: {max_id}}}) {{
+        votes(first: 10000, where: {{created: {max_created}}}) {{
           id
           voter
           created
@@ -42,23 +59,6 @@ query = f"""
         }}
 }}
 """
-
-
-
-#query = f"""
-#{{
-#        votes(first: 10000, where: {{id: {max_id}}}) {{
-#          id
-#          voter
-#          created
-#          choice
-#          __typename
-#          proposal {
-#            id
-#          }
-#        }}
-#}}
-#"""
 
 def run_query(q):
     request = requests.post('https://hub.snapshot.org/graphql'
