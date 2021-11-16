@@ -14,7 +14,6 @@ from pprint import pprint
 # run query, convert json outout to dataframe
 
 # db_string = 'postgresql://user:password@localhost:port/mydatabase'
-db_string = 'postgresql://dao_dash_app:W6BlwLwv2foA1AvR@db-postgresql-nyc3-31688-do-user-9472067-0.b.db.ondigitalocean.com:25060/dao_dash'
 db = create_engine(db_string)
 
 with db.connect() as conn:
@@ -43,8 +42,9 @@ query = """
 }
 """
 
-variables = {'created': max_created}
+# String interpolation not working
 
+#variables = {'created': max_created}
 query2 = f"""
 {{
         votes(first: 10000, where: {{created: {max_created}}}) {{
@@ -59,6 +59,63 @@ query2 = f"""
         }}
 }}
 """
+
+# Second String interpolation attempt 
+# note: f""" yield an error
+
+query3 = """
+mutation createVote {
+  createVote(input: {
+      id: "0x0cfb9c3476157243303e1e5cef02e7719b261b566c377a1e23586915e8f604b3", 
+      voter: "0x4f8c2d5397262653Cd8956CB977A0bA3660210c7", 
+      created: "1635966410", 
+      __typename: "Vote", 
+      proposal: {"id": "0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e"}
+      }) {
+    votes {
+        id
+        voter
+        created
+        __typename
+        proposal {
+            id
+        }
+    }
+  }
+}
+"""
+
+# Third string interpolation attempt
+# note: f""" yield an error
+
+variables = {
+  "input": {
+    "id": "0x0cfb9c3476157243303e1e5cef02e7719b261b566c377a1e23586915e8f604b3",
+    "voter": "0x4f8c2d5397262653Cd8956CB977A0bA3660210c7",
+    "created": "1635966410",
+    "__typename": "Vote",
+    "proposal": {"id": "0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e"}
+  }
+}
+
+
+query4 = """
+mutation createUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    user {
+      id
+      voter
+      created
+      __typename
+      proposal {
+            id
+      }
+    }
+  }
+}
+"""
+
+
 
 def run_query(q):
     request = requests.post('https://hub.snapshot.org/graphql'
