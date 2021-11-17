@@ -47,7 +47,7 @@ query = """
 variables = {'created': max_created}
 query2 = f"""
 {{
-        votes(first: 10000, where: {{created: {max_created}}}) {{
+        votes(first: 10000, where: {{created_gt: {max_created}, space: "banklessvault.eth"}}) {{
           id
           voter
           created
@@ -55,6 +55,9 @@ query2 = f"""
           __typename
           proposal {{
             id
+            space {{
+              id
+            }}
           }}
         }}
 }}
@@ -66,11 +69,12 @@ query2 = f"""
 query3 = """
 mutation createVote {
   createVote(input: {
-      id: "0x0cfb9c3476157243303e1e5cef02e7719b261b566c377a1e23586915e8f604b3", 
-      voter: "0x4f8c2d5397262653Cd8956CB977A0bA3660210c7", 
-      created: "1635966410", 
-      __typename: "Vote", 
-      proposal: {"id": "0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e"}
+      id: "0x0cfb9c3476157243303e1e5cef02e7719b261b566c377a1e23586915e8f604b3",
+      voter: "0x4f8c2d5397262653Cd8956CB977A0bA3660210c7",
+      created: "1635966410",
+      __typename: "Vote",
+      proposal: {
+          "id": "0xabccf8394b35e92043a4055f8430f1babd44fdc763849ad0158441073578a62e"}
       }) {
     votes {
         id
@@ -135,3 +139,33 @@ print('################')
 
 # pretty print
 pprint(result)
+
+# convert list, then df
+result_list = list(result.items())
+lst_of_dict = result_list[0][1].get('votes')
+latest_df = pd.json_normalize(lst_of_dict)
+
+pprint(latest_df)
+
+# update index
+# add max_id
+# reset_index
+latest_df.index += 1   # because indexing in python starts with 0
+latest_df.index += max_id
+latest_df2 = latest_df.reset_index()
+print(latest_df2)
+
+# select specific columns
+latest_df3 = latest_df2[['index', 'id', 'voter',
+                         'created', 'choice', '__typename', 'proposal.id']]
+
+print(latest_df3)
+# rename columns
+
+# change column names index = id, id = vote_id, proposal.id = proposal_id
+latest_df4 = latest_df3.rename(
+    columns={'index': 'id', 'id': 'vote_id', 'proposal.id': 'proposal_id'}, inplace=False)
+
+print(latest_df4)
+
+# push back up to postgres
