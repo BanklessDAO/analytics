@@ -114,3 +114,7 @@ latest_df4 = latest_df3.rename(
 print(latest_df4)
 
 # push back up to postgres
+# latest_df4.to_sql('stg_bankless_snapshot_1', con=db,
+#                  if_exists='append', index=False)
+
+# print("Done. Check pgAdmin")
