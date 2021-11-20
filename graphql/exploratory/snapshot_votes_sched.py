@@ -100,6 +100,7 @@ def snapshot_votes_etl(query):
         columns={'index': 'id', 'id': 'vote_id', 'proposal.id': 'proposal_id'}, inplace=False)
     print(df4)
     print("#### need to un-comment next line to push to postgres ####")
+    # df4.to_sql('stg_bankless_snapshot_1', con=db, if_exists='append', index=False)
     return df4
 
 # To print out timestamps for 'first priority' and 'positional'

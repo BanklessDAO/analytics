@@ -102,6 +102,7 @@ def snapshot_proposal_etl(query):
         columns={'index': 'id', 'id': 'proposal_id', 'start': 'start_date', 'end': 'end_date'}, inplace=False)
     print(df4)
     print("#### need to un-comment next line to push to postgres ####")
+    # df4.to_sql('bankless_snapshot_header_1', con=db, if_exists='append', index=False)
     return df4
 
 # To print out timestamps for 'first priority' and 'positional'
