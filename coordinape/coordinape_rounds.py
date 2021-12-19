@@ -54,5 +54,14 @@ concat_frames_2 = concat_frames.reset_index()
 concat_frames_3 = concat_frames_2.reset_index()
 
 # select specific columns
+concat_frames_4 = concat_frames_3[['level_0', 'id', 'recipient_address', 'sender_address',
+                                   'recipient_id', 'sender_id', 'tokens', 'circle_id', 'epoch_id',
+                                   'dts_created']]
 
-print(concat_frames_2.reset_index())
+# change column name 'dts_created' -> 'timestamp'
+concat_frames_5 = concat_frames_4.rename(
+    columns={'level_0': 'id', 'id': 'coord_id', 'dts_created': 'timestamp'}, inplace=False)
+print(concat_frames_5)
+
+# write to csv
+# concat_frames_5.to_csv('coordinape_pipe_v1.csv')
