@@ -32,6 +32,7 @@ snapshot_votes <- read_csv("./snapshot/raw_data/snapshot_votes_s2_010122.csv")
 
 ## Visualize New Members
 
+Data: analytics/s3_data_activity/discord/raw_data
 
 ```{r, echo=FALSE}
 new_member %>%
@@ -290,13 +291,313 @@ voice_act %>%
 
 ## Visualize Snapshot Votes
 
+Data: analytics/s3_data_activity/snapshot/raw_data
+
 ```{r, echo=FALSE}
+# snapshot data
+snapshot_votes <- read_csv("./snapshot/raw_data/snapshot_votes_s2_010122.csv")
+
 
 snapshot_votes %>%
     group_by(proposal_id, title) %>%
     tally(sort = TRUE)
 
 ```
+
+## Example Sankey
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(networkD3)
+
+# sample sankey ----
+
+# flow
+links <- data.frame(
+    source=c("group_A","group_A", "group_B", "group_C", "group_C", "group_E"), 
+    target=c("group_C","group_D", "group_E", "group_F", "group_G", "group_H"), 
+    value=c(2,3, 2, 3, 1, 3)
+)
+
+# nodes
+nodes <- data.frame(
+    name=c(as.character(links$source), 
+           as.character(links$target)) %>% unique()
+)
+
+# With networkD3, connection must be provided using id, not using real name like in the links dataframe.. So we need to reformat it.
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+# Make the Network
+p <- sankeyNetwork(Links = links, Nodes = nodes,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", 
+              sinksRight=FALSE)
+p
+
+```
+
+## Grants Committee Season 1 Sankey
+
+Workflow
+
+Step 1: Replace `NA` values. Note: `NA` values step from having new projects, guilds pop up after the creation of `bankless_wallet_entity` table in DaoDash, so be sure to update that table before proceeding. 
+
+Step 2: =create a `my_links` table, 
+Step 2a: a `my_nodes` table, 
+Step 2b: create IDSource, IDTarget columns
+Step 2c: create `my_color` object.
+
+Step 3: Create sankey w/ SankeyNetwork() function and library.
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(networkD3)
+
+# load data 
+gcs1 <- read_csv("./sankey/raw_data/gc_s1_fund_flow_20220103T044120.csv")
+
+# Alternative way to replace NA values - this works
+gcs1$human_readable[is.na(gcs1$human_readable)] <- "Individual Contributor"
+
+my_links <- gcs1 %>%
+    select(readable, human_readable, amount_display) %>%
+    rename(
+        source = readable,
+        target = human_readable,
+        value = amount_display
+    )
+
+
+my_nodes <- data.frame(name = c("Grants Committee",
+                                "Individual Contributor",
+                                "DAO Punks",
+                                "BizDev Guild",
+                                "A/V Guild",
+                                "BED Index",
+                                "First Quest",
+                                "Degen",
+                                "Marketing Guild",
+                                "BountyBoard",
+                                "Bankless Academy",
+                                "Bankless Website Multisig",
+                                "Liquity Project Multisig",
+                                "Bankless Loans",
+                                "Research Guild",
+                                "Analytics Guild",
+                                "Design Guild",
+                                "Ops Guild",
+                                "Writers Guild",
+                                "Treasury Guild",
+                                "Translators Guild",
+                                "Devs Guild Multisig",
+                                "Legal Guild"))
+
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links$IDsource <- match(my_links$source, my_nodes$name)-1
+my_links$IDtarget <- match(my_links$target, my_nodes$name)-1
+
+# set color -- swap : #006d2c
+my_color <- 'd3.scaleOrdinal() .domain(["Grants Committee", 
+                                        "Individual Contributor", 
+                                        "DAO Punks", 
+                                        "BizDev Guild", 
+                                        "A/V Guild", 
+                                        "BED Index",
+                                        "First Quest",
+                                        "Degen",
+                                        "Marketing Guild",
+                                        "BountyBoard",
+                                        "Bankless Academy",
+                                        "Bankless Website Multisig",
+                                        "Liquity Project Multisig",
+                                        "Bankless Loans",
+                                        "Research Guild",
+                                        "Analytics Guild",
+                                        "Design Guild",
+                                        "Ops Guild",
+                                        "Writers Guild",
+                                        "Treasury Guild",
+                                        "Translators Guild",
+                                        "Devs Guild Multisig",
+                                        "Legal Guild"]) .range(["red", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb"])'
+
+
+sankeyNetwork(Links = my_links, Nodes = my_nodes, Source = "IDsource",
+              Target = "IDtarget", Value = "value", NodeID = "name",
+              colourScale = my_color, fontSize = 15, sinksRight=FALSE)
+
+```
+
+
+## Grants Committee Season 2 Sankey
+
+NOTE: Need to consult this [sheet](https://docs.google.com/spreadsheets/d/1a6ZMclYkESWNwV7xNhT-LELwHtK28wo9f4xx-JGab5k/edit#gid=0) to add additional project, guild multisig & address to `bankless_wallet_entity` table in DAODash.
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(networkD3)
+
+# load data
+gcs2 <- read_csv("./sankey/raw_data/gc_s2_fund_flow_20220105T074303.csv")
+
+# create id for each node
+# Alternative way to replace NA values - this works
+gcs2$human_readable[is.na(gcs2$human_readable)] <- "Individual Contributor & Others"
+
+
+# create links
+my_links_2 <- gcs2 %>%
+    select(readable, human_readable, amount_display) %>%
+    rename(
+        source = readable,
+        target = human_readable,
+        value = amount_display
+    )
+
+# create nodes
+# note: unique() function doesn't capture "Grants Committee" so that has to be entered manually
+my_nodes_2 <- unique(my_links_2[c("target")])
+
+my_nodes_2[14,] <- "Grants Committee"
+
+# change column name from 'target' -> 'name'
+my_nodes_2 <- my_nodes_2 %>%
+    rename(name = target)
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links_2$IDsource <- match(my_links_2$source, my_nodes_2$name)-1
+my_links_2$IDtarget <- match(my_links_2$target, my_nodes_2$name)-1
+
+# add color
+my_color_2 <- 'd3.scaleOrdinal() .domain(["Grants Committee", 
+                                        "Individual Contributor & Others", 
+                                        "Crypto Sapiens",
+                                        "DAO Punks", 
+                                        "S1 Coordinape",     
+                                        "A/V Guild",
+                                        "FightClub",
+                                        "Content Gateway",
+                                        "Marketing Guild",    
+                                        "BountyBoard",       
+                                        "Writers Guild",       
+                                        "Translators Guild",   
+                                        "DaoDash",
+                                        "Legal Guild"]) .range(["red", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "red", 
+                                                                "red"])'
+
+
+# sankey
+sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
+              Target = "IDtarget", Value = "value", NodeID = "name", 
+              colourScale = my_color_2, fontSize = 15, sinksRight=FALSE)
+
+
+```
+
+
+## Number of Bank Holders (Membership Categories); S1 vs S2
+
+See `mem_1_10K_bank_holdings_time_range` and other segments downloaded in raw csv. 
+Data gathered from DAODash table: 
+
+```{r, echo=FALSE}
+
+library(lubridate)
+
+bank_sg <- read_csv("./bank_subgraph/raw_data/mem_1_10K_bank_holdings_time_range_20220102T062946.csv")
+
+# turn time stamp into date
+bank_sg %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n)
+    )%>%
+    ggplot(aes(x = new_day, y = cummulative)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime"
+    )
+
+```
+
+
+## Coordinape Distribution
+
+See DaoDash
+
+```{r, echo=FALSE}
+
+```
+
+## POAP Distribution
+
+See Content Gateway and DEGEN.
+
+```{r, echo=FALSE}
+
+```
+
+## Bounty Board
+
+```{r, echo=FALSE}
+
+```
+
+## Discourse
+
+```{r, echo=FALSE}
+
+```
+
 
 ## Next Section
 
@@ -305,4 +606,9 @@ snapshot_votes %>%
 ```
 
 
+## Next Section
+
+```{r, echo=FALSE}
+
+```
 
