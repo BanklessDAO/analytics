@@ -588,9 +588,37 @@ bank_sg %>%
 
 **Task**: Find number of POAPs claimed for Community Calls S1 vs S2
 
-**Challenge**: See Content Gateway and DEGEN for access to raw data. 
+**Progress**: Query Content Gateway API endpoint: 
+
+https://prod-content-gateway-api.herokuapp.com/api/v1/graphql
+
+Query historical -> PoapV1 -> PoapTokenV1s
+
+Can query all events containing "Bankless DAO Community" (for community call poaps), but still need to find *number of poaps* claimed at each event. 
+
 
 ```{r, echo=FALSE}
+# GraphiQL query
+# {
+#  historical{
+#    PoapV1 {
+#      PoapEventV1s(first: 200, where: {name: {contains: "Bankless DAO Community"}}){
+#        data{
+#          id,
+#          fancyId,
+#          name,
+#          year,
+#          eventHostId,
+#          eventTemplateId,
+#          eventUrl
+#        }
+#      }
+#    }
+#  }
+#}
+
+
+
 
 ```
 

@@ -29,3 +29,11 @@ for dct in user_topics:
             print(value)
         else:
             pass
+
+# query list_users
+# need user type - 'active' as parameter
+list_of_users = client.list_users('active')
+
+for dct in list_of_users:
+    print("Username:", dct['username'], "Time Read:", dct['time_read'], "Post Read Count:",
+          dct['posts_read_count'], "Topics Entered:", dct['topics_entered'], "Post Count:", dct['post_count'])
