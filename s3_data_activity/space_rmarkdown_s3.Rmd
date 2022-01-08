@@ -540,6 +540,10 @@ sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
 
 ## Number of Bank Holders (Membership Categories); S1 vs S2
 
+**Task**: Compare S1 vs S2 on all membership categories.
+
+**Challenge**: Data is secured, need to visualize. 
+
 See `mem_1_10K_bank_holdings_time_range` and other segments downloaded in raw csv. 
 Data gathered from DAODash table: 
 
@@ -572,7 +576,9 @@ bank_sg %>%
 
 ## Coordinape Distribution
 
-See DaoDash
+**Task**: Query comparison of tokens/bank distributed via Coordinape in S1 vs S2.
+
+**Challenge**: See DaoDash query. 
 
 ```{r, echo=FALSE}
 
@@ -580,7 +586,9 @@ See DaoDash
 
 ## POAP Distribution
 
-See Content Gateway and DEGEN.
+**Task**: Find number of POAPs claimed for Community Calls S1 vs S2
+
+**Challenge**: See Content Gateway and DEGEN for access to raw data. 
 
 ```{r, echo=FALSE}
 
@@ -588,16 +596,45 @@ See Content Gateway and DEGEN.
 
 ## Bounty Board
 
+**Task**: Query total number of bounties and total value committed to bounties between S1 v S2.
+
+**Challenge**: query from database in prod. WIP. 
+
 ```{r, echo=FALSE}
 
 ```
 
 ## Discourse
 
+Task: Connect to API to query forum posts with polls and number of people voting.
+
+Challenge: API documentation does not mention Polls or Votes. See [documentation](https://docs.discourse.org/) here. 
+
 ```{r, echo=FALSE}
 
 ```
 
+
+## First Quest
+
+Task: Query number of new members going through First Quest 
+
+**Challenge**: Data inserted at 2021-11-18, might have insufficient data to make S1 vs S2 comparison.
+
+```{r, echo=FALSE}
+
+```
+
+
+## Tips Given & Received
+
+**Task**: Get comparison between S1 and S2
+
+**Challenge**: Insufficient tipping data that goes back to S1 ?
+
+```{r, echo=FALSE}
+
+```
 
 ## Next Section
 
@@ -611,4 +648,5 @@ See Content Gateway and DEGEN.
 ```{r, echo=FALSE}
 
 ```
+
 
