@@ -304,6 +304,125 @@ snapshot_votes %>%
 
 ```
 
+## Grants Committee Fund Distribution: Stacked Bar Chart
+
+Note: For comparison between S1 and S2 where available.
+
+SQL Query: See DaoDash `Fund_Flow_GC_2`. Note dates between S1 and S2. Same query used for Sankey.
+
+**NOTE**: May need to add Treasury Guild as another potential source of funds (confirm Treasury address).
+
+```{r}
+# --Season 1 (116 rows): timestamp_display < '2021-10-08'::DATE AND timestamp_display > '2021-06-14'::DATE  -- TOTAL: 11,288,361.28706
+# --Season 2 (426 rows): timestamp_display > '2021-10-07'::DATE AND timestamp_display < '2022-01-08'::DATE  -- TOTAL: 10,780,178.00001
+
+#WITH fund_flow AS (
+#select 
+#  'Out' as Direction,
+#   ssb.from_address,
+#   w.human_readable,
+#   w.entity_type,
+#   ssb.amount_display,
+#   ssb.timestamp_display,
+#   ssb.to_address
+#from stg_subgraph_bank_1 ssb
+#join public.bankless_wallet_entity_2 w on lower(ssb.from_address) = lower(w.wallet_address)
+#-- note 'Out' is from_address
+   
+#union all 
+   
+#select 
+#  'In' as Direction,
+#  ssb.from_address,
+#  w.human_readable,
+#  w.entity_type,
+#  ssb.amount_display,
+#  ssb.timestamp_display,
+#  ssb.to_address
+#from stg_subgraph_bank_1 ssb
+#join public.bankless_wallet_entity_2 w on lower(ssb.to_address) = lower(w.wallet_address)
+#-- note 'In' is to_address
+#),
+
+#gcs1 AS (
+#SELECT
+#  direction,
+#  from_address,
+#  human_readable AS readable,
+#  entity_type,
+#  amount_display,
+#  timestamp_display,
+#  to_address
+#FROM fund_flow 
+#WHERE entity_type = 'Grants Committee'
+#AND timestamp_display > '2021-10-07'::DATE  
+#AND timestamp_display < '2022-01-08'::DATE
+#AND direction = 'Out'
+#--where timestamp_display > '2021-10-01T09:26:59'::TIMESTAMP 
+#ORDER BY timestamp_display DESC
+#)
+
+#SELECT
+#  g.direction,
+#  g.from_address,
+#  g.readable,
+#  g.entity_type,
+#  g.amount_display,
+#  g.timestamp_display,
+#  g.to_address,
+#  b.human_readable 
+#FROM gcs1 g 
+#LEFT JOIN bankless_wallet_entity_2 b ON lower(g.to_address) = lower(b.wallet_address)
+```
+
+Visualization
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(scales)
+
+# load data
+gcs1 <- read_csv("./sankey/raw_data/s1_fund_flow_gc_2_20220112T062448.csv")
+gcs2 <- read_csv("./sankey/raw_data/s2_fund_flow_gc_2_20220112T063018.csv")
+
+# transform
+gcs1a <- gcs1 %>%
+    mutate(
+        season = 1,
+        human_readable = if_else(is.na(human_readable), "Misc", human_readable)
+    ) %>% 
+    select(human_readable, amount_display, season)
+
+
+
+gcs2a <- gcs2 %>%
+    mutate(
+        season = 2,
+        human_readable = if_else(is.na(human_readable), "Misc", human_readable)
+    ) %>% 
+    select(human_readable, amount_display, season)
+
+grants <- rbind(gcs1a, gcs2a)
+
+# scientific notation
+options(scipen=999)
+
+# visualize
+grants %>%
+    mutate(
+        season = as.factor(season)
+    ) %>%
+    group_by(human_readable, season) %>%
+    summarise(amount = sum(amount_display)) %>%
+    ggplot(aes(x = reorder(human_readable, amount), y = amount, fill = season)) +
+    geom_bar(stat = "identity", position = "stack") +
+    scale_y_continuous(labels = comma) +
+    coord_flip() +
+    theme_minimal()
+```
+
+
+
 ## Example Sankey
 
 ```{r, echo=FALSE}
@@ -350,6 +469,8 @@ Step 2b: create IDSource, IDTarget columns
 Step 2c: create `my_color` object.
 
 Step 3: Create sankey w/ SankeyNetwork() function and library.
+
+**NOTE** For comparison between Grants Comm distribution S1 vs S2, use side-by-side bar chart. 
 
 ```{r, echo=FALSE}
 library(tidyverse)
@@ -544,17 +665,119 @@ sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
 
 **Challenge**: Data is secured, need to visualize. 
 
+**NOTE**: Cummulative 
+
 See `mem_1_10K_bank_holdings_time_range` and other segments downloaded in raw csv. 
 Data gathered from DAODash table: 
 
 ```{r, echo=FALSE}
-
+library(tidyverse)
 library(lubridate)
+library(zoo)
 
 bank_sg <- read_csv("./bank_subgraph/raw_data/mem_1_10K_bank_holdings_time_range_20220102T062946.csv")
 
 # turn time stamp into date
 bank_sg %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n),
+        change = n - lag(n,1,default = 0.0),
+        series = cummulative + change
+    )%>%
+    ggplot(aes(x = new_day, y = series)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "1 - 10K BANK"
+    )
+
+?rollsum
+```
+
+## BANK Holders 10 - 35K
+
+```{r, echo=FALSE}
+
+library(tidyverse)
+library(lubridate)
+
+bank_sg_10_35 <- read_csv("./bank_subgraph/raw_data/mem_10K_35K_bank_holdings_time_range_20220102T062204.csv")
+
+# turn time stamp into date
+bank_sg_10_35 %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n),
+        change = n - lag(n,1,default = 0.0),
+        series = cummulative - change
+    )%>%
+    ggplot(aes(x = new_day, y = series)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "10 - 35K BANK"
+    )
+
+
+```
+
+
+## BANK Holders 35 - 150K
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(lubridate)
+
+bank_sg_35_150 <- read_csv("./bank_subgraph/raw_data/mem_35K_150K_bank_holdings_time_range_20220102T061722.csv")
+
+# turn time stamp into date
+bank_sg_35_150 %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n),
+        change = n - lag(n,1,default = 0.0),
+        series = cummulative - change
+    )%>%
+    ggplot(aes(x = new_day, y = series)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "35 - 150K BANK"
+    )
+
+```
+
+
+## BANK Holders 150K - 1.5M
+
+```{r, echo=FALSE}
+
+library(tidyverse)
+library(lubridate)
+
+bank_sg_150K_1M <- read_csv("./bank_subgraph/raw_data/mem_150K_1.5M_bank_holdings_time_range_20220102T064031.csv")
+
+# turn time stamp into date
+bank_sg_150K_1M %>%
     mutate(
         new_day = date(day)
     ) %>%
@@ -568,7 +791,8 @@ bank_sg %>%
     geom_line() +
     scale_x_date(date_breaks = "1 month") +
     labs(
-        title = "Number of BANK Holders overtime"
+        title = "Number of BANK Holders overtime",
+        subtitle = "150K - 1.5M BANK"
     )
 
 ```
@@ -578,9 +802,44 @@ bank_sg %>%
 
 **Task**: Query comparison of tokens/bank distributed via Coordinape in S1 vs S2.
 
-**Challenge**: See DaoDash query. 
+**Challenge**: See DaoDash query, `Seasonal Coordinape Distribution`
+
+**Request**: Reach out to Saul for coordinape network visual growth s1 to s2.
 
 ```{r, echo=FALSE}
+library(tidyverse)
+
+coord_s1 <- read_csv("./coordinape/raw_data/s1_coordinape_distribution_20220112T121445.csv")
+coord_s2 <- read_csv("./coordinape/raw_data/s2_coordinape_distribution_20220112T120953.csv")
+
+# sum tokens distributed - Season 1: 192,076 , Season 2: 425,561
+coord_s1 %>%
+    summarise(sum_tokens = sum(tokens))
+
+coord_s2 %>%
+    summarise(sum_tokens = sum(tokens))
+
+# how many senders, Season 1: n = 302, Season 2: 458
+coord_s1 %>%
+    group_by(sender_id) %>%
+    tally(sort = TRUE)
+
+coord_s1 %>%
+    distinct(sender_id) %>%
+    count()
+
+coord_s2 %>%
+    distinct(sender_id) %>%
+    count()
+
+# how many recipients, Season 1: n = 416, Season 2: n = 481
+coord_s1 %>%
+    distinct(recipient_id) %>%
+    count()
+
+coord_s2 %>%
+    distinct(recipient_id) %>%
+    count()
 
 ```
 
@@ -595,6 +854,8 @@ https://prod-content-gateway-api.herokuapp.com/api/v1/graphql
 Query historical -> PoapV1 -> PoapTokenV1s
 
 Can query all events containing "Bankless DAO Community" (for community call poaps), but still need to find *number of poaps* claimed at each event. 
+
+Reach out to DEGEN team: 
 
 
 ```{r, echo=FALSE}
@@ -638,6 +899,16 @@ Task: Connect to API to query forum posts with polls and number of people voting
 
 Challenge: API documentation does not mention Polls or Votes. See [documentation](https://docs.discourse.org/) here. 
 
+Progress: Established API connection with the `pydiscourse` https://github.com/BanklessDAO/analytics/blob/main/discourse_forum/api_connection.py
+
+Ended up downloading CSV manually of all users, instead of votes, will track other engagement metrics like: 
+- topics_entered
+- posts_read_count
+- time_read
+- topic_count
+
+*note*: remove email column, then save raw data to github
+
 ```{r, echo=FALSE}
 
 ```
@@ -647,7 +918,7 @@ Challenge: API documentation does not mention Polls or Votes. See [documentation
 
 Task: Query number of new members going through First Quest 
 
-**Challenge**: Data inserted at 2021-11-18, might have insufficient data to make S1 vs S2 comparison.
+**Challenge**: Data inserted at 2021-11-18, might have insufficient data to make S1 vs S2 comparison. Just show S2 First Quest data standalone. 
 
 ```{r, echo=FALSE}
 
@@ -658,7 +929,10 @@ Task: Query number of new members going through First Quest
 
 **Task**: Get comparison between S1 and S2
 
-**Challenge**: Insufficient tipping data that goes back to S1 ?
+**Data**: See DaoDash query: `Seasonal Tip Distribution` 
+
+-- Season 1 Tip Distribution (2873 rows, 983,019 tips given), WHERE timestamp < '2021-10-08'::DATE AND timestamp > '2021-06-14'::DATE 
+-- Season 2 Tip Distribution (1336 rows, 337,173 tips given), WHERE timestamp > '2021-10-07'::DATE AND timestamp < '2022-01-08'::DATE 
 
 ```{r, echo=FALSE}
 
