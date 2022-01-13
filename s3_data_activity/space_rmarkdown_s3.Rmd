@@ -421,7 +421,70 @@ grants %>%
     theme_minimal()
 ```
 
+## Bankless Vault Fund Distribution
 
+**Note**: In Season 1, Analytics Guild received funds from the Grants Committee address, in Season 2, the Analytics Guild received funds from the Bankless Vault address.
+
+See DaoDash: `Fund_Flow_Bankless_Vault` (nearly identical to `Fund_Flow_GC_2`, except direction is 'In'). 
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(scales)
+
+# load data
+bv_s1 <- read_csv("./sankey/raw_data/s1_fund_flow_bankless_vault_20220113T082455.csv")
+bv_s2 <- read_csv("./sankey/raw_data/s2_fund_flow_bankless_vault_20220113T082831.csv")
+
+# transform
+bv_s1a <- bv_s1 %>%
+    mutate(
+        season = 1
+    ) %>%
+    select(human_readable, amount_display, season)
+
+
+bv_s2a <- bv_s2 %>%
+    mutate(
+        season = 2
+    ) %>%
+    select(human_readable, amount_display, season)
+
+
+bv_grants <- rbind(bv_s1a, bv_s2a)
+
+# scientific notation
+options(scipen=999)
+
+# visualize
+bv_grants %>%
+    mutate(
+        season = as.factor(season)
+    ) %>%
+    group_by(human_readable, season) %>%
+    summarise(amount = sum(amount_display)) %>%
+    ggplot(aes(x = reorder(human_readable, amount), y = amount, fill = season)) +
+    geom_bar(stat = "identity", position = "stack") +
+    scale_y_continuous(labels = comma) +
+    coord_flip() +
+    theme_minimal()
+
+# full grants - minus grants committee
+full_grants <- rbind(gcs1a, gcs2a, bv_s1a, bv_s2a)
+
+full_grants %>%
+    mutate(
+        season = as.factor(season)
+    ) %>%
+    group_by(human_readable, season) %>%
+    summarise(amount = sum(amount_display)) %>%
+    filter(human_readable != 'Grants Committee') %>%
+    ggplot(aes(x = reorder(human_readable, amount), y = amount, fill = season)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    scale_y_continuous(labels = comma) +
+    coord_flip() +
+    theme_minimal()
+
+```
 
 ## Example Sankey
 
@@ -663,7 +726,7 @@ sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
 
 **Task**: Compare S1 vs S2 on all membership categories.
 
-**Challenge**: Data is secured, need to visualize. 
+**Challenge**: Inconsistent results using very similar queries across DaoDash, Dune Analytics and Google BigQuery. Use Dune Analytics for now, reconcile sources in S3.
 
 **NOTE**: Cummulative 
 
@@ -806,6 +869,8 @@ bank_sg_150K_1M %>%
 
 **Request**: Reach out to Saul for coordinape network visual growth s1 to s2.
 
+Create dataframe / tibble.
+
 ```{r, echo=FALSE}
 library(tidyverse)
 
@@ -855,7 +920,7 @@ Query historical -> PoapV1 -> PoapTokenV1s
 
 Can query all events containing "Bankless DAO Community" (for community call poaps), but still need to find *number of poaps* claimed at each event. 
 
-Reach out to DEGEN team: 
+Query: Combine GC API and programmatically get tokens distributed for each event. 
 
 
 ```{r, echo=FALSE}
@@ -889,6 +954,10 @@ Reach out to DEGEN team:
 
 **Challenge**: query from database in prod. WIP. 
 
+Number of bounties:                 S1: 40, S2: 66+
+
+Value committed to bounties:        S1: 68K, S2: 209K
+
 ```{r, echo=FALSE}
 
 ```
@@ -918,7 +987,9 @@ Ended up downloading CSV manually of all users, instead of votes, will track oth
 
 Task: Query number of new members going through First Quest 
 
-**Challenge**: Data inserted at 2021-11-18, might have insufficient data to make S1 vs S2 comparison. Just show S2 First Quest data standalone. 
+**Challenge**: Data inserted at 2021-11-18, might have insufficient data to make S1 vs S2 comparison. 
+
+Just show S2 First Quest data standalone (compare Funnel shape from two time periods).
 
 ```{r, echo=FALSE}
 
@@ -927,12 +998,15 @@ Task: Query number of new members going through First Quest
 
 ## Tips Given & Received
 
-**Task**: Get comparison between S1 and S2
+**Task**: Get comparison between S1 and S2, create tibble/dataframe to display data. 
 
 **Data**: See DaoDash query: `Seasonal Tip Distribution` 
 
--- Season 1 Tip Distribution (2873 rows, 983,019 tips given), WHERE timestamp < '2021-10-08'::DATE AND timestamp > '2021-06-14'::DATE 
--- Season 2 Tip Distribution (1336 rows, 337,173 tips given), WHERE timestamp > '2021-10-07'::DATE AND timestamp < '2022-01-08'::DATE 
+Season 1 Tip Distribution (2873 rows, 983,019 tips given), WHERE timestamp < '2021-10-08'::DATE AND timestamp > '2021-06-14'::DATE 
+
+Season 2 Tip Distribution (1336 rows, 337,173 tips given), WHERE timestamp > '2021-10-07'::DATE AND timestamp < '2022-01-08'::DATE 
+
+
 
 ```{r, echo=FALSE}
 
