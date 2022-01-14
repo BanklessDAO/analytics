@@ -724,6 +724,12 @@ sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
 
 ## REVISED Sankey: Grants Committee Vault, Season 1
 
+
+NOTE: full_grants <- rbind(gcs1a, gcs2a, bv_s1a, bv_s2a)
+
+- full_grants combines grants committee + bankless_vault, across s1 and s2
+- start with full_grants 
+
 ```{r, echo=FALSE}
 # REVISED Sankey with New Data ----
 library(tidyverse)
@@ -1239,6 +1245,31 @@ Can query all events containing "Bankless DAO Community" (for community call poa
 
 Query: Combine GC API and programmatically get tokens distributed for each event. 
 
+```{r, echo=FALSE}
+library(tidyverse)
+
+# load data
+poap_cc <- read_csv("./poap_cc_claims/raw_data/poap_cc_claims_20220114T085045.csv")
+
+# remove rows: 1, 11, 37
+poap_cc_2 <- poap_cc[-c(1,11,37),]
+
+# need to create factors to order Community Call sequentially
+poap_cc_2 %>%
+    mutate(
+        mint_count_2 = as.numeric(mint_count)
+    ) %>%
+    ggplot(aes(x = reorder(name, mint_count_2), y = mint_count_2)) +
+    geom_col() +
+    theme(
+        axis.text.x = element_text(angle = 90, hjust = 1)
+    )
+
+```
+
+Query from Content Gateway API Endpoint. https://prod-content-gateway-api.herokuapp.com/api/v1/graphql
+
+NOTE: Used POAP.xyz subgraph API
 
 ```{r, echo=FALSE}
 # GraphiQL query
@@ -1275,7 +1306,26 @@ Number of bounties:                 S1: 40, S2: 66+
 
 Value committed to bounties:        S1: 68K, S2: 209K
 
+Update: 15/01/22 for numbers
+
 ```{r, echo=FALSE}
+
+season <- c('1','2')
+num_bounties <- c(40, 69)
+value_in_bounties <- c(68071, 215506)
+
+
+bb_df <- data.frame(season, num_bounties, value_in_bounties)
+
+# number of bounties: s1 vs s2
+bb_df %>%
+    ggplot(aes(x = season, y = num_bounties)) +
+    geom_col()
+
+# value in bounties: s1 vs s2
+bb_df %>%
+    ggplot(aes(x = season, y = value_in_bounties)) +
+    geom_col()
 
 ```
 
@@ -1326,7 +1376,11 @@ Season 2 Tip Distribution (1336 rows, 337,173 tips given), WHERE timestamp > '20
 
 
 ```{r, echo=FALSE}
+tips_df <- data.frame(season = c("1", "2"), tips_distributed = c(983019, 337173))
 
+tips_df %>%
+    ggplot(aes(x = season, y = tips_distributed)) +
+    geom_col()
 ```
 
 ## Next Section
