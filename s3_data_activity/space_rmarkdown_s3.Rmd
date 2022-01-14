@@ -722,6 +722,323 @@ sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
 ```
 
 
+## REVISED Sankey: Grants Committee Vault, Season 1
+
+```{r, echo=FALSE}
+# REVISED Sankey with New Data ----
+library(tidyverse)
+library(networkD3)
+
+# create id for each node
+# Alternative way to replace NA values - this works
+
+# Starting point 'full_grants'
+my_links_1 <- full_grants %>%
+    filter(season == 1) %>%
+    filter(human_readable != 'Grants Committee') %>%
+    mutate(
+        source = 'Grants Committee Vault'
+    ) %>%
+    rename(
+        target = human_readable,
+        value = amount_display
+    ) %>%
+    select(source, target, value) 
+
+
+# unique nodes
+# find unique values in column
+# change 'target' to 'name'
+unique_nodes <- unique(my_links_1[c("target")]) %>%
+    rename(
+        name = target
+    ) %>%
+    print(n = 100)
+
+
+
+
+# manually create nodes
+# NOTE: 'Grants Committee Vault' is first row
+my_nodes_1 <- data.frame(name = c(
+    "Grants Committee Vault",
+    "BountyBoard",                
+    "A/V Guild",                     
+    "Bankless Academy",              
+    "Analytics Guild",               
+    "Degen",                         
+    "Bankless Loans",                
+    "Writers Guild",                 
+    "Devs Guild Multisig",           
+    "Translators Guild",             
+    "Treasury Guild",                
+    "Ops Guild",                     
+    "Design Guild",                  
+    "Research Guild",                
+    "Marketing Guild",               
+    "First Quest",                   
+    "Bankless Website Multisig",     
+    "Liquity Project Multisig",      
+    "S1 Coordinape",                 
+    "BED Index",                     
+    "BizDev Guild",                  
+    "DAO Punks",                     
+    "Crypto Sapiens",                
+    "Legal Guild",                   
+    "Education Guild Multisig",      
+    "DevOps Infrastructure Multisig",
+    "Balancer Multisig",             
+    "Misc"  
+))
+
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links_1$IDsource <- match(my_links_1$source, my_nodes_1$name)-1
+my_links_1$IDtarget <- match(my_links_1$target, my_nodes_1$name)-1
+
+# add color
+
+my_color_1 <- 'd3.scaleOrdinal() .domain(["Grants Committee Vault",
+                            "BountyBoard",                
+                            "A/V Guild",                     
+                            "Bankless Academy",              
+                            "Analytics Guild",               
+                            "Degen",                         
+                            "Bankless Loans",                
+                            "Writers Guild",                 
+                            "Devs Guild Multisig",           
+                            "Translators Guild",             
+                            "Treasury Guild",                
+                            "Ops Guild",                     
+                            "Design Guild",                  
+                            "Research Guild",                
+                            "Marketing Guild",               
+                            "First Quest",                   
+                            "Bankless Website Multisig",     
+                            "Liquity Project Multisig",      
+                            "S1 Coordinape",                 
+                            "BED Index",                     
+                            "BizDev Guild",                  
+                            "DAO Punks",                     
+                            "Crypto Sapiens",                
+                            "Legal Guild",                   
+                            "Education Guild Multisig",      
+                            "DevOps Infrastructure Multisig",
+                            "Balancer Multisig",             
+                            "Misc"]) .range(["red", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "yellow"
+                                    ])'
+
+# sankey
+sankeyNetwork(Links = my_links_1, Nodes = my_nodes_1,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", colourScale = my_color_1, 
+              fontSize = 15, fontFamily = "Helvetica", sinksRight=FALSE)
+
+
+
+
+
+```
+
+## REVISED Sankey: Grants Committee Vault, Season 2
+
+```{r, echo=FALSE}
+
+# REVISED Sankey with New Data ----
+library(tidyverse)
+library(networkD3)
+
+# create id for each node
+# Alternative way to replace NA values - this works
+
+# Starting point 'full_grants'
+my_links_2 <- full_grants %>%
+    filter(season == 2) %>%
+    filter(human_readable != 'Grants Committee') %>%
+    mutate(
+        source = 'Grants Committee Vault'
+    ) %>%
+    rename(
+        target = human_readable,
+        value = amount_display
+    ) %>%
+    select(source, target, value) 
+
+# unique nodes
+# find unique values in column
+# change 'target' to 'name'
+unique_nodes_2 <- unique(my_links_2[c("target")]) %>%
+    rename(
+        name = target
+    ) %>%
+    print(n = 100)
+
+# MANUALLY create nodes
+# NOTE: 'Grants Committee Vault' is first row
+my_nodes_2 <- data.frame(name = c(
+    "Grants Committee Vault",
+    "BountyBoard",				
+    "A/V Guild",				
+    "DaoDash",				
+    "FightClub",				
+    "Content Gateway",				
+    "Writers Guild",				
+    "Marketing Guild",				
+    "S1 Coordinape",				
+    "DAO Punks",				
+    "Legal Guild",
+    "Balancer Liquidity Mining Program Multisig",				
+    "International Media Node Multisig",				
+    "Book Club Multisig",				
+    "Podcast Hatchery Multisig",				
+    "Flipper Zone Multisig",				
+    "Misc",				
+    "Bankless Academy",				
+    "Analytics Guild",				
+    "Degen",				
+    "Bankless Loans",
+    "NewsletterTeam",				
+    "Devs Guild Multisig",				
+    "Translators Guild",				
+    "Treasury Guild",				
+    "Ops Guild",				
+    "Design Guild",				
+    "Research Guild",				
+    "First Quest",				
+    "Bankless Website Multisig",				
+    "Liquity Project Multisig",
+    "BED Index",				
+    "BizDev Guild",				
+    "Education Guild Multisig",				
+    "DevOps Infrastructure Multisig"
+))
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links_2$IDsource <- match(my_links_2$source, my_nodes_2$name)-1
+my_links_2$IDtarget <- match(my_links_2$target, my_nodes_2$name)-1
+
+
+# add color
+
+my_color_2 <- 'd3.scaleOrdinal() .domain([
+                            "Grants Committee Vault",
+                            "BountyBoard",				
+                            "A/V Guild",				
+                            "DaoDash",				
+                            "FightClub",				
+                            "Content Gateway",				
+                            "Writers Guild",				
+                            "Marketing Guild",				
+                            "S1 Coordinape",				
+                            "DAO Punks",				
+                            "Legal Guild",
+                            "Balancer Liquidity Mining Program Multisig",				
+                            "International Media Node Multisig",				
+                            "Book Club Multisig",				
+                            "Podcast Hatchery Multisig",				
+                            "Flipper Zone Multisig",				
+                            "Misc",				
+                            "Bankless Academy",				
+                            "Analytics Guild",				
+                            "Degen",				
+                            "Bankless Loans",
+                            "NewsletterTeam",				
+                            "Devs Guild Multisig",				
+                            "Translators Guild",				
+                            "Treasury Guild",				
+                            "Ops Guild",				
+                            "Design Guild",				
+                            "Research Guild",				
+                            "First Quest",				
+                            "Bankless Website Multisig",				
+                            "Liquity Project Multisig",
+                            "BED Index",				
+                            "BizDev Guild",				
+                            "Education Guild Multisig",				
+                            "DevOps Infrastructure Multisig"]) .range(["red", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "yellow",
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                    ])'
+
+
+# sankey
+sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", colourScale = my_color_2, 
+              fontSize = 15, fontFamily = "Helvetica", sinksRight=FALSE)
+
+```
+
+
+
+
+
+
 ## Number of Bank Holders (Membership Categories); S1 vs S2
 
 **Task**: Compare S1 vs S2 on all membership categories.
