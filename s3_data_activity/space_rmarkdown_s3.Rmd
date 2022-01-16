@@ -628,20 +628,281 @@ total_voice_act %>%
 
 ```
 
-## Visualize Snapshot Votes
+## Snapshot Votes: Season 0 and Season 1: Transform data
+
+```{r,echo=FALSE}
+# load library ----
+library(tidyverse)
+
+# load data ----
+p1 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12389500.csv")
+p2 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12381760.csv")
+p3 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12414778.csv")
+p4 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12597085.csv")
+p5 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12655510.csv")
+p6 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12742069.csv")
+p7 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12822029.csv")
+p8 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12921898.csv")
+p9 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-13238616.csv")
+p10 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-13239761.csv")
+
+# data wrangling ----
+
+# select two columns needed (address, balance $BANK)
+# add column proposal number
+# add column proposal full name
+# save as new data frame
+# join into one data frame
+
+sp1 <- p1 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 1",
+        name = "Approve the Bankless DAO Genesis Proposal"
+    )
+
+sp2 <- p2 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 2",
+        name = "What charity should CMS Holdings donate 100k towards"
+    )
+
+sp3 <- p3 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 3",
+        name = "Badge Distribution for Second Airdrop"
+    )
+
+
+sp4 <- p4 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 4",
+        name = "Reward Season 0 Active Members"
+    )
+
+
+sp5 <- p5 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 5",
+        name = "Bankless DAO Season 1"
+    )
+
+
+sp6 <- p6 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 6",
+        name = "BanklessDAO Season 1 Grants Committee Ratification"
+    )
+
+sp7 <- p7 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 7",
+        name = "BED Index Logo Contest"
+    )
+
+sp8 <- p8 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 8",
+        name = "Request for funds for Notion's ongoing subscription"
+    )
+
+
+sp9 <- p9 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 9",
+        name = "Transfer ownership of the treasury multisig wallet from the genesis team to the DAO"
+    )
+
+
+sp10 <- p10 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 10",
+        name = "Bankless DAO Season 2"
+    )
+
+# combine new data frames ----
+
+snapshot_votes_s1 <- rbind(sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9, sp10) 
+
+# re-arrange factor levels
+# specify factor order (proposal #'s)
+library(forcats)
+
+# manually arranging factors - num
+# note: move "proposal 10" to the end
+# them apply newly arranged factor levels to column of interest
+snapshot_votes_s1$num <- fct_relevel(snapshot_votes_s1$num, c("proposal 1", "proposal 2", "proposal 3", "proposal 4", "proposal 5", 
+                       "proposal 6", "proposal 7", "proposal 8", "proposal 9", "proposal 10"))
+
+
+# manually arrange factors - name
+# then apply newly arranged factor levels to column of interest
+snapshot_votes_s1$name <- fct_relevel(snapshot_votes_s1$name, c("Approve the Bankless DAO Genesis Proposal",
+                        "What charity should CMS Holdings donate 100k towards",
+                        "Badge Distribution for Second Airdrop",
+                        "Reward Season 0 Active Members",
+                        "Bankless DAO Season 1",
+                        "BanklessDAO Season 1 Grants Committee Ratification",
+                        "BED Index Logo Contest",
+                        "Request for funds for Notion's ongoing subscription",
+                        "Transfer ownership of the treasury multisig wallet from the genesis team to the DAO",
+                        "Bankless DAO Season 2"))
+
+```
+
+
+## Snapshot Votes: Season 0 and Season 1: Visualize data
+
+Note: See above for data wrangling and transformation.
+
+```{r,echo=FALSE}
+# visualize num addresses vote ----
+
+snapshot_votes_s1 %>%
+    count(name) %>%
+    ggplot(aes(x = n, y = name, fill = name)) +
+    geom_col() +
+    geom_text(aes(label = n), hjust = -0.2, color = "white") +
+    theme(
+        legend.position = "none",
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white", size = 15),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_y_discrete(limits = rev(levels(snapshot_votes_s1$name))) +
+    scale_fill_manual(values = c("#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", 
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2")) +
+    labs(
+        title = "Member Participation in Snapshot Votes",
+        subtitle = "Season 0 - Season 1",
+        y = "",
+        x = "Number of Addresses"
+    )
+```
+
+
+## Transform & Wrangle Snapshot Votes: Season 2
+
+Data from DaoDash:
 
 Data: analytics/s3_data_activity/snapshot/raw_data
 
 ```{r, echo=FALSE}
 # snapshot data
-snapshot_votes <- read_csv("./snapshot/raw_data/snapshot_votes_s2_010122.csv")
+snapshot_votes_s2 <- read_csv("./snapshot/raw_data/snapshot_votes_s2_010122.csv")
 
 
-snapshot_votes %>%
-    group_by(proposal_id, title) %>%
-    tally(sort = TRUE)
+snapshot_votes_s2_fct <- snapshot_votes_s2 %>%
+    group_by(title) %>%
+    tally(sort = TRUE) %>%
+    rename(
+        name = title
+    )
+
+# re-order factor levels
+
+# Season 0 & 1 (order, top to bottom)
+
+#Approve the Bankless DAO Genesis Proposal	1240			
+#What charity should CMS Holdings donate 100k towards	597			
+#Badge Distribution for Second Airdrop	588			
+#Reward Season 0 Active Members	558			
+#Bankless DAO Season 1	509			
+#BanklessDAO Season 1 Grants Committee Ratification	136			
+#BED Index Logo Contest	196			
+#Request for funds for Notion's ongoing subscription	109			
+#Transfer ownership of the treasury multisig wallet from the genesis team to the DAO	650			
+#Bankless DAO Season 2	752	
+
+# Season 2 (order, top to bottom)
+
+# Bankless DAO Season 2 Grants Committee Ratification
+# Bankless DAO Treasury Multi-sig Signer Ratification
+# S1 & S2 Grants Committee Compensation
+# Retro Rectification Donations
+# Season 2 Project and Guild Funding
+# Balancer Liquidity Mining Program
+# Olympus Pro BANK liquidity bonds,
+# Execute swap with Tokemak for BANK reactor ignition
+# --- pending ---
+# Funding for Season 2 Approved Projects
+# BanklessDAO Season 3 Specification
+# Firming Up Governance
+# Season 3 Grants Committee Elections
+# Season 3 Project and Guild Funding
+
+# manually arrange factors - name
+# then apply newly arranged factor levels to column of interest
+snapshot_votes_s2_fct$name <- fct_relevel(snapshot_votes_s2_fct$name, c("Bankless DAO Season 2 Grants Committee Ratification",
+                        "Bankless DAO Treasury Multi-sig Signer Ratification",
+                        "S1 & S2 Grants Committee Compensation",
+                        "Retro Rectification Donations",
+                        "Season 2 Project and Guild Funding",
+                        "Balancer Liquidity Mining Program",
+                        "Olympus Pro BANK liquidity bonds",
+                        "Execute swap with Tokemak for BANK reactor ignition"
+                         ))
+
+
 
 ```
+
+
+## Visualize Snapshot Votes: Season 2
+
+Use: `snapshot_votes_s2_fct`, still pending 5 more snapshot vote events
+
+- Funding for Season 2 Approved Projects
+- BanklessDAO Season 3 Specification
+- Firming Up Governance
+- Season 3 Grants Committee Elections
+- Season 3 Project and Guild Funding
+
+```{r, echo=FALSE}
+
+snapshot_votes_s2_fct %>%
+    ggplot(aes(x = n, y = name, fill = name)) +
+    geom_col() +
+    geom_text(aes(label = n), hjust = -0.2, color = "white") +
+    theme(
+        legend.position = "none",
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white", size = 15),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_y_discrete(limits = rev(levels(snapshot_votes_s2_fct$name))) +
+    scale_fill_manual(values = c("#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", 
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2")) +
+    labs(
+        title = "Member Participation in Snapshot Votes",
+        subtitle = "Season 2",
+        y = "",
+        x = "Number of Addresses"
+    )
+
+```
+
 
 ## Grants Committee Fund Distribution: Stacked Bar Chart
 
@@ -821,7 +1082,28 @@ full_grants %>%
     geom_bar(stat = "identity", position = "dodge") +
     scale_y_continuous(labels = comma) +
     coord_flip() +
-    theme_minimal()
+    theme(
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_fill_manual(values = c("black", "red")) +
+    labs(
+        title = "Funding from Grants Committee | Bankless Vault",
+        subtitle = "S1 and S2",
+        x = "Projects & Guilds",
+        y = "Amount ($BANK)",
+        caption = "Powered by DAO Dash"
+    )
 
 ```
 
