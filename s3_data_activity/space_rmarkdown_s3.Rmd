@@ -1636,7 +1636,6 @@ my_nodes_2 <- data.frame(name = c(
     "Book Club Multisig",				
     "Podcast Hatchery Multisig",				
     "Flipper Zone Multisig",				
-    "Misc",				
     "Bankless Academy",				
     "Analytics Guild",				
     "Degen",				
@@ -1654,7 +1653,8 @@ my_nodes_2 <- data.frame(name = c(
     "BED Index",				
     "BizDev Guild",				
     "Education Guild Multisig",				
-    "DevOps Infrastructure Multisig"
+    "DevOps Infrastructure Multisig",
+    "Misc"
 ))
 
 # create id for each node ----
@@ -1684,7 +1684,6 @@ my_color_2 <- 'd3.scaleOrdinal() .domain([
                             "Book Club Multisig",				
                             "Podcast Hatchery Multisig",				
                             "Flipper Zone Multisig",				
-                            "Misc",				
                             "Bankless Academy",				
                             "Analytics Guild",				
                             "Degen",				
@@ -1702,7 +1701,8 @@ my_color_2 <- 'd3.scaleOrdinal() .domain([
                             "BED Index",				
                             "BizDev Guild",				
                             "Education Guild Multisig",				
-                            "DevOps Infrastructure Multisig"]) .range(["red", 
+                            "DevOps Infrastructure Multisig",
+                            "Misc"]) .range(["red", 
                                              "#2ca25f", 
                                              "#66c2a4", 
                                              "#b2e2e2", 
@@ -1937,6 +1937,31 @@ coord_s2 %>%
     distinct(recipient_id) %>%
     count()
 
+
+# create dataframes for Tokens distributed, Number of Senders and Number of Receivers 
+season <- c("1", "2")
+tokens_distributed <- c(192076, 425561)
+num_senders <- c(302, 458)
+num_receivers <- c(416, 481)
+
+coord_df <- data.frame(season, tokens_distributed, num_senders, num_receivers)
+
+# visualize tokens_distributed
+coord_df %>%
+    ggplot(aes(x = season, y = tokens_distributed)) +
+    geom_col()
+
+# visualize num_senders
+coord_df %>%
+    ggplot(aes(x = season, y = num_senders)) +
+    geom_col()
+
+# visualize num_receivers
+coord_df %>%
+    ggplot(aes(x = season, y = num_receivers)) +
+    geom_col()
+
+
 ```
 
 ## POAP Distribution
@@ -1972,6 +1997,22 @@ poap_cc_2 %>%
     theme(
         axis.text.x = element_text(angle = 90, hjust = 1)
     )
+
+poap_cc_2 %>%
+    arrange(id) %>%
+    mutate(
+        mint_count_2 = as.numeric(mint_count)
+    ) %>%
+    ggplot(aes(x = reorder(name, id), y = mint_count_2)) +
+    geom_col() +
+    theme(
+        axis.text.x = element_text(angle = 90, hjust = 1)
+    ) +
+    coord_flip()
+
+
+
+
 
 ```
 
