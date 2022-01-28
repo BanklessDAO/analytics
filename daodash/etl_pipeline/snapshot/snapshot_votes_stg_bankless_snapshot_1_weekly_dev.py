@@ -124,3 +124,5 @@ def snapshot_votes_etl():
     else:
         return "halt"
 
+while snapshot_votes_etl() != "halt":
+    print("...")
