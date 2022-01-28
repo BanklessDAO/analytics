@@ -48,3 +48,13 @@ Please make sure to update tests as appropriate.
 ## License
 
 TBD
+
+## Pipeline Progress
+
+### Snapshot Proposal
+
+- Update: Jan 29, 2022
+- encountered a bug with pipeline: `snapshot_proposal_bankless_snapshot_header_1_weekly_dev.py`
+- when querying our postgres db, the SQL query on line 32 "ORDER BY id", should be "ORDER BY start_date" for a more accurate sorting
+- the `bankless_snapshot_header_1` table is not ordering all proposals by time, so a new table `bankless_snapshot_header_2` was created.
+- created `temp_snapshot_proposal.py` as an an updated pipeline.

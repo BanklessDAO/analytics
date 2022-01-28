@@ -43,7 +43,7 @@ variables = {'start_date': max_start_date}
 # change 'start_gt' to 'start' to test this endpoint
 query = f"""
 {{
-    proposals(first: 1000, skip: 0, where: {{space: "banklessvault.eth", start_gt: {max_start_date}}}) {{
+    proposals(first: 1000, skip: 0, where: {{space: "banklessvault.eth"}}) {{
         id
         title
         body
@@ -94,36 +94,27 @@ def snapshot_proposal_etl(query):
     df = pd.json_normalize(lst_of_dict)
     # reset index
     # note: indexing in python starts with 0
-    df.index += 1
-    df.index += max_id
-    df2 = df.reset_index()
+    print("PRINT df: ", df)
+    #df.index += 1
+    #df.index += max_id
+    #df2 = df.sort_index(ascending=False)
+    df2 = df.sort_index(ascending=False).reset_index()
+    print(df2)
     # select specific columns
-    df3 = df2[['index', 'id', 'title', 'start', 'end']]
-    # change column name
-    df4 = df3.rename(
-        columns={'index': 'id', 'id': 'proposal_id', 'start': 'start_date', 'end': 'end_date'}, inplace=False)
+    # df3 = df2[['index', 'id', 'title', 'start', 'end']]
+    df3 = df2.reset_index()
+    df4 = df3[['level_0', 'id', 'title', 'start', 'end']]
     print(df4)
+    df5 = df4.rename(columns={
+                     'level_0': 'id', 'id': 'proposal_id', 'start': 'start_date', 'end': 'end_date'})
+    print(df5)
+    # change column name
+    #df4 = df3.rename(columns={'level_0': 'id', 'id': 'proposal_id', 'start': 'start_date', 'end': 'end_date'}, inplace=False)
+    # print(df4)
     print("#### need to un-comment next line to push to postgres ####")
-    # df4.to_sql('bankless_snapshot_header_1', con=db, if_exists='append', index=False)
-    return df4
+    # df5.to_sql('bankless_snapshot_header_2', con=db, if_exists='append', index=False)
+    return df5
+
 
 # To print out timestamps for 'first priority' and 'positional'
-
-
-def print_time(a='default'):
-    print("From print_time", time.time(), a)
-
-
-def schedule_etl(query):
-    print("First Timestamp: ", time.time())
-    snapshot_proposal_etl(query)
-    event_schedule.enter(40, 2, print_time, argument=('second in queue',))
-    event_schedule.enter(25, 1, print_time, kwargs={'a': 'first in queue'})
-    event_schedule.run()
-    print("Last Timestamp: ", time.time())
-
-
-event_schedule = sched.scheduler(time.time, time.sleep)
-print("Initiate schedule_etl...\n")
-event_schedule.enter(50, 3, schedule_etl(query),)
-print("\n Closing schedule_etl...")
+snapshot_proposal_etl(query)
