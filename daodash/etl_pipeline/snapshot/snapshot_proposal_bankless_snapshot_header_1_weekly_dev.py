@@ -47,7 +47,7 @@ variables = {'start_date': max_start_date}
 # change 'start_gt' to 'start' to test this endpoint
 query = f"""
 {{
-    proposals(first: 1000, skip: 0, where: {{space: "banklessvault.eth", start_gt: {max_start_date}}}) {{
+    proposals(first: 1000, skip: 0, where: {{space: "banklessvault.eth", start_gt: {max_start_date}}}, orderBy:"created", orderDirection:asc) {{
         id
         title
         body
