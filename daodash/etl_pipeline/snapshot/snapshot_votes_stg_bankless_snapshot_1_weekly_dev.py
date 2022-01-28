@@ -44,6 +44,9 @@ query = f"""
           choice
           __typename
           proposal {{
+    ## initalize variables
+    max_id = 0
+    max_created = 0
             id
             space {{
               id
@@ -99,5 +102,3 @@ def snapshot_votes_etl(query):
     return df4
 
 # To print out timestamps for 'first priority' and 'positional'
-
-
