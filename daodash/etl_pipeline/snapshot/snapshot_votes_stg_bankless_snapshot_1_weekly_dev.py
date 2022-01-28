@@ -8,11 +8,6 @@ import json
 import pandas as pd
 from pprint import pprint
 
-# libraries for sched
-import sched
-import time
-import logging
-
 
 # using python-dotenv method
 from dotenv import load_dotenv
@@ -106,20 +101,3 @@ def snapshot_votes_etl(query):
 # To print out timestamps for 'first priority' and 'positional'
 
 
-def print_time(a='default'):
-    print("From print_time", time.time(), a)
-
-
-def schedule_etl(query):
-    print("First Timestamp: ", time.time())
-    snapshot_votes_etl(query)
-    event_schedule.enter(40, 2, print_time, argument=('second in queue',))
-    event_schedule.enter(25, 1, print_time, kwargs={'a': 'first in queue'})
-    event_schedule.run()
-    print("Last Timestamp: ", time.time())
-
-
-event_schedule = sched.scheduler(time.time, time.sleep)
-print("Initiate schedule_etl...\n")
-event_schedule.enter(50, 3, schedule_etl(query),)
-print("\n Closing schedule_etl...")
