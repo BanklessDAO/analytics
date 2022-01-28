@@ -103,3 +103,5 @@ def snapshot_votes_etl(query):
     return df4
 
 # To print out timestamps for 'first priority' and 'positional'
+def has_votes(json):
+    return json != {'data': {'votes': []}}
