@@ -1,0 +1,2148 @@
+---
+title: "Spaces"
+author: "Analytics Guild"
+date: "01/01/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup
+
+Loading libraries and data.
+
+```{r, include=FALSE}
+# load library ----
+library(tidyverse)
+
+# load data ----
+new_member <- read_csv("./discord/raw_data/guild-joins-by-source_010122.csv")
+total_member <- read_csv("./discord/raw_data/guild-total-membership_010122.csv")
+first_activation <- read_csv("./discord/raw_data/guild-activation_010122.csv")
+next_retention <- read_csv("./discord/raw_data/guild-retention_010122.csv")
+visit_comm <- read_csv("./discord/raw_data/guild-communicators_010122.csv")
+msg_avg <- read_csv("./discord/raw_data/guild-message-activity_010122.csv")
+voice_act <- read_csv("./discord/raw_data/guild-voice-activity_010122.csv")
+
+# snapshot data
+snapshot_votes <- read_csv("./snapshot/raw_data/snapshot_votes_s2_010122.csv")
+```
+
+## Visualize New Members
+
+Data: analytics/s3_data_activity/discord/raw_data
+
+```{r, echo=FALSE}
+new_member %>%
+    rename(
+        vanity = "vanity_joins",
+        discovery = "discovery_joins",
+        time = "interval_start_timestamp"
+    ) %>%
+    pivot_longer(cols = discovery:vanity, names_to = "channel", values_to = "count") %>%
+    ggplot(aes(x = time, y = count, fill = channel)) +
+    geom_bar(position = "stack", stat = "identity") +
+    geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "white") +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_fill_manual(values = c("white", "red", "black")) +
+    labs(
+        title = "How many new members are joining?",
+        subtitle = "Where are they coming from?",
+        y = "Joins",
+        x = ""
+    )
+```
+
+## New Members: S1 and S2
+
+Showing organic grow
+
+```{r, echo=FALSE}
+# JOIN Discord Data S1 and S2 ----
+
+new_member_s2 <- read_csv("../s2_data_activity/discord/raw_data/new-member-joins-by-source_290921.csv")
+new_member_s3 <- read_csv("./discord/raw_data/guild-joins-by-source_010122.csv")
+
+# combine s1 and s2
+all_new_mem <- rbind(new_member_s2, new_member_s3)
+
+# visualize
+all_new_mem %>%
+    rename(
+        vanity = "vanity_joins",
+        discovery = "discovery_joins",
+        time = "interval_start_timestamp"
+    ) %>%
+    pivot_longer(cols = discovery:vanity, names_to = "channel", values_to = "count") %>%
+    ggplot(aes(x = time, y = count, fill = channel)) +
+    geom_bar(position = "stack", stat = "identity") +
+    geom_text(aes(label = count), position = position_stack(vjust = 0.5), color = "white") +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_fill_manual(values = c("white", "red", "black")) +
+    labs(
+        title = "How many new members are joining? (Seasons 1 - 2)",
+        subtitle = "Where are they coming from?",
+        y = "Joins",
+        x = ""
+    )
+```
+
+## Visualize Total Member
+
+```{r, echo=FALSE}
+total_member %>%
+    rename(
+        time = "interval_start_timestamp",
+        total = "total_membership"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_line(aes(y = total), color = "red", size = 1.5) +
+    theme(
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Total membership over time",
+        y = "",
+        x = ""
+    )
+```
+
+
+# Total Members: S1 and S2
+
+Up and to the right
+
+```{r, echo=FALSE}
+# JOIN Total Member Growth S1 and S2 ----
+
+total_member_s2 <- read_csv("../s2_data_activity/discord/raw_data/total-membership-joins_290921.csv")
+total_member_s3 <- read_csv("./discord/raw_data/guild-total-membership_010122.csv")
+
+all_total_mem <- rbind(total_member_s2, total_member_s3)
+
+all_total_mem %>%
+    rename(
+        time = "interval_start_timestamp",
+        total = "total_membership"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_line(aes(y = total), color = "red", size = 1.5) +
+    theme(
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Total membership over time: S1 and S2",
+        y = "",
+        x = ""
+    )
+
+```
+
+
+## Visualize First Day Activation
+
+```{r, echo=FALSE}
+first_activation %>%
+    rename(
+        time = "interval_start_timestamp",
+        new = "new_members",
+        talked = "pct_communicated",
+        visited = "pct_opened_channels"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = new, color = "New members"), stat = "identity", fill = "black") +
+    geom_line(aes(y = talked*15, color = "% talked (voice or text)"), size = 1.5) +
+    geom_line(aes(y = visited*15, color = "% visited more than 3 channels"), size = 1.5) +
+    geom_line(y = 480, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "New Members",
+        sec.axis = sec_axis(trans = ~./1500*100, name = "% Activated")
+    ) +
+    scale_color_manual(values = c("white", "red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "How many new members successfully activate on their first day?",
+        x = "",
+        color = "Legend"
+    )
+```
+
+## First Day Activation: S1 and S2
+
+Voice participation went up in Season 2:
+
+```{r, echo=FALSE}
+# JOIN Activation S1 and S2 ----
+
+first_activation_s2 <- read_csv("../s2_data_activity/discord/raw_data/first-day-activation_290921.csv")
+first_activation_s3 <- read_csv("./discord/raw_data/guild-activation_010122.csv")
+
+total_activation <- rbind(first_activation_s2, first_activation_s3)
+
+total_activation %>%
+    rename(
+        time = "interval_start_timestamp",
+        new = "new_members",
+        talked = "pct_communicated",
+        visited = "pct_opened_channels"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = new, color = "New members"), stat = "identity", fill = "black") +
+    geom_line(aes(y = talked*15, color = "% talked (voice or text)"), size = 1.5) +
+    geom_line(aes(y = visited*15, color = "% visited more than 3 channels"), size = 1.5) +
+    geom_line(y = 480, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "New Members",
+        sec.axis = sec_axis(trans = ~./1500*100, name = "% Activated")
+    ) +
+    scale_color_manual(values = c("white", "red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "How many new members successfully activate on their first day?",
+        subtitle = "S1 and S2",
+        x = "",
+        color = "Legend",
+        caption = "Data: Discord | BanklessDAO Analytics Guild | Visual: @paulapivat"
+    )
+
+```
+
+## Visualize Next Week Retention
+
+```{r, echo=FALSE}
+next_retention %>%
+    rename(
+        time = "interval_start_timestamp",
+        new = "new_members",
+        retained = "pct_retained"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = new, color = "New members"), stat = "identity", fill = "black") +
+    geom_line(aes(y = retained*15, color = "Week 1 retention"), size = 1.5) +
+    geom_line(y = 320, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "New Members",
+        sec.axis = sec_axis(trans = ~./1500*100, name = "Week 1 retention")
+    ) +
+    scale_color_manual(values = c("black", "red")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "How many new members retain the next week?",
+        subtitle = "S1 and S2",
+        x = "",
+        color = "Legend",
+        caption = "Data: Discord | Bankless DAO Analytics Guild | Analysis: @paulapivat"
+    )
+```
+
+## Total Retention: S1 and S2
+
+Retention has not improved that much, but we have more new members. 
+
+```{r, echo=FALSE}
+# JOIN Retention S1 and S2 ----
+
+next_retention_s1 <- read_csv("../s2_data_activity/discord/raw_data/next-week-retention_290921.csv")
+next_retention_s2 <- read_csv("./discord/raw_data/guild-retention_010122.csv")
+
+total_retention <- rbind(next_retention_s1, next_retention_s2)
+
+total_retention %>%
+    rename(
+        time = "interval_start_timestamp",
+        new = "new_members",
+        retained = "pct_retained"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = new, color = "New members"), stat = "identity", fill = "black") +
+    geom_line(aes(y = retained*15, color = "Week 1 retention"), size = 1.5) +
+    geom_line(y = 320, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "New Members",
+        sec.axis = sec_axis(trans = ~./1500*100, name = "Week 1 retention")
+    ) +
+    scale_color_manual(values = c("black", "red")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "How many new members retain the next week?",
+        subtitle = "S1 and S2",
+        x = "",
+        color = "Legend",
+        caption = "Data: Discord | Bankless DAO Analytics Guild | Analysis: @paulapivat"
+    )
+```
+
+
+
+
+## Visualize Visitors & Communicators
+
+```{r, echo=FALSE}
+visit_comm %>%
+    rename(
+        time = "interval_start_timestamp",
+        comm = "pct_communicated"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = visitors, color = "Visitors"), stat = "identity", fill = "black") +
+    geom_line(aes(y = comm*30, color = "% communicators"), size = 1.5) +
+    geom_line(y = 1200, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "Visitors",
+        sec.axis = sec_axis(trans = ~./3000*100, name = "% Communicators")
+    ) +
+    scale_color_manual(values = c("red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "How many members visited and communicated?",
+        subtitle = "S1 and S2",
+        x = "",
+        color = "Legend",
+        caption = "Data: Discord | Bankless DAO Analytics Guild | Analysis: @paulapivat"
+    )
+```
+
+## Total Visitor and Communicator: S1 and S2
+
+Still below benchmark, but trending upward slight in season 2:
+
+```{r, echo=FALSE}
+# JOIN Visitors and Communicators: S1 and S2 ----
+
+visit_comm_s1 <- read_csv("../s2_data_activity/discord/raw_data/visitors-communicators_290921.csv")
+visit_comm_s2 <- read_csv("./discord/raw_data/guild-communicators_010122.csv")
+
+total_visit_comm <- rbind(visit_comm_s1, visit_comm_s2)
+
+total_visit_comm %>%
+    rename(
+        time = "interval_start_timestamp",
+        comm = "pct_communicated"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = visitors, color = "Visitors"), stat = "identity", fill = "black") +
+    geom_line(aes(y = comm*30, color = "% communicators"), size = 1.5) +
+    geom_line(y = 1200, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "Visitors",
+        sec.axis = sec_axis(trans = ~./3000*100, name = "% Communicators")
+    ) +
+    scale_color_manual(values = c("red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "How many members visited and communicated?",
+        subtitle = "S1 and S2",
+        x = "",
+        color = "Legend",
+        caption = "Data: Discord | Bankless DAO Analytics Guild | Analysis: @paulapivat"
+    )
+
+```
+
+## Visualize Message - Avg Messages
+
+```{r, echo=FALSE}
+msg_avg %>%
+    rename(
+        time = "interval_start_timestamp",
+        per = "messages_per_communicator"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = messages, color = "Messages sent"), stat = "identity", fill = "black") +
+    # conversion between two y-axis (similar to % conversion)
+    geom_line(aes(y = per*6000/12, color = "Messages per communicator"), size = 1.5) +
+    geom_line(y = 5000, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "Messages sent",
+        sec.axis = sec_axis(trans = ~./6000*12, name = "Message per ommunicator")
+    ) +
+    scale_color_manual(values = c("red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Message Activity",
+        x = "",
+        color = "Legend"
+    )
+```
+
+## Total Message - Avg Message: S1 and S2
+
+Average Messages going down
+
+```{r, echo=FALSE}
+
+# JOIN Message - Avg Message: S1 and S2 ----
+
+msg_avg_s1 <- read_csv("../s2_data_activity/discord/raw_data/message-avg-msg_290921.csv")
+msg_avg_s2 <- read_csv("./discord/raw_data/guild-message-activity_010122.csv")
+
+total_msg_avg <- rbind(msg_avg_s1, msg_avg_s2)
+
+total_msg_avg %>%
+    rename(
+        time = "interval_start_timestamp",
+        per = "messages_per_communicator"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = messages, color = "Messages sent"), stat = "identity", fill = "black") +
+    # conversion between two y-axis (similar to % conversion)
+    geom_line(aes(y = per*6000/12, color = "Messages per communicator"), size = 1.5) +
+    geom_line(y = 5000, color = "orange", size = 0.2) +
+    scale_y_continuous(
+        name = "Messages sent",
+        sec.axis = sec_axis(trans = ~./6000*12, name = "Message per ommunicator")
+    ) +
+    scale_color_manual(values = c("red", "black")) +
+    theme(
+        legend.position = "bottom",
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Message Activity",
+        subtitle = "S1 and S2",
+        x = "",
+        color = "Legend",
+        caption = "Data: Discord | Bankless DAO Analytics Guild | Analysis: @paulapivat"
+    )
+```
+
+## Visualize Voice Activity
+
+```{r, echo=FALSE}
+voice_act %>%
+    rename(
+        time = "interval_start_timestamp",
+        speak = "speaking_minutes"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = speak), stat = "identity", fill = "white") +
+    theme(
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Voice Activity",
+        subtitle = "Speaking minutes",
+        y = "Values",
+        x = ""
+    )
+```
+
+## Total Voice Activity: S1 and S2
+
+```{r, echo=FALSE}
+# JOIN Voice Activity S1 and S2 ----
+
+voice_act_s1 <- read_csv("../s2_data_activity/discord/raw_data/voice-activity_290921.csv")
+voice_act_s2 <- read_csv("./discord/raw_data/guild-voice-activity_010122.csv")
+
+total_voice_act <- rbind(voice_act_s1, voice_act_s2)
+
+total_voice_act %>%
+    rename(
+        time = "interval_start_timestamp",
+        speak = "speaking_minutes"
+    ) %>%
+    ggplot(aes(x = time)) +
+    geom_bar(aes(y = speak), stat = "identity", fill = "white") +
+    theme(
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    labs(
+        title = "Voice Activity: S1 and S2",
+        subtitle = "Speaking minutes",
+        y = "Values",
+        x = "",
+        caption = "Data: Discord | Bankless DAO Analytics Guild | Analysis: @paulapivat"
+    )
+
+```
+
+## Snapshot Votes: Season 0 and Season 1: Transform data
+
+```{r,echo=FALSE}
+# load library ----
+library(tidyverse)
+
+# load data ----
+p1 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12389500.csv")
+p2 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12381760.csv")
+p3 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12414778.csv")
+p4 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12597085.csv")
+p5 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12655510.csv")
+p6 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12742069.csv")
+p7 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12822029.csv")
+p8 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-12921898.csv")
+p9 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-13238616.csv")
+p10 <- read_csv("../s2_data_activity/snapshot/raw_data/snapshot-report-13239761.csv")
+
+# data wrangling ----
+
+# select two columns needed (address, balance $BANK)
+# add column proposal number
+# add column proposal full name
+# save as new data frame
+# join into one data frame
+
+sp1 <- p1 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 1",
+        name = "Approve the Bankless DAO Genesis Proposal"
+    )
+
+sp2 <- p2 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 2",
+        name = "What charity should CMS Holdings donate 100k towards"
+    )
+
+sp3 <- p3 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 3",
+        name = "Badge Distribution for Second Airdrop"
+    )
+
+
+sp4 <- p4 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 4",
+        name = "Reward Season 0 Active Members"
+    )
+
+
+sp5 <- p5 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 5",
+        name = "Bankless DAO Season 1"
+    )
+
+
+sp6 <- p6 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 6",
+        name = "BanklessDAO Season 1 Grants Committee Ratification"
+    )
+
+sp7 <- p7 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 7",
+        name = "BED Index Logo Contest"
+    )
+
+sp8 <- p8 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 8",
+        name = "Request for funds for Notion's ongoing subscription"
+    )
+
+
+sp9 <- p9 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 9",
+        name = "Transfer ownership of the treasury multisig wallet from the genesis team to the DAO"
+    )
+
+
+sp10 <- p10 %>%
+    select(address, balance) %>%
+    mutate(
+        num = "proposal 10",
+        name = "Bankless DAO Season 2"
+    )
+
+# combine new data frames ----
+
+snapshot_votes_s1 <- rbind(sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9, sp10) 
+
+# re-arrange factor levels
+# specify factor order (proposal #'s)
+library(forcats)
+
+# manually arranging factors - num
+# note: move "proposal 10" to the end
+# them apply newly arranged factor levels to column of interest
+snapshot_votes_s1$num <- fct_relevel(snapshot_votes_s1$num, c("proposal 1", "proposal 2", "proposal 3", "proposal 4", "proposal 5", 
+                       "proposal 6", "proposal 7", "proposal 8", "proposal 9", "proposal 10"))
+
+
+# manually arrange factors - name
+# then apply newly arranged factor levels to column of interest
+snapshot_votes_s1$name <- fct_relevel(snapshot_votes_s1$name, c("Approve the Bankless DAO Genesis Proposal",
+                        "What charity should CMS Holdings donate 100k towards",
+                        "Badge Distribution for Second Airdrop",
+                        "Reward Season 0 Active Members",
+                        "Bankless DAO Season 1",
+                        "BanklessDAO Season 1 Grants Committee Ratification",
+                        "BED Index Logo Contest",
+                        "Request for funds for Notion's ongoing subscription",
+                        "Transfer ownership of the treasury multisig wallet from the genesis team to the DAO",
+                        "Bankless DAO Season 2"))
+
+```
+
+
+## Snapshot Votes: Season 0 and Season 1: Visualize data
+
+Note: See above for data wrangling and transformation.
+
+```{r,echo=FALSE}
+# visualize num addresses vote ----
+
+snapshot_votes_s1 %>%
+    count(name) %>%
+    ggplot(aes(x = n, y = name, fill = name)) +
+    geom_col() +
+    geom_text(aes(label = n), hjust = -0.2, color = "white") +
+    theme(
+        legend.position = "none",
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white", size = 15),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_y_discrete(limits = rev(levels(snapshot_votes_s1$name))) +
+    scale_fill_manual(values = c("#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", 
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2")) +
+    labs(
+        title = "Member Participation in Snapshot Votes",
+        subtitle = "Season 0 - Season 1",
+        y = "",
+        x = "Number of Addresses"
+    )
+```
+
+
+## Transform & Wrangle Snapshot Votes: Season 2
+
+Data from DaoDash: `Snapshot S2` query. 
+
+Data: analytics/s3_data_activity/snapshot/raw_data
+
+```{r, echo=FALSE}
+# snapshot data
+# snapshot_votes_s2 <- read_csv("./snapshot/raw_data/snapshot_votes_s2_010122.csv") -- old version
+snapshot_votes_s2 <- read_csv("./snapshot/raw_data/snapshot_votes_s2_20220117T075716.csv")
+
+
+snapshot_votes_s2_fct <- snapshot_votes_s2 %>%
+    group_by(title) %>%
+    tally(sort = TRUE) %>%
+    rename(
+        name = title
+    )
+
+# re-order factor levels
+
+# Season 0 & 1 (order, top to bottom)
+
+#Approve the Bankless DAO Genesis Proposal	1240			
+#What charity should CMS Holdings donate 100k towards	597			
+#Badge Distribution for Second Airdrop	588			
+#Reward Season 0 Active Members	558			
+#Bankless DAO Season 1	509			
+#BanklessDAO Season 1 Grants Committee Ratification	136			
+#BED Index Logo Contest	196			
+#Request for funds for Notion's ongoing subscription	109			
+#Transfer ownership of the treasury multisig wallet from the genesis team to the DAO	650			
+#Bankless DAO Season 2	752	
+
+# Season 2 (order, top to bottom)
+
+# Bankless DAO Season 2 Grants Committee Ratification
+# Bankless DAO Treasury Multi-sig Signer Ratification
+# S1 & S2 Grants Committee Compensation
+# Retro Rectification Donations
+# Season 2 Project and Guild Funding
+# Balancer Liquidity Mining Program
+# Olympus Pro BANK liquidity bonds,
+# Execute swap with Tokemak for BANK reactor ignition
+# Funding for Season 2 Approved Projects
+# BanklessDAO Season 3 Specification
+# Firming Up Governance
+# Season 3 Grants Committee Elections
+# Season 3 Project and Guild Funding ----------STILL ACTIVE VOTING
+# --- pending ---
+
+
+# manually arrange factors - name
+# then apply newly arranged factor levels to column of interest
+snapshot_votes_s2_fct$name <- fct_relevel(snapshot_votes_s2_fct$name, c("Bankless DAO Season 2 Grants Committee Ratification",
+                        "Bankless DAO Treasury Multi-sig Signer Ratification",
+                        "S1 & S2 Grants Committee Compensation",
+                        "Retro Rectification Donations",
+                        "Season 2 Project and Guild Funding",
+                        "Balancer Liquidity Mining Program",
+                        "Olympus Pro BANK liquidity bonds",
+                        "Execute swap with Tokemak for BANK reactor ignition",
+                        "Funding for Season 2 Approved Projects",
+                        "BanklessDAO Season 3 Specification",
+                        "Firming Up Governance",
+                        "Season 3 Grants Committee Elections",
+                        "Season 3 Project and Guild Funding"
+                         ))
+
+
+
+```
+
+
+## Visualize Snapshot Votes: Season 2
+
+Use: `snapshot_votes_s2_fct`, still pending 5 more snapshot vote events
+
+- Funding for Season 2 Approved Projects
+- BanklessDAO Season 3 Specification
+- Firming Up Governance
+- Season 3 Grants Committee Elections
+- Season 3 Project and Guild Funding
+
+```{r, echo=FALSE}
+
+snapshot_votes_s2_fct %>%
+    ggplot(aes(x = n, y = name, fill = name)) +
+    geom_col() +
+    geom_text(aes(label = n), hjust = -0.2, color = "white") +
+    theme(
+        legend.position = "none",
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white", size = 15),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_y_discrete(limits = rev(levels(snapshot_votes_s2_fct$name))) +
+    scale_fill_manual(values = c("#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", 
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2",
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2")) +
+    labs(
+        title = "Member Participation in Snapshot Votes",
+        subtitle = "Season 2",
+        y = "",
+        x = "Number of Addresses"
+    )
+
+```
+
+## Snapshot Votes across Season 0 - 2
+
+Combine data sets
+
+```{r, echo=FALSE}
+
+library(tidyverse)
+
+total_snapshot_votes <- read_csv("./snapshot/raw_data/total_snapshot_votes_s0_s2_20220117T103145.csv")
+
+
+total_snapshot_votes_fct <- total_snapshot_votes %>%
+    group_by(title) %>%
+    tally(sort = TRUE) %>%
+    rename(
+        name = title
+    )
+
+
+# set factor order
+total_snapshot_votes_fct$name <- fct_relevel(total_snapshot_votes_fct$name, c("Approve the Bankless DAO Genesis¬†Proposal?",
+                        "What charity should CMS Holdings donate 100k towards?",
+                        "Badge Distribution for Second Airdrop",
+                        "Reward Season 0 Active Members",
+                        "Bankless DAO Season 1",
+                        "Title: BanklessDAO Season 1 Grants Committee ratification",
+                        "BED Index Logo Contest",
+                        "Request for funds for Notion‚Äôs ongoing subscription",
+                        "Transfer ownership of the treasury multisig wallet from the genesis team to the DAO.",
+                        "Bankless DAO Season 2",
+                        "Bankless DAO Season 2 Grants Committee Ratification",
+                        "Bankless DAO Treasury Multi-sig Signer Ratification",
+                        "S1 & S2 Grants Committee Compensation",
+                        "Retro Rectification Donations",
+                        "Season 2 Project and Guild Funding",
+                        "Balancer Liquidity Mining Program",
+                        "Olympus Pro BANK liquidity bonds",
+                        "Execute swap with Tokemak for BANK reactor ignition",
+                        "Funding for Season 2 Approved Projects",
+                        "BanklessDAO Season 3 Specification",
+                        "Firming Up Governance",
+                        "Season 3 Grants Committee Elections",
+                        "Season 3 Project and Guild Funding"))
+
+
+# visualize
+total_snapshot_votes_fct %>%
+    ggplot(aes(x = n, y = name, fill = name)) +
+    geom_col() +
+    geom_text(aes(label = n), hjust = -0.2, color = "white") +
+    theme(
+        legend.position = "none",
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white", size = 15),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_y_discrete(limits = rev(levels(total_snapshot_votes_fct$name))) +
+    scale_fill_manual(values = c("#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", 
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2",
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2","#ffb2b2", "#ffb2b2",
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", "#ffb2b2", 
+                                 "#ffb2b2", "#ffb2b2", "#ffb2b2")) +
+    labs(
+        title = "Member Participation in Snapshot Votes",
+        subtitle = "Total: Season 0 - Season 2",
+        y = "",
+        x = "Number of Addresses"
+    )
+
+
+
+```
+
+
+## Grants Committee Fund Distribution: Stacked Bar Chart
+
+Note: For comparison between S1 and S2 where available.
+
+SQL Query: See DaoDash `Fund_Flow_GC_2`. Note dates between S1 and S2. Same query used for Sankey.
+
+**NOTE**: May need to add Treasury Guild as another potential source of funds (confirm Treasury address).
+
+```{r}
+# --Season 1 (116 rows): timestamp_display < '2021-10-08'::DATE AND timestamp_display > '2021-06-14'::DATE  -- TOTAL: 11,288,361.28706
+# --Season 2 (426 rows): timestamp_display > '2021-10-07'::DATE AND timestamp_display < '2022-01-08'::DATE  -- TOTAL: 10,780,178.00001
+
+#WITH fund_flow AS (
+#select 
+#  'Out' as Direction,
+#   ssb.from_address,
+#   w.human_readable,
+#   w.entity_type,
+#   ssb.amount_display,
+#   ssb.timestamp_display,
+#   ssb.to_address
+#from stg_subgraph_bank_1 ssb
+#join public.bankless_wallet_entity_2 w on lower(ssb.from_address) = lower(w.wallet_address)
+#-- note 'Out' is from_address
+   
+#union all 
+   
+#select 
+#  'In' as Direction,
+#  ssb.from_address,
+#  w.human_readable,
+#  w.entity_type,
+#  ssb.amount_display,
+#  ssb.timestamp_display,
+#  ssb.to_address
+#from stg_subgraph_bank_1 ssb
+#join public.bankless_wallet_entity_2 w on lower(ssb.to_address) = lower(w.wallet_address)
+#-- note 'In' is to_address
+#),
+
+#gcs1 AS (
+#SELECT
+#  direction,
+#  from_address,
+#  human_readable AS readable,
+#  entity_type,
+#  amount_display,
+#  timestamp_display,
+#  to_address
+#FROM fund_flow 
+#WHERE entity_type = 'Grants Committee'
+#AND timestamp_display > '2021-10-07'::DATE  
+#AND timestamp_display < '2022-01-08'::DATE
+#AND direction = 'Out'
+#--where timestamp_display > '2021-10-01T09:26:59'::TIMESTAMP 
+#ORDER BY timestamp_display DESC
+#)
+
+#SELECT
+#  g.direction,
+#  g.from_address,
+#  g.readable,
+#  g.entity_type,
+#  g.amount_display,
+#  g.timestamp_display,
+#  g.to_address,
+#  b.human_readable 
+#FROM gcs1 g 
+#LEFT JOIN bankless_wallet_entity_2 b ON lower(g.to_address) = lower(b.wallet_address)
+```
+
+Visualization
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(scales)
+
+# load data
+gcs1 <- read_csv("./sankey/raw_data/s1_fund_flow_gc_2_20220112T062448.csv")
+gcs2 <- read_csv("./sankey/raw_data/s2_fund_flow_gc_2_20220112T063018.csv")
+
+# transform
+gcs1a <- gcs1 %>%
+    mutate(
+        season = 1,
+        human_readable = if_else(is.na(human_readable), "Misc", human_readable)
+    ) %>% 
+    select(human_readable, amount_display, season)
+
+
+
+gcs2a <- gcs2 %>%
+    mutate(
+        season = 2,
+        human_readable = if_else(is.na(human_readable), "Misc", human_readable)
+    ) %>% 
+    select(human_readable, amount_display, season)
+
+grants <- rbind(gcs1a, gcs2a)
+
+# scientific notation
+options(scipen=999)
+
+# visualize
+grants %>%
+    mutate(
+        season = as.factor(season)
+    ) %>%
+    group_by(human_readable, season) %>%
+    summarise(amount = sum(amount_display)) %>%
+    ggplot(aes(x = reorder(human_readable, amount), y = amount, fill = season)) +
+    geom_bar(stat = "identity", position = "stack") +
+    scale_y_continuous(labels = comma) +
+    coord_flip() +
+    theme_minimal()
+```
+
+## Bankless Vault Fund Distribution
+
+**Note**: In Season 1, Analytics Guild received funds from the Grants Committee address, in Season 2, the Analytics Guild received funds from the Bankless Vault address.
+
+See DaoDash: `Fund_Flow_Bankless_Vault` (nearly identical to `Fund_Flow_GC_2`, except direction is 'In'). 
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(scales)
+
+# load data
+bv_s1 <- read_csv("./sankey/raw_data/s1_fund_flow_bankless_vault_20220113T082455.csv")
+bv_s2 <- read_csv("./sankey/raw_data/s2_fund_flow_bankless_vault_20220113T082831.csv")
+
+# transform
+bv_s1a <- bv_s1 %>%
+    mutate(
+        season = 1
+    ) %>%
+    select(human_readable, amount_display, season)
+
+
+bv_s2a <- bv_s2 %>%
+    mutate(
+        season = 2
+    ) %>%
+    select(human_readable, amount_display, season)
+
+
+bv_grants <- rbind(bv_s1a, bv_s2a)
+
+# scientific notation
+options(scipen=999)
+
+# visualize
+bv_grants %>%
+    mutate(
+        season = as.factor(season)
+    ) %>%
+    group_by(human_readable, season) %>%
+    summarise(amount = sum(amount_display)) %>%
+    ggplot(aes(x = reorder(human_readable, amount), y = amount, fill = season)) +
+    geom_bar(stat = "identity", position = "stack") +
+    scale_y_continuous(labels = comma) +
+    coord_flip() +
+    theme_minimal()
+
+# full grants - minus grants committee
+full_grants <- rbind(gcs1a, gcs2a, bv_s1a, bv_s2a)
+
+full_grants %>%
+    mutate(
+        season = as.factor(season)
+    ) %>%
+    group_by(human_readable, season) %>%
+    summarise(amount = sum(amount_display)) %>%
+    filter(human_readable != 'Grants Committee') %>%
+    ggplot(aes(x = reorder(human_readable, amount), y = amount, fill = season)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    scale_y_continuous(labels = comma) +
+    coord_flip() +
+    theme(
+        legend.background = element_rect(fill = "#65737e"),
+        legend.text = element_text(color = "white"),
+        legend.title = element_text(color = "white"),
+        panel.background = element_rect(fill = "#65737e"),
+        panel.grid.major = element_line(color = "#65737e"),
+        panel.grid.minor = element_line(color = "#65737e"),
+        plot.background = element_rect(fill = "#65737e"),
+        axis.text.x = element_text(color = "white"),
+        axis.text.y = element_text(color = "white"),
+        axis.title.x = element_text(color = "white"),
+        axis.title.y = element_text(color = "white"),
+        title = element_text(color = "white", face = "bold")
+    ) +
+    scale_fill_manual(values = c("black", "red")) +
+    labs(
+        title = "Funding from Grants Committee | Bankless Vault",
+        subtitle = "S1 and S2",
+        x = "Projects & Guilds",
+        y = "Amount ($BANK)",
+        caption = "Powered by DAO Dash"
+    )
+
+```
+
+## Example Sankey
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(networkD3)
+
+# sample sankey ----
+
+# flow
+links <- data.frame(
+    source=c("group_A","group_A", "group_B", "group_C", "group_C", "group_E"), 
+    target=c("group_C","group_D", "group_E", "group_F", "group_G", "group_H"), 
+    value=c(2,3, 2, 3, 1, 3)
+)
+
+# nodes
+nodes <- data.frame(
+    name=c(as.character(links$source), 
+           as.character(links$target)) %>% unique()
+)
+
+# With networkD3, connection must be provided using id, not using real name like in the links dataframe.. So we need to reformat it.
+links$IDsource <- match(links$source, nodes$name)-1 
+links$IDtarget <- match(links$target, nodes$name)-1
+
+# Make the Network
+p <- sankeyNetwork(Links = links, Nodes = nodes,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", 
+              sinksRight=FALSE)
+p
+
+```
+
+## Grants Committee Season 1 Sankey
+
+Workflow
+
+Step 1: Replace `NA` values. Note: `NA` values step from having new projects, guilds pop up after the creation of `bankless_wallet_entity` table in DaoDash, so be sure to update that table before proceeding. 
+
+Step 2: =create a `my_links` table, 
+Step 2a: a `my_nodes` table, 
+Step 2b: create IDSource, IDTarget columns
+Step 2c: create `my_color` object.
+
+Step 3: Create sankey w/ SankeyNetwork() function and library.
+
+**NOTE** For comparison between Grants Comm distribution S1 vs S2, use side-by-side bar chart. 
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(networkD3)
+
+# load data 
+gcs1 <- read_csv("./sankey/raw_data/gc_s1_fund_flow_20220103T044120.csv")
+
+# Alternative way to replace NA values - this works
+gcs1$human_readable[is.na(gcs1$human_readable)] <- "Individual Contributor"
+
+my_links <- gcs1 %>%
+    select(readable, human_readable, amount_display) %>%
+    rename(
+        source = readable,
+        target = human_readable,
+        value = amount_display
+    )
+
+
+my_nodes <- data.frame(name = c("Grants Committee",
+                                "Individual Contributor",
+                                "DAO Punks",
+                                "BizDev Guild",
+                                "A/V Guild",
+                                "BED Index",
+                                "First Quest",
+                                "Degen",
+                                "Marketing Guild",
+                                "BountyBoard",
+                                "Bankless Academy",
+                                "Bankless Website Multisig",
+                                "Liquity Project Multisig",
+                                "Bankless Loans",
+                                "Research Guild",
+                                "Analytics Guild",
+                                "Design Guild",
+                                "Ops Guild",
+                                "Writers Guild",
+                                "Treasury Guild",
+                                "Translators Guild",
+                                "Devs Guild Multisig",
+                                "Legal Guild"))
+
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links$IDsource <- match(my_links$source, my_nodes$name)-1
+my_links$IDtarget <- match(my_links$target, my_nodes$name)-1
+
+# set color -- swap : #006d2c
+my_color <- 'd3.scaleOrdinal() .domain(["Grants Committee", 
+                                        "Individual Contributor", 
+                                        "DAO Punks", 
+                                        "BizDev Guild", 
+                                        "A/V Guild", 
+                                        "BED Index",
+                                        "First Quest",
+                                        "Degen",
+                                        "Marketing Guild",
+                                        "BountyBoard",
+                                        "Bankless Academy",
+                                        "Bankless Website Multisig",
+                                        "Liquity Project Multisig",
+                                        "Bankless Loans",
+                                        "Research Guild",
+                                        "Analytics Guild",
+                                        "Design Guild",
+                                        "Ops Guild",
+                                        "Writers Guild",
+                                        "Treasury Guild",
+                                        "Translators Guild",
+                                        "Devs Guild Multisig",
+                                        "Legal Guild"]) .range(["red", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb"])'
+
+
+sankeyNetwork(Links = my_links, Nodes = my_nodes, Source = "IDsource",
+              Target = "IDtarget", Value = "value", NodeID = "name",
+              colourScale = my_color, fontSize = 15, sinksRight=FALSE)
+
+```
+
+
+## Grants Committee Season 2 Sankey
+
+NOTE: Need to consult this [sheet](https://docs.google.com/spreadsheets/d/1a6ZMclYkESWNwV7xNhT-LELwHtK28wo9f4xx-JGab5k/edit#gid=0) to add additional project, guild multisig & address to `bankless_wallet_entity` table in DAODash.
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(networkD3)
+
+# load data
+gcs2 <- read_csv("./sankey/raw_data/gc_s2_fund_flow_20220105T074303.csv")
+
+# create id for each node
+# Alternative way to replace NA values - this works
+gcs2$human_readable[is.na(gcs2$human_readable)] <- "Individual Contributor & Others"
+
+
+# create links
+my_links_2 <- gcs2 %>%
+    select(readable, human_readable, amount_display) %>%
+    rename(
+        source = readable,
+        target = human_readable,
+        value = amount_display
+    )
+
+# create nodes
+# note: unique() function doesn't capture "Grants Committee" so that has to be entered manually
+my_nodes_2 <- unique(my_links_2[c("target")])
+
+my_nodes_2[14,] <- "Grants Committee"
+
+# change column name from 'target' -> 'name'
+my_nodes_2 <- my_nodes_2 %>%
+    rename(name = target)
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links_2$IDsource <- match(my_links_2$source, my_nodes_2$name)-1
+my_links_2$IDtarget <- match(my_links_2$target, my_nodes_2$name)-1
+
+# add color
+my_color_2 <- 'd3.scaleOrdinal() .domain(["Grants Committee", 
+                                        "Individual Contributor & Others", 
+                                        "Crypto Sapiens",
+                                        "DAO Punks", 
+                                        "S1 Coordinape",     
+                                        "A/V Guild",
+                                        "FightClub",
+                                        "Content Gateway",
+                                        "Marketing Guild",    
+                                        "BountyBoard",       
+                                        "Writers Guild",       
+                                        "Translators Guild",   
+                                        "DaoDash",
+                                        "Legal Guild"]) .range(["red", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "#006d2c", 
+                                                                "#2ca25f", 
+                                                                "#66c2a4", 
+                                                                "#b2e2e2", 
+                                                                "#edf8fb", 
+                                                                "#8B8989",
+                                                                "red", 
+                                                                "red"])'
+
+
+# sankey
+sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2, Source = "IDsource",
+              Target = "IDtarget", Value = "value", NodeID = "name", 
+              colourScale = my_color_2, fontSize = 15, sinksRight=FALSE)
+
+
+```
+
+
+## REVISED Sankey: Grants Committee Vault, Season 1
+
+
+NOTE: full_grants <- rbind(gcs1a, gcs2a, bv_s1a, bv_s2a)
+
+- full_grants combines grants committee + bankless_vault, across s1 and s2
+- start with full_grants 
+
+```{r, echo=FALSE}
+# REVISED Sankey with New Data ----
+library(tidyverse)
+library(networkD3)
+
+# create id for each node
+# Alternative way to replace NA values - this works
+
+# Starting point 'full_grants'
+my_links_1 <- full_grants %>%
+    filter(season == 1) %>%
+    filter(human_readable != 'Grants Committee') %>%
+    mutate(
+        source = 'Grants Committee Vault'
+    ) %>%
+    rename(
+        target = human_readable,
+        value = amount_display
+    ) %>%
+    select(source, target, value) 
+
+
+# unique nodes
+# find unique values in column
+# change 'target' to 'name'
+unique_nodes <- unique(my_links_1[c("target")]) %>%
+    rename(
+        name = target
+    ) %>%
+    print(n = 100)
+
+
+
+
+# manually create nodes
+# NOTE: 'Grants Committee Vault' is first row
+my_nodes_1 <- data.frame(name = c(
+    "Grants Committee Vault",
+    "BountyBoard",                
+    "A/V Guild",                     
+    "Bankless Academy",              
+    "Analytics Guild",               
+    "Degen",                         
+    "Bankless Loans",                
+    "Writers Guild",                 
+    "Devs Guild Multisig",           
+    "Translators Guild",             
+    "Treasury Guild",                
+    "Ops Guild",                     
+    "Design Guild",                  
+    "Research Guild",                
+    "Marketing Guild",               
+    "First Quest",                   
+    "Bankless Website Multisig",     
+    "Liquity Project Multisig",      
+    "S1 Coordinape",                 
+    "BED Index",                     
+    "BizDev Guild",                  
+    "DAO Punks",                     
+    "Crypto Sapiens",                
+    "Legal Guild",                   
+    "Education Guild Multisig",      
+    "DevOps Infrastructure Multisig",
+    "Balancer Multisig",             
+    "Misc"  
+))
+
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links_1$IDsource <- match(my_links_1$source, my_nodes_1$name)-1
+my_links_1$IDtarget <- match(my_links_1$target, my_nodes_1$name)-1
+
+# add color
+
+my_color_1 <- 'd3.scaleOrdinal() .domain(["Grants Committee Vault",
+                            "BountyBoard",                
+                            "A/V Guild",                     
+                            "Bankless Academy",              
+                            "Analytics Guild",               
+                            "Degen",                         
+                            "Bankless Loans",                
+                            "Writers Guild",                 
+                            "Devs Guild Multisig",           
+                            "Translators Guild",             
+                            "Treasury Guild",                
+                            "Ops Guild",                     
+                            "Design Guild",                  
+                            "Research Guild",                
+                            "Marketing Guild",               
+                            "First Quest",                   
+                            "Bankless Website Multisig",     
+                            "Liquity Project Multisig",      
+                            "S1 Coordinape",                 
+                            "BED Index",                     
+                            "BizDev Guild",                  
+                            "DAO Punks",                     
+                            "Crypto Sapiens",                
+                            "Legal Guild",                   
+                            "Education Guild Multisig",      
+                            "DevOps Infrastructure Multisig",
+                            "Balancer Multisig",             
+                            "Misc"]) .range(["red", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "yellow"
+                                    ])'
+
+# sankey
+sankeyNetwork(Links = my_links_1, Nodes = my_nodes_1,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", colourScale = my_color_1, 
+              fontSize = 15, fontFamily = "Helvetica", sinksRight=FALSE)
+
+
+
+
+
+```
+
+## REVISED Sankey: Grants Committee Vault, Season 2
+
+```{r, echo=FALSE}
+
+# REVISED Sankey with New Data ----
+library(tidyverse)
+library(networkD3)
+
+# create id for each node
+# Alternative way to replace NA values - this works
+
+# Starting point 'full_grants'
+my_links_2 <- full_grants %>%
+    filter(season == 2) %>%
+    filter(human_readable != 'Grants Committee') %>%
+    mutate(
+        source = 'Grants Committee Vault'
+    ) %>%
+    rename(
+        target = human_readable,
+        value = amount_display
+    ) %>%
+    select(source, target, value) 
+
+# unique nodes
+# find unique values in column
+# change 'target' to 'name'
+unique_nodes_2 <- unique(my_links_2[c("target")]) %>%
+    rename(
+        name = target
+    ) %>%
+    print(n = 100)
+
+# MANUALLY create nodes
+# NOTE: 'Grants Committee Vault' is first row
+my_nodes_2 <- data.frame(name = c(
+    "Grants Committee Vault",
+    "BountyBoard",				
+    "A/V Guild",				
+    "DaoDash",				
+    "FightClub",				
+    "Content Gateway",				
+    "Writers Guild",				
+    "Marketing Guild",				
+    "S1 Coordinape",				
+    "DAO Punks",				
+    "Legal Guild",
+    "Balancer Liquidity Mining Program Multisig",				
+    "International Media Node Multisig",				
+    "Book Club Multisig",				
+    "Podcast Hatchery Multisig",				
+    "Flipper Zone Multisig",				
+    "Bankless Academy",				
+    "Analytics Guild",				
+    "Degen",				
+    "Bankless Loans",
+    "NewsletterTeam",				
+    "Devs Guild Multisig",				
+    "Translators Guild",				
+    "Treasury Guild",				
+    "Ops Guild",				
+    "Design Guild",				
+    "Research Guild",				
+    "First Quest",				
+    "Bankless Website Multisig",				
+    "Liquity Project Multisig",
+    "BED Index",				
+    "BizDev Guild",				
+    "Education Guild Multisig",				
+    "DevOps Infrastructure Multisig",
+    "Misc"
+))
+
+# create id for each node ----
+# links$IDsource <- match(links$source, nodes$name)-1 
+# links$IDtarget <- match(links$target, nodes$name)-1
+
+my_links_2$IDsource <- match(my_links_2$source, my_nodes_2$name)-1
+my_links_2$IDtarget <- match(my_links_2$target, my_nodes_2$name)-1
+
+
+# add color
+
+my_color_2 <- 'd3.scaleOrdinal() .domain([
+                            "Grants Committee Vault",
+                            "BountyBoard",				
+                            "A/V Guild",				
+                            "DaoDash",				
+                            "FightClub",				
+                            "Content Gateway",				
+                            "Writers Guild",				
+                            "Marketing Guild",				
+                            "S1 Coordinape",				
+                            "DAO Punks",				
+                            "Legal Guild",
+                            "Balancer Liquidity Mining Program Multisig",				
+                            "International Media Node Multisig",				
+                            "Book Club Multisig",				
+                            "Podcast Hatchery Multisig",				
+                            "Flipper Zone Multisig",				
+                            "Bankless Academy",				
+                            "Analytics Guild",				
+                            "Degen",				
+                            "Bankless Loans",
+                            "NewsletterTeam",				
+                            "Devs Guild Multisig",				
+                            "Translators Guild",				
+                            "Treasury Guild",				
+                            "Ops Guild",				
+                            "Design Guild",				
+                            "Research Guild",				
+                            "First Quest",				
+                            "Bankless Website Multisig",				
+                            "Liquity Project Multisig",
+                            "BED Index",				
+                            "BizDev Guild",				
+                            "Education Guild Multisig",				
+                            "DevOps Infrastructure Multisig",
+                            "Misc"]) .range(["red", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                             "blue", 
+                                             "green",
+                                             "yellow",
+                                             "#8B8989",
+                                             "#006d2c", 
+                                             "#2ca25f", 
+                                             "#66c2a4", 
+                                             "#b2e2e2", 
+                                             "#edf8fb", 
+                                             "#8B8989",
+                                    ])'
+
+
+# sankey
+sankeyNetwork(Links = my_links_2, Nodes = my_nodes_2,
+              Source = "IDsource", Target = "IDtarget",
+              Value = "value", NodeID = "name", colourScale = my_color_2, 
+              fontSize = 15, fontFamily = "Helvetica", sinksRight=FALSE)
+
+```
+
+
+
+
+
+
+## Number of Bank Holders (Membership Categories); S1 vs S2
+
+**Task**: Compare S1 vs S2 on all membership categories.
+
+**Challenge**: Inconsistent results using very similar queries across DaoDash, Dune Analytics and Google BigQuery. Use Dune Analytics for now, reconcile sources in S3.
+
+**NOTE**: Cummulative 
+
+See `mem_1_10K_bank_holdings_time_range` and other segments downloaded in raw csv. 
+Data gathered from DAODash table: 
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(lubridate)
+library(zoo)
+
+bank_sg <- read_csv("./bank_subgraph/raw_data/mem_1_10K_bank_holdings_time_range_20220102T062946.csv")
+
+# turn time stamp into date
+bank_sg %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n),
+        change = n - lag(n,1,default = 0.0),
+        series = cummulative + change
+    )%>%
+    ggplot(aes(x = new_day, y = series)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "1 - 10K BANK"
+    )
+
+?rollsum
+```
+
+## BANK Holders 10 - 35K
+
+```{r, echo=FALSE}
+
+library(tidyverse)
+library(lubridate)
+
+bank_sg_10_35 <- read_csv("./bank_subgraph/raw_data/mem_10K_35K_bank_holdings_time_range_20220102T062204.csv")
+
+# turn time stamp into date
+bank_sg_10_35 %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n),
+        change = n - lag(n,1,default = 0.0),
+        series = cummulative - change
+    )%>%
+    ggplot(aes(x = new_day, y = series)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "10 - 35K BANK"
+    )
+
+
+```
+
+
+## BANK Holders 35 - 150K
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(lubridate)
+
+bank_sg_35_150 <- read_csv("./bank_subgraph/raw_data/mem_35K_150K_bank_holdings_time_range_20220102T061722.csv")
+
+# turn time stamp into date
+bank_sg_35_150 %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n),
+        change = n - lag(n,1,default = 0.0),
+        series = cummulative - change
+    )%>%
+    ggplot(aes(x = new_day, y = series)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "35 - 150K BANK"
+    )
+
+```
+
+
+## BANK Holders 150K - 1.5M
+
+```{r, echo=FALSE}
+
+library(tidyverse)
+library(lubridate)
+
+bank_sg_150K_1M <- read_csv("./bank_subgraph/raw_data/mem_150K_1.5M_bank_holdings_time_range_20220102T064031.csv")
+
+# turn time stamp into date
+bank_sg_150K_1M %>%
+    mutate(
+        new_day = date(day)
+    ) %>%
+    group_by(new_day) %>%
+    tally(sort = TRUE) %>%
+    arrange(new_day) %>%
+    mutate(
+        cummulative = cumsum(n)
+    )%>%
+    ggplot(aes(x = new_day, y = cummulative)) +
+    geom_line() +
+    scale_x_date(date_breaks = "1 month") +
+    labs(
+        title = "Number of BANK Holders overtime",
+        subtitle = "150K - 1.5M BANK"
+    )
+
+```
+
+
+## Coordinape Distribution
+
+**Task**: Query comparison of tokens/bank distributed via Coordinape in S1 vs S2.
+
+**Challenge**: See DaoDash query, `Seasonal Coordinape Distribution`
+
+**Request**: Reach out to Saul for coordinape network visual growth s1 to s2.
+
+Create dataframe / tibble.
+
+```{r, echo=FALSE}
+library(tidyverse)
+
+coord_s1 <- read_csv("./coordinape/raw_data/s1_coordinape_distribution_20220112T121445.csv")
+coord_s2 <- read_csv("./coordinape/raw_data/s2_coordinape_distribution_20220112T120953.csv")
+
+# sum tokens distributed - Season 1: 192,076 , Season 2: 425,561
+coord_s1 %>%
+    summarise(sum_tokens = sum(tokens))
+
+coord_s2 %>%
+    summarise(sum_tokens = sum(tokens))
+
+# how many senders, Season 1: n = 302, Season 2: 458
+coord_s1 %>%
+    group_by(sender_id) %>%
+    tally(sort = TRUE)
+
+coord_s1 %>%
+    distinct(sender_id) %>%
+    count()
+
+coord_s2 %>%
+    distinct(sender_id) %>%
+    count()
+
+# how many recipients, Season 1: n = 416, Season 2: n = 481
+coord_s1 %>%
+    distinct(recipient_id) %>%
+    count()
+
+coord_s2 %>%
+    distinct(recipient_id) %>%
+    count()
+
+
+# create dataframes for Tokens distributed, Number of Senders and Number of Receivers 
+season <- c("1", "2")
+tokens_distributed <- c(192076, 425561)
+num_senders <- c(302, 458)
+num_receivers <- c(416, 481)
+
+coord_df <- data.frame(season, tokens_distributed, num_senders, num_receivers)
+
+# visualize tokens_distributed
+coord_df %>%
+    ggplot(aes(x = season, y = tokens_distributed)) +
+    geom_col()
+
+# visualize num_senders
+coord_df %>%
+    ggplot(aes(x = season, y = num_senders)) +
+    geom_col()
+
+# visualize num_receivers
+coord_df %>%
+    ggplot(aes(x = season, y = num_receivers)) +
+    geom_col()
+
+
+```
+
+## POAP Distribution
+
+**Task**: Find number of POAPs claimed for Community Calls S1 vs S2
+
+**Progress**: Query Content Gateway API endpoint: 
+
+https://prod-content-gateway-api.herokuapp.com/api/v1/graphql
+
+Query historical -> PoapV1 -> PoapTokenV1s
+
+Can query all events containing "Bankless DAO Community" (for community call poaps), but still need to find *number of poaps* claimed at each event. 
+
+Query: Combine GC API and programmatically get tokens distributed for each event. 
+
+```{r, echo=FALSE}
+library(tidyverse)
+
+# load data
+poap_cc <- read_csv("./poap_cc_claims/raw_data/poap_cc_claims_20220114T085045.csv")
+
+# remove rows: 1, 11, 37
+poap_cc_2 <- poap_cc[-c(1,11,37),]
+
+# need to create factors to order Community Call sequentially
+poap_cc_2 %>%
+    mutate(
+        mint_count_2 = as.numeric(mint_count)
+    ) %>%
+    ggplot(aes(x = reorder(name, mint_count_2), y = mint_count_2)) +
+    geom_col() +
+    theme(
+        axis.text.x = element_text(angle = 90, hjust = 1)
+    )
+
+poap_cc_2 %>%
+    arrange(id) %>%
+    mutate(
+        mint_count_2 = as.numeric(mint_count)
+    ) %>%
+    ggplot(aes(x = reorder(name, id), y = mint_count_2)) +
+    geom_col() +
+    theme(
+        axis.text.x = element_text(angle = 90, hjust = 1)
+    ) +
+    coord_flip()
+
+
+
+
+
+```
+
+Query from Content Gateway API Endpoint. https://prod-content-gateway-api.herokuapp.com/api/v1/graphql
+
+NOTE: Used POAP.xyz subgraph API
+
+```{r, echo=FALSE}
+# GraphiQL query
+# {
+#  historical{
+#    PoapV1 {
+#      PoapEventV1s(first: 200, where: {name: {contains: "Bankless DAO Community"}}){
+#        data{
+#          id,
+#          fancyId,
+#          name,
+#          year,
+#          eventHostId,
+#          eventTemplateId,
+#          eventUrl
+#        }
+#      }
+#    }
+#  }
+#}
+
+
+
+
+```
+
+## Bounty Board
+
+**Task**: Query total number of bounties and total value committed to bounties between S1 v S2.
+
+**Challenge**: query from database in prod. WIP. 
+
+Number of bounties:                 S1: 40, S2: 66+
+
+Value committed to bounties:        S1: 68K, S2: 209K
+
+Update: 15/01/22 for numbers
+
+```{r, echo=FALSE}
+
+season <- c('1','2')
+num_bounties <- c(40, 69)
+value_in_bounties <- c(68071, 215506)
+
+
+bb_df <- data.frame(season, num_bounties, value_in_bounties)
+
+# number of bounties: s1 vs s2
+bb_df %>%
+    ggplot(aes(x = season, y = num_bounties)) +
+    geom_col()
+
+# value in bounties: s1 vs s2
+bb_df %>%
+    ggplot(aes(x = season, y = value_in_bounties)) +
+    geom_col()
+
+```
+
+## Discourse
+
+Task: Connect to API to query forum posts with polls and number of people voting.
+
+Challenge: API documentation does not mention Polls or Votes. See [documentation](https://docs.discourse.org/) here. 
+
+Progress: Established API connection with the `pydiscourse` https://github.com/BanklessDAO/analytics/blob/main/discourse_forum/api_connection.py
+
+Ended up downloading CSV manually of all users, instead of votes, will track other engagement metrics like: 
+- topics_entered
+- posts_read_count
+- time_read
+- topic_count
+
+*note*: remove email column, then save raw data to github
+
+```{r, echo=FALSE}
+
+```
+
+
+## First Quest
+
+Task: Query number of new members going through First Quest 
+
+**Challenge**: Data inserted at 2021-11-18, might have insufficient data to make S1 vs S2 comparison. 
+
+Just show S2 First Quest data standalone (compare Funnel shape from two time periods).
+
+```{r, echo=FALSE}
+
+```
+
+
+## Tips Given & Received
+
+**Task**: Get comparison between S1 and S2, create tibble/dataframe to display data. 
+
+**Data**: See DaoDash query: `Seasonal Tip Distribution` 
+
+Season 1 Tip Distribution (2873 rows, 983,019 tips given), WHERE timestamp < '2021-10-08'::DATE AND timestamp > '2021-06-14'::DATE 
+
+Season 2 Tip Distribution (1336 rows, 337,173 tips given), WHERE timestamp > '2021-10-07'::DATE AND timestamp < '2022-01-08'::DATE 
+
+
+
+```{r, echo=FALSE}
+tips_df <- data.frame(season = c("1", "2"), tips_distributed = c(983019, 337173))
+
+tips_df %>%
+    ggplot(aes(x = season, y = tips_distributed)) +
+    geom_col()
+```
+
+## Next Section
+
+```{r, echo=FALSE}
+
+```
+
+
+## Next Section
+
+```{r, echo=FALSE}
+
+```
+
+
