@@ -47,6 +47,7 @@ query = f"""
     ## initalize variables
     max_id = 0
     max_created = 0
+        votes(first: 1000, where: {{created_gt: {max_created}, space: "banklessvault.eth"}}, orderBy:"created", orderDirection:asc) {{
             id
             space {{
               id
