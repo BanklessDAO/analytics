@@ -26,6 +26,10 @@ load_dotenv()
 db_string = os.environ.get('DB_STRING')
 db = create_engine(db_string)
 
+#initalize vars
+max_id = 0
+max_start_date = 0
+
 with db.connect() as conn:
     result = conn.execute(
         # note ORDER BY start_date, not id
