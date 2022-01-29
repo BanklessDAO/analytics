@@ -26,6 +26,10 @@ load_dotenv()
 db_string = os.environ.get('DB_STRING')
 db = create_engine(db_string)
 
+#initalize vars
+max_id = 0
+max_start_date = 0
+
 with db.connect() as conn:
     result = conn.execute(
         # note ORDER BY start_date, not id
@@ -43,7 +47,7 @@ variables = {'start_date': max_start_date}
 # change 'start_gt' to 'start' to test this endpoint
 query = f"""
 {{
-    proposals(first: 1000, skip: 0, where: {{space: "banklessvault.eth", start_gt: {max_start_date}}}) {{
+    proposals(first: 1000, skip: 0, where: {{space: "banklessvault.eth", start_gt: {max_start_date}}}, orderBy:"created", orderDirection:asc) {{
         id
         title
         body

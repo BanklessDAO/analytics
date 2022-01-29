@@ -2,3 +2,4 @@ node_modules/
 db/
 .vscode/
 .env
+.DS_Store
