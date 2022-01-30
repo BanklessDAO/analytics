@@ -58,3 +58,11 @@ TBD
 - when querying our postgres db, the SQL query on line 32 "ORDER BY id", should be "ORDER BY start_date" for a more accurate sorting
 - the `bankless_snapshot_header_1` table is not ordering all proposals by time, so a new table `bankless_snapshot_header_2` was created.
 - created `temp_snapshot_proposal.py` as an an updated pipeline.
+
+### Coordinape
+
+- Update: Jan 30, 2022
+- use new api endpoint: `https://api.coordinape.com/api/v2/users?circle_id` (previously: ../v2/token_gifts?circle_id)
+- select specific columns: name, discord_username, address, circle_id
+- concatenate df across several coordinape rounds
+- need to automate pipeline
