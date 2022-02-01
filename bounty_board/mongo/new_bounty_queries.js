@@ -395,3 +395,214 @@ db.bounties.aggregate([
     },
   },
 ]);
+
+// IN-PROGRESS Bounties (valued locked)
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { customer_id: "834499078434979890" },
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { status: "In-Progress" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      _title: "$title",
+      _status: "$status",
+      _createdAt: "$createdAt",
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      title: "$_title",
+      status: "$_status",
+      createdAt: { $toDate: "$_createdAt" },
+    },
+  },
+]);
+
+// IN-REVIEW Bounties (value locked)
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { customer_id: "834499078434979890" },
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { status: "In-Review" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      _title: "$title",
+      _status: "$status",
+      _createdAt: "$createdAt",
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      title: "$_title",
+      status: "$_status",
+      createdAt: { $toDate: "$_createdAt" },
+    },
+  },
+]);
+
+// Bounty Status (by Count)
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { customer_id: "834499078434979890" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      customer_id: 1,
+      "reward.amount": 1,
+      "reward.currency": 1,
+      status: 1,
+    },
+  },
+  { $group: { _id: "$status", num_bounties: { $sum: 1 } } },
+]);
+
+// Bounty Status (by Value)
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { customer_id: "834499078434979890" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      customer_id: 1,
+      "reward.amount": 1,
+      "reward.currency": 1,
+      status: 1,
+    },
+  },
+  { $group: { _id: "$status", sum: { $sum: "$reward.amount" } } },
+]);
+
+// Total BANK Claimed from Completed Bounties
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { customer_id: "834499078434979890" },
+        { status: "Completed" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      customer_id: 1,
+      "reward.amount": 1,
+      "reward.currency": 1,
+      status: 1,
+    },
+  },
+  { $group: { _id: "$customer_id", sum: { $sum: "$reward.amount" } } },
+]);
+
+// Total BANK Allocated for Bounties
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { customer_id: "834499078434979890" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      customer_id: 1,
+      "reward.amount": 1,
+      "reward.currency": 1,
+      status: 1,
+    },
+  },
+  { $group: { _id: "$customer_id", sum: { $sum: "$reward.amount" } } },
+]);
+
+// Number of Bounties per week
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { customer_id: "834499078434979890" },
+      ],
+    },
+  },
+  { $project: { _id: 1, season: 1, createdAt: { $toDate: "$createdAt" } } },
+  {
+    $group: {
+      _id: { week: { $isoWeek: "$createdAt" } },
+      num_bounties: { $sum: 1 },
+    },
+  },
+  { $sort: { week: -1 } },
+]);
+
+// Amount of BANK committed per week
+// Oct 8th, 2021 - Jan 8th, 2022, Season 2
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { createdAt: { $gte: "2021-10-08" } },
+        { createdAt: { $lte: "2022-01-08" } },
+        { "reward.currency": "BANK" },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      season: 1,
+      "reward.amount": 1,
+      createdAt: { $toDate: "$createdAt" },
+    },
+  },
+  {
+    $group: {
+      _id: { week: { $isoWeek: "$createdAt" } },
+      total_reward: { $sum: "$reward.amount" },
+    },
+  },
+  { $sort: { week: -1 } },
+]);
