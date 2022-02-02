@@ -66,3 +66,6 @@ TBD
 - select specific columns: name, discord_username, address, circle_id
 - concatenate df across several coordinape rounds
 - need to automate pipeline
+
+- Update: Feb 2, 2022
+- create file: `coordinape_establish_api_connection.py` for documentating the process
