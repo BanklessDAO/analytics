@@ -14,6 +14,19 @@ api_endpoint_manifest = os.environ.get('API_ENDPOINT_MANIFEST')
 api_endpoint_users = os.environ.get('API_ENDPOINT_USERS')
 HEADER = {'Authorization': f'{auth_token}'}
 
+# --- Primary steps to explore nested data ------
+response = requests.get(f'{api_endpoint_manifest}', headers=HEADER)
+result = response.json()
+dataframe = pd.json_normalize(result)
+list_of_column_names = list(dataframe)
+
+# dataframe is [1 rows x 48 columns]
+# unpack dataframe using f-string
+for item in list_of_column_names:
+    print(dataframe[f'{item}'])
+
+# ------------------------------------------------
+
 # specific api endpoint
 response = requests.get(f'{api_endpoint_manifest}', headers=HEADER)
 response_2 = requests.get(f'{api_endpoint_users}', headers=HEADER)
@@ -33,6 +46,9 @@ print(dataframe_2)
 # print column names
 print(dataframe.columns)
 print(dataframe_2.columns)
+
+# alternative way to print column names
+pprint(list(dataframe))
 
 # print columns names
 for col in dataframe.columns:
@@ -119,3 +135,12 @@ pd.json_normalize(dataframe['myUsers'][0])
 pd.json_normalize(dataframe['circles'][0])
 pd.json_normalize(dataframe['circle.users'][0])
 pd.json_normalize(dataframe['circle.token_gifts'][0])
+
+# normalize into dataframe, then list column names
+token_gifts = pd.json_normalize(dataframe['circle.token_gifts'][0])
+print(list(token_gifts))
+
+# The Coordinape API produces nested data
+# Here's the TLDR
+
+list_of_column_names = list(dataframe)
