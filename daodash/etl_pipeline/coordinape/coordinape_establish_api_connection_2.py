@@ -9,27 +9,86 @@ load_dotenv()
 
 # api endpoints, authorization & header
 auth_token = os.environ.get('AUTH_TOKEN')
-
 HEADER = {'Authorization': f'{auth_token}'}
-
 api_endpoint_manifest_protocol_bankless = os.environ.get(
     'API_ENDPOINT_MANIFEST_PROTOCOL_BANKLESS')
 
-response = requests.get(
-    f'{api_endpoint_manifest_protocol_bankless}', headers=HEADER)
 
-result = response.json()
+# make requests to api endpoint and print a dataframe
+# then, perform a basic loop to print something out
 
-# normalize json data into dataframe
-dataframe = pd.json_normalize(result)
+def send_request():
+    """Description
 
-# print dataframe
-print(dataframe)
+    Send request to Coordinape API endpoint.
+    Return json object of the response.
 
-for c in dataframe.columns:
-    print(dataframe[f'{c}'])
+    Args: None.
+
+    Returns: json object
+
+    Notes:
+    """
+    response = requests.get(
+        f'{api_endpoint_manifest_protocol_bankless}', headers=HEADER)
+    return response.json()
+
+
+def normalize(result):
+    """Description
+
+    Takes json object and normalizes into dataframe
+
+    Args: json object
+
+    Returns: dataframe
+    Raises/Notes:
+    """
+    dataframe = pd.json_normalize(result)
+    return dataframe
+
+
+def print_columns(df):
+    """Description
+
+    Loop through dataframe column names
+    Use names to index through dataframe and print each column
+
+    Args: dataframe
+
+    Returns: print dataframe indexed by column name
+    Raises/Notes:
+    """
+    for col in df.columns:
+        print(df[f'{col}'])
+    print('\n')
+
+
+def print_circles(df):
+    """Description:
+
+    Loop through 'circles' column, a list of dictionaries,
+    print values associated with the keys: id, name, protocol_id
+
+    Args: dataframe
+
+    Returns:
+    Raises/Notes:
+    """
+    for dct in df['circles'][0]:
+        print(dct['id'], dct['name'], dct['protocol_id'])
+    print('\n')
+
+
+result = send_request()
+df = normalize(result)
+print_columns(df)
+print_circles(df)
+
 
 """
+dataframe column names:
+
 myUsers
 circles
 active_epochs
@@ -79,9 +138,3 @@ circle.circle.protocol.updated_at
 circle.circle.protocol.telegram_id
 circle.circle.protocol.is_verified
 """
-
-for d in dataframe['circles'][0]:
-    print(d['id'], d['name'], d['protocol_id'])
-
-for d in dataframe['active_epochs'][0]:
-    print(d)
