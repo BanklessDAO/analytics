@@ -357,3 +357,84 @@ db.bounties.aggregate([
     },
   },
 ]);
+
+// Find Query
+// Count TOTAL Bankless bounties
+db.bounties.find({ customer_id: "834499078434979890" }).count();
+
+// bounties before jan 2022: 98
+db.bounties
+  .find({
+    $and: [
+      { customer_id: "834499078434979890" },
+      { createdAt: { $lt: "2022-01-01" } },
+    ],
+  })
+  .count();
+
+// bounties after jan 2022: tbd
+db.bounties
+  .find({
+    $and: [
+      { customer_id: "834499078434979890" },
+      { createdAt: { $gte: "2022-01-01" } },
+    ],
+  })
+  .count();
+
+// bounties in jan 2022: 24
+db.bounties
+  .find({
+    $and: [
+      { customer_id: "834499078434979890" },
+      { createdAt: { $gte: "2022-01-01", $lt: "2022-02-01" } },
+    ],
+  })
+  .count();
+
+// Aggregation Framework
+// Percentage of New Bounties created After Jan 1st 2022
+// before and after New Years
+db.bounties.aggregate([
+  { $match: { customer_id: "834499078434979890" } },
+  {
+    $group: {
+      _id: 1,
+      count_new: {
+        $sum: { $cond: [{ $gte: ["$createdAt", "2022-01-01"] }, 1, 0] },
+      },
+      count_repeat: {
+        $sum: { $cond: [{ $lt: ["$createdAt", "2022-01-01"] }, 1, 0] },
+      },
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      new_creator_percentage: { $divide: ["$count_new", "$count_repeat"] },
+    },
+  },
+]);
+
+// Percentage of New Bounties created After Feb 1st 2022
+// before and after Feb 1st 2022
+db.bounties.aggregate([
+  { $match: { customer_id: "834499078434979890" } },
+  {
+    $group: {
+      _id: 1,
+      count_new: {
+        $sum: { $cond: [{ $gte: ["$createdAt", "2022-02-01"] }, 1, 0] },
+      },
+      count_repeat: {
+        $sum: { $cond: [{ $lt: ["$createdAt", "2022-02-01"] }, 1, 0] },
+      },
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      new_creator_percentage: { $divide: ["$count_new", "$count_repeat"] },
+    },
+  },
+]);
