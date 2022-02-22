@@ -231,7 +231,7 @@ db.bounties.aggregate([
   { $group: { _id: { $month: "$createdAt" }, num_doc_by_month: { $sum: 1 } } },
 ]);
 
-// 60-day 2-months (December - January) count of Bounties (customer_id)
+// 60-day 2-months (December - January) count of Bounties (customer_id) (Dec, n = 27; Jan, n=24)
 db.bounties.aggregate([
   {
     $match: {
@@ -252,8 +252,8 @@ db.bounties.aggregate([
   { $group: { _id: { $month: "$createdAt" }, num_doc_by_month: { $sum: 1 } } },
 ]);
 
-// Alternative version (customerId instead of customer_id) for December AND January bounties (n = )
-
+// Alternative version (customerId instead of customer_id)
+// 60-day 2-months (December - January) count of Bounties (customerId) (Dec, n = 21; Jan, n=24)
 db.bounties.aggregate([
   {
     $match: {
@@ -274,7 +274,28 @@ db.bounties.aggregate([
   { $group: { _id: { $month: "$createdAt" }, num_doc_by_month: { $sum: 1 } } },
 ]);
 
-// Week-over-week (December - January)
+// Week-over-week (Dec 2021 - Jan 2022)
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { customer_id: "834499078434979890" },
+        { createdAt: { $gte: "2021-12-01" } },
+        { createdAt: { $lt: "2022-02-01" } },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      createdAt: { $toDate: "$createdAt" },
+      "createdBy.discordHandle": 1,
+    },
+  },
+  { $group: { _id: { $week: "$createdAt" }, num_doc_by_week: { $sum: 1 } } },
+]);
+
+// Alternate: Week-over-week (Dec 2021 - Jan 2022)
 db.bounties.aggregate([
   {
     $match: {
