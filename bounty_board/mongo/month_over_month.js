@@ -315,3 +315,47 @@ db.bounties.aggregate([
   },
   { $group: { _id: { $week: "$createdAt" }, num_doc_by_week: { $sum: 1 } } },
 ]);
+
+// Alternate: Month-over-Month (Dec 2021 - Jan 2022)
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { customerId: "834499078434979890" },
+        { createdAt: { $gte: "2021-12-01" } },
+        { createdAt: { $lt: "2022-02-01" } },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      createdAt: { $toDate: "$createdAt" },
+      "createdBy.discordHandle": 1,
+    },
+  },
+  { $group: { _id: { $month: "$createdAt" }, num_doc_by_week: { $sum: 1 } } },
+]);
+
+// Alternate: Day-over-Day (Jan 2022)
+db.bounties.aggregate([
+  {
+    $match: {
+      $and: [
+        { customerId: "834499078434979890" },
+        { createdAt: { $gte: "2022-01-01" } },
+        { createdAt: { $lt: "2022-02-01" } },
+      ],
+    },
+  },
+  {
+    $project: {
+      _id: 1,
+      createdAt: { $toDate: "$createdAt" },
+      "createdBy.discordHandle": 1,
+    },
+  },
+  {
+    $group: { _id: { $dayOfYear: "$createdAt" }, num_doc_by_week: { $sum: 1 } },
+  },
+]);
