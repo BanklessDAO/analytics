@@ -5,7 +5,10 @@ import pymongo
 from pymongo import MongoClient
 
 # context manager
-import contextlib
+# import contextlib
+
+# pandas
+from pandas import DataFrame
 
 # pretty print
 from pprint import pprint
@@ -62,3 +65,24 @@ print("Number of Bankless bounties with customerId: ",
 
 print("First bounty that introduced customerId: ",
       bounties_col.find_one(customerId_filter))
+
+# Cross-Check: count_documents after createdAt: '2021-12-09' and customerId: '834499078434979890'
+# n = 67
+bounties_col.count_documents({
+    'customerId': '834499078434979890',
+    'createdAt': {'$gte': '2021-12-09'}
+})
+
+# ----- Cross-check: 219% growth after Jan 1st ------#
+# Cross-Check: count_documents after createdAt: '2021-12-09' and before '2022-01-01' and customerId: '834499078434979890'
+# n = 21
+# calculation: 67 - 21 = 46 || 4600/21 = 219%
+bounties_col.count_documents({
+    'customerId': '834499078434979890',
+    'createdAt': {'$gte': '2021-12-09', '$lt': '2022-01-01'}
+})
+
+# ---- load bounties_col into dataframe ----- #
+# n = 67 (rows)
+df = DataFrame(list(bounties_col.find({'customerId': '834499078434979890'})))
+print(df)
