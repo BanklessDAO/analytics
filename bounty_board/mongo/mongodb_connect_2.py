@@ -48,7 +48,11 @@ print(list(first_bounties_doc.keys()))
 
 # find latest document to inspect
 latest_bounties_doc = bounties_col.find().skip(n_bounties - 1)
-print(list(latest_bounties_doc)[0].keys())
+pprint(list(latest_bounties_doc)[0])
+
+# print only keys
+# print(list(latest_bounties_doc)[0].keys())
+
 
 # composing filters
 # filter for customer_id
