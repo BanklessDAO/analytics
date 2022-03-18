@@ -52,13 +52,27 @@ with get_postgres_conn(db_string) as conn:
     result = conn.execute(
         text("SELECT id, COUNT(id) FROM subgraph_bank_transactions GROUP BY id HAVING COUNT(id) > 1 LIMIT 10")
     )
+    n = 0
     for row in result:
+        n += 1
         print("row :", row)
+        if n > 0:
+            print("There are duplicates.")
+            break
+        else:
+            print("No duplicates!")
 
 # this query of the 'graph_id' column shows there are no duplicates
 with get_postgres_conn(db_string) as conn:
     result = conn.execute(
         text("SELECT graph_id, COUNT(graph_id) FROM subgraph_bank_transactions GROUP BY graph_id HAVING COUNT(graph_id) > 1 LIMIT 10")
     )
+    n = 0
     for row in result:
+        n += 1
         print("row :", row)
+        if n > 0:
+            print("There are duplicates.")
+            break
+        else:
+            print("No duplicates!")
