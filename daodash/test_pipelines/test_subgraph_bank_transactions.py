@@ -62,7 +62,7 @@ with get_postgres_conn(db_string) as conn:
         else:
             print("No duplicates!")
 
-# this query of the 'graph_id' column shows there are no duplicates
+# this query of the 'graph_id' column shows there are *no* duplicates
 with get_postgres_conn(db_string) as conn:
     result = conn.execute(
         text("SELECT graph_id, COUNT(graph_id) FROM subgraph_bank_transactions GROUP BY graph_id HAVING COUNT(graph_id) > 1 LIMIT 10")
@@ -76,3 +76,12 @@ with get_postgres_conn(db_string) as conn:
             break
         else:
             print("No duplicates!")
+
+
+# incorporating vw_dupe_check_script
+with get_postgres_conn(db_string) as conn:
+    result = conn.execute(
+        text("SELECT * FROM vw_dupe_check_script")
+    )
+    for row in result:
+        print("vw_dupe_check_script :", row)
