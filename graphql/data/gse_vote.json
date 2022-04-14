@@ -1,0 +1,4646 @@
+[
+  {
+    "id": "0x3d887c23f894455ea744022fe55f3b638aae3ec208a35512879beeae941d8be6",
+    "voter": "0x4A6737Da9668D09aCE702c3ff5e0dA33a84d28F7",
+    "created": 1647993154,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x915a87e6f44b50abb06ef55277fd308146fd83b20d65bb1f84d66e8479157c8b",
+    "voter": "0x540c44FF7B71F2487Cd11aaF53aeC1a85BFE8f7a",
+    "created": 1647990901,
+    "choice": {
+      "3": 5,
+      "4": 40,
+      "6": 5,
+      "7": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x96c8ce37e9bacc755d837540a4140a84917ddbbf15f1817060dc01540785702c",
+    "voter": "0xAf5c595eaA0ED462A75157513D99e1E3B0D1A570",
+    "created": 1647986560,
+    "choice": {
+      "3": 1,
+      "5": 2,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5ab41a959493b21ec0b69439584b36002d7af5d27c1c5a8a92f71be65ab4521d",
+    "voter": "0x7d4D74853ED81b1f01bf0a5943Fe4b9459AFA036",
+    "created": 1647985443,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x28cb75baac84568a1a85811e1404a254977ca9371ad0f6389fd982aef5fac4aa",
+    "voter": "0x82c384FD188BFb22981B9922c67ae21A4493bF28",
+    "created": 1647984979,
+    "choice": {
+      "6": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1ebf794eaa7299388654df1bcaa9157f97d854ab3d6d92fe3522accdd372fc3c",
+    "voter": "0x40DA94690068a123399c1BDEef3220685EcD8940",
+    "created": 1647983816,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0b1035cd2ec9300cb7b37684051c64f8da2212daaf5956cafc42edea275a94d9",
+    "voter": "0xb5fd9d86826697ddA47A5045725406b3B1758c40",
+    "created": 1647983762,
+    "choice": {
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmcbYytcWmrS31drA4RevBbq5g2vLNw6xtzP8XRk5QRQAN",
+    "voter": "0x528591159Ff78e91FB760b73266bc65CB1943072",
+    "created": 1647982644,
+    "choice": {
+      "3": 1,
+      "4": 2,
+      "5": 3,
+      "6": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa70002a65eefbb28d53faaf3feaa79083003653be62272d6b488ef7393fb7af8",
+    "voter": "0xa23de4b54e18bAaeeFAc9FdBCD78EAD69c8B1C66",
+    "created": 1647981957,
+    "choice": {
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe85a1cdd30f21c3770482c1b5ca4d5e6d35d9c723eb27e6e9b859a8b2857c470",
+    "voter": "0x338f603755412f64eAb9A3FE9D2873e0d8C536d8",
+    "created": 1647980663,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 3,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xcddde9348c8b7e08d25f016c0df03ad15c1a0620a6533e2161705db93ffbf3ba",
+    "voter": "0x61f1EC7720Bf935E6dcC03eBCFd0E01774C563E2",
+    "created": 1647980533,
+    "choice": {
+      "7": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf494bfdeedf99b44f5e1bda36ac47a576fb96044fe597ffdede6cd2e99010cf8",
+    "voter": "0x97667E07eef1eFe254d37a13de221425740E3774",
+    "created": 1647979208,
+    "choice": {
+      "7": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7d795b664eebaa2f1278cfceb4def029e0add0f3b77c4ec0400a6d6ce36368d0",
+    "voter": "0x1850aD6dEecFE06dD9D001b683FE867301C92326",
+    "created": 1647979020,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x93227882b2dad1687d15627b4194571312558e0e29b249a38d77744c60af23ff",
+    "voter": "0xbe2909813f6F850af99C8b968febF6eb884F1454",
+    "created": 1647978977,
+    "choice": {
+      "3": 3,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xeb85a48c50ddfa73037b5ffd9deef18f01a7a28b143383a57e70e969281836b9",
+    "voter": "0x170C3D36B7b6Fa957C8b454C416F66c4085971c7",
+    "created": 1647978927,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5fb512586cdb0e6b4205da6f35129e50385f9ffb64e31ade3be9cdf7a30bc145",
+    "voter": "0x6a58e5864E0fc7dA7489cA3A9613C3492b2A9842",
+    "created": 1647978458,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xecf0a97eeadf259fe6c1c8798b9b20b9c571d7e74fba92cf919531750a28e301",
+    "voter": "0x595FfB4E0738f4976A82Dc9CD5158ac1EecDEBf1",
+    "created": 1647965881,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x12e4501aaa75f91f6f6adef9c83509488f1da23b294b1b80d83ab553c4378992",
+    "voter": "0x3A5bd1E37b099aE3386D13947b6a90d97675e5e3",
+    "created": 1647964801,
+    "choice": {
+      "7": 4
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe14cc34526a290abed2365dcd0d1ba09b807b9f693bb1ab9167df2b1a33b7bf0",
+    "voter": "0x56Cb75b092b1866ffE4531151Da6e233ae5811E2",
+    "created": 1647958630,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmPgirnmLd2uPbjudkVs2CzaiqN8VLZHUzrcV1Ps7JSa4B",
+    "voter": "0x94c1E53629840Ad496b7CC61faBd2548d70BE07b",
+    "created": 1647958359,
+    "choice": {
+      "1": 1,
+      "3": 2,
+      "4": 3,
+      "5": 1,
+      "6": 2,
+      "7": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf889fb60539aa9325b6455cb01798ecd23e0d875088ceb019cb800f5f572dcdf",
+    "voter": "0xa336fa33DA9178Cb46dfeE752bFA5700f5BF39f1",
+    "created": 1647957166,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf334781e751bda71737661e2c59e95dcf24dce50c824b1100bdbcc101feb06e7",
+    "voter": "0x609F1FE76461bFB7f5e44Dc66D5806CD379c5094",
+    "created": 1647954114,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xecbab3d50f29f087254061e9e565fadcf7db94ebca8ca212b90d6c3667f0ecce",
+    "voter": "0xBC9f3d253E0e4Fa7970Da8a1d01fece566ea3Fa1",
+    "created": 1647945029,
+    "choice": {
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9a4786921431d844d324999069473bad48cfab243fabff4cfff1b1d805914335",
+    "voter": "0x5aD12AaD34f0ecD96528cDdc49448FDdD944A9BA",
+    "created": 1647943081,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc86b9d1147800fee2bbf515025d52b08226a4d4e6227477787fff3b55014b382",
+    "voter": "0x25a2a1719722A3cbf014ea9E2906521eB57caA8f",
+    "created": 1647943010,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 2,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2ce38ec9c8636b1a8d4858f7302ba2cd101deb18a8c53b8cec8bd10bddfefc2d",
+    "voter": "0x3E67c69386323FaE679BfC43b183e2C97C0c5433",
+    "created": 1647942987,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 2,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3709ede3daa3eefb675436c0aa464981245452dd0882bff4bcd11d3215f33bfc",
+    "voter": "0x67f5849B493bC5A148fC389aB4D3c3D123AeB85D",
+    "created": 1647942963,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 2,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x11774b73f196c083a5b63f0914c863b6ce2b76508c88194b33be48adc53582f8",
+    "voter": "0x2503648ba68E694155D1c0FF56209f6Dd3e7E22d",
+    "created": 1647942334,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x003ae7be217e736809bc5db1785de11220274ea5338ac5e7f6edfc4f4ee15cdc",
+    "voter": "0xE8Dc8e3169388C26c39a3903D1b68AdaafeC42F2",
+    "created": 1647942307,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x36e75ff856e7b2439ed5fb8c1e6a2a71adbf09dc902c5b0b39d5cb85e40f32db",
+    "voter": "0xeF21937c9a9c067fF1E45332a98804bef25d7899",
+    "created": 1647942284,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xde42f9c5c73475da8dad0376eab5d4679ea2e0cba21fa3e38ef2a1eaf7843656",
+    "voter": "0x933342831c3947Fdc8e3016d2d2fd2c8EFDA389E",
+    "created": 1647942260,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6b40593fb38490482f26b14262e6f258a5e1e0ec0b3ce3538ea9bdb2082dca8d",
+    "voter": "0x010C6fBCAb924f7d43536c33f8c7da009f4CBB5F",
+    "created": 1647942174,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x671f757afef45fa0d9e53253af239c7a5bdbd3b308b8d4d847b55f3544fb5c25",
+    "voter": "0x85956C4A2478a77730635CE0Dc3954983d5b0971",
+    "created": 1647941900,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x25eb8f90c416b6f5817c8e2187e04f5722c8263e103878a16fc978f626c788ac",
+    "voter": "0xE8689d980bf3ffc0a82DAC0af794234ceD4dBc5c",
+    "created": 1647941859,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x59e5f5b887aa768748c62c3825caad2682f24e4cde28fe5e30f9898bbdb834d3",
+    "voter": "0xb87cef3Ae435914f150141205866F3569CbAC26E",
+    "created": 1647941642,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd8b0413d0d45248cd2ad11c1073d07eb0b4c5565bd36e5cb829903c20f81a251",
+    "voter": "0x1953234b8EB23F6A71D7E8556329C219d030398B",
+    "created": 1647941562,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfddb3745691946a9e149e8cf6651abdf2e772bb746808dd25e13721e72f13fe1",
+    "voter": "0x44B6da4d5fe34754DD6bd7F00E15986eac5f23c8",
+    "created": 1647941410,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2a18ca2601999d453d1417ea0c49cf364fb13aacf364b00adc10819ec6acb73e",
+    "voter": "0x9F247ACBdF9ec6B4C9EB3c60596B79E0a71C0267",
+    "created": 1647941251,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6bc3216b31725d9b4b08bec2e25d3ded1bc5ebe85e0cf0bd3a5102cdffb3f803",
+    "voter": "0x568478262B0FB688db4BEA198783878E9e6b29c1",
+    "created": 1647941181,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf3f4c5cfbe4380ec8de863723861dbbcb795d9fb4846ba1e953ae8ec331d49cb",
+    "voter": "0x5D32cC8B77dA54aF05e2F349aa88a6Ccb9a446a4",
+    "created": 1647941147,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4663e13f23a6c3d426490e0f0152ae13fb18f7708bd833fc073e7eceadb0e363",
+    "voter": "0x2C8D2e50Ee03f98A2f4CCFbe1A61552b79bDF6fa",
+    "created": 1647939357,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x81ba984e02b3bc6a7709b1aec3dd0c23c2667da827c879b8fc3773149c0a9071",
+    "voter": "0xe2D8923A1aBd3738BD0D35da6E832cEe4A0c17Fb",
+    "created": 1647928722,
+    "choice": {
+      "2": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7ce6c531dab9d18a5ed91ed1169352361d3bd375fd1ae104663fd40bde2a1b17",
+    "voter": "0x81cf5F80e6C9B9653155Db40Dc3176F3938f5d34",
+    "created": 1647928714,
+    "choice": {
+      "7": 5
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x377af883f680647de93b23d730ec3d49dc4ac2fde187c5adc5c27578fddaebbb",
+    "voter": "0x72b2Cb558bF17F9e5AA40754A4e26EC480C07554",
+    "created": 1647925612,
+    "choice": {
+      "7": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x79dfd2e6ebbec5c83f2d21c60c9fbf829807add950fb1afeb5c176fe501fad71",
+    "voter": "0xAcC452a494b59A3F536D717F6222D09C5Acf20A8",
+    "created": 1647883378,
+    "choice": {
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x889e79a3592e60c62ccdbc92fe6f29b66e5fe71ef9b68a38b3f3bf779dd5ad04",
+    "voter": "0x201E6710f39611807BB8EC840f8c252F6C16C71E",
+    "created": 1647882895,
+    "choice": {
+      "1": 2,
+      "2": 1,
+      "3": 5,
+      "4": 3,
+      "5": 2,
+      "6": 1,
+      "7": 6
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x17e9d7ef09a5871b60adcfb93e7809b3b35a5108330e1b957ee2d8025d9acc7b",
+    "voter": "0xAFa6F7A00e089059DB60268ad230aF5e311C440c",
+    "created": 1647881528,
+    "choice": {
+      "3": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x546cefa8b7ab4dfb8074fa23d823cbf51cdeee0441fd75257c1ac9c36f33aacd",
+    "voter": "0x314618a937f4f443Ba1700222AFc1518F3238480",
+    "created": 1647881398,
+    "choice": {
+      "4": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2854c7368c39c30baba253375f789121f8c6c49d4c502daf1aec8ae37961c41c",
+    "voter": "0x2ce1A66F22A2Dc6E410D9021D57aEB8D13D6bFEF",
+    "created": 1647880779,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6815cca5eee02f43ace4b332c8c4b7b88472270e300328f5ba58046994038eeb",
+    "voter": "0x93E459A7fA7886cE52993A48445646A1342F1Bf0",
+    "created": 1647873115,
+    "choice": {
+      "7": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd02a225f1dfb42a2160381e4e726fcc563f55b3b70716fafe52858806813a920",
+    "voter": "0xBd7041c03B68467a55596F375c3e4Bb716406a23",
+    "created": 1647872820,
+    "choice": {
+      "1": 25,
+      "3": 25,
+      "5": 25,
+      "7": 25
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8ba4d30f0ea2398d18e86d1a35cd116c7bd22031603f53d06af18bed6275022a",
+    "voter": "0x3eC25DBBF90468979c25b45D9F76aBAAA59dFCa2",
+    "created": 1647871007,
+    "choice": {
+      "1": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6d8a2c3474149844f7fdbe0367ccbd4ba9a00136f19356e345ca1fa60efafac1",
+    "voter": "0xF226018b76f2F7cB45aD5829a7eEDD4214580a3F",
+    "created": 1647862875,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5b11033a3127f87ad93bdf063571e809241d45f7ef38c41e61443489a9bd47b5",
+    "voter": "0xdd45CA901067d65860b54d4310e37371CD92Fb09",
+    "created": 1647852866,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xcd8135a95f1d1648903e8298acaee3c8ae5673e03c69af8aa0822908d4de0e65",
+    "voter": "0x2D96e1FE38ff45CC8910C617b3c5E0B6298a81f3",
+    "created": 1647844705,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xee4c55e890a2fb3b29669fb88f2e5da5a462a831a0ee9aa18acb7fbc5d83e094",
+    "voter": "0xad4745844bC838a22c6d63213507Bc888dEE3fc4",
+    "created": 1647843350,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xee1795c185a76938382d0d6e33ea2168ecd48d9c0c6e4fc9970afcc9535eed82",
+    "voter": "0xC93BBD6b37893667bf1e100F7Bd445E3044D72C9",
+    "created": 1647835427,
+    "choice": {
+      "1": 10,
+      "2": 10,
+      "3": 25,
+      "4": 10,
+      "5": 10,
+      "6": 10,
+      "7": 25
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd7cedf8712afcff97a8dc320e59e5d1d1139dab0aac406ae81957a0e64690c81",
+    "voter": "0x83C9440dc34DA00c47A0d4dC2b598d7BDB1b53F7",
+    "created": 1647832221,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "5": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd0f876c2899a3650cecd95e8a5a413136d6439bba8203c518211c64eee6a961a",
+    "voter": "0xE8c77e0eAbD6d8b2F54343152a8b213d3a42E54E",
+    "created": 1647817246,
+    "choice": {
+      "5": 50,
+      "6": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2b33b54e148ae2bde280e420e346facaf1347b6aea4327b317d8d3b2dae2c8f1",
+    "voter": "0x6A76DF065Fb20c33E99A763eCF186C60d1d3f78B",
+    "created": 1647812460,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x95b041ca856c10e91856286038e0c0f68889009286b9d1b19d9f8da46546d111",
+    "voter": "0xAEab2C097bd7a9e5Dbd83fEba500Aa56fB0C5930",
+    "created": 1647798627,
+    "choice": {
+      "3": 30,
+      "4": 20,
+      "5": 30,
+      "7": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5ccfcb25f63b1861c1f6374fb7840cfcf9d1b2010a515f6fb001ee3c64cc3303",
+    "voter": "0x2A1BBcdff7A047d82fc8829FAA0D13a8D2cf1dBE",
+    "created": 1647790136,
+    "choice": {
+      "1": 200
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1617e9fee9ef89b2ef473f11d3563efcc6fd0a35e4686fac03b384aa55eb882f",
+    "voter": "0xB7D62170F81E9F576906B81999a071eFDC3a0A0A",
+    "created": 1647789775,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4a7f896b51d8c79c5aa982f60caf6fa803a6ef2a0df5d30f4b3b6ef1cb80ace2",
+    "voter": "0x45b8BE1f65D8943580ed9CdB30865d2033BEb5E7",
+    "created": 1647789482,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x91098b9e75683860c1e660e8334ec64a0d10661bc82cf6388fb5d73c171e9edd",
+    "voter": "0x403a1Eb02a01702bF66c5D98FE2454348bCdb7f8",
+    "created": 1647789400,
+    "choice": {
+      "2": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x228627c6617ebc96a7cc8b2bc4070e6297cdf41209eeff1c730be9a0ece51fbf",
+    "voter": "0xdf1B02672d19909F80805AA3b217b8C9cD704D60",
+    "created": 1647788229,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd839c498aaee2392097133c700bd42d64ceba1b0129a4a12acc3c06233e5c0c1",
+    "voter": "0xAEECD8471dC7D1D9a8745916b79e1091617d86Cb",
+    "created": 1647777633,
+    "choice": {
+      "2": 1,
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x92cbff73eb18ba14dd96b907b44a31e07a21ddd5a5b320ea343a86e59b275340",
+    "voter": "0xaB888291F4127352B655fd476F64AC2ebfb8fe76",
+    "created": 1647770601,
+    "choice": {
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x81e46015c6cfe0b44425653f915e1e2a98701fcfb8631a74eddcbaccaf292cdd",
+    "voter": "0x0F46540678c7e6D2eF983B382CC07Fa815AB148c",
+    "created": 1647765887,
+    "choice": {
+      "1": 40,
+      "2": 60
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8b2e2979dd6ab8055d5a7303ebc4206a89766caacdca7c2392c0e2dd720e4a9e",
+    "voter": "0xFA7513021002F7181333B773BF801DFD7fd91ce7",
+    "created": 1647724037,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0f4bf10c770f174928babaf2d38b3e83d23c8e734a9eab5e4710d4124ffad6a8",
+    "voter": "0xbFE384D79969Bcb583B8A0e5FEDC314Aee480E7e",
+    "created": 1647710791,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc4d854612ae28c147234a4586a70a5239186b7f9b6204ce343e91f1438e7652a",
+    "voter": "0x600B7eD5d4F7eeBE62Cf089003E95Dce68625Ae2",
+    "created": 1647704003,
+    "choice": {
+      "1": 4,
+      "2": 5,
+      "3": 4,
+      "4": 5,
+      "5": 6,
+      "6": 1,
+      "7": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1cf9f30c13bc8e4f04a1ce59a809c4528a90bc68d03a14373a60e9265d5d7bc5",
+    "voter": "0xF30FC56264d65F241d5b2f0C861BbFf7555656b9",
+    "created": 1647703966,
+    "choice": {
+      "1": 10,
+      "2": 5,
+      "3": 8,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x76b35925a9c411706b8a71f5028086174a4dca1068ba815c76a99407243297ec",
+    "voter": "0xCF603a4B0D42337DD9fde4998c092aDc9C6C7fDb",
+    "created": 1647695118,
+    "choice": {
+      "1": 2,
+      "4": 1,
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xcb003791959a87ee3465a5406e03984165d53d2bd3e9a513f3157d66c30669bb",
+    "voter": "0x0A4DE625aa7624dD72cb09a41a6E52FCe1993310",
+    "created": 1647685652,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7cd9acd4d659202c2935d3043631f5eebed0c075c3e0cf5579d6532da606fff2",
+    "voter": "0x10a4be2F610104A18DbD9888E4FEf4374A9BBBE6",
+    "created": 1647684426,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9e15c2df17a07c69a15036e4203d018ccba7990cff2dccd3c050a2c665f16491",
+    "voter": "0xA9bEA5C0C25E4D02d56CBFE9A7564c3CcF599617",
+    "created": 1647677526,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x44352b00dfb8e398c63cb177cb1740072f500513d5eb6fdbd950b5bb6b9a2f00",
+    "voter": "0xe9945b3AcbDc2f9dcad8871F01aa9dabBb20d882",
+    "created": 1647675119,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc3ec44f8d3a1cf7b2bf48e60727742a91650b2693ef3c5cf497357bc125be407",
+    "voter": "0xB6fcA91D1c166564cC9888F96b3B553f42C96349",
+    "created": 1647674204,
+    "choice": {
+      "1": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd63cc20f89e94bbb033a608d663eaff02aa9e64adb0dbba79ed734b6818546e9",
+    "voter": "0x7e62D7BbEa6c1A843552f6dBB6E1395bAd769226",
+    "created": 1647673832,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9e9fa4947653e7536dd8997e9244834f2b078325b0ac1d95966618c7f5253fd7",
+    "voter": "0x528cD3a3db61d0e325BCD486bAEEe8E7317206Af",
+    "created": 1647665476,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x562ea539707da547823f5d001beaaa6f2435cc9e7be0caa7a7095cda8fb05922",
+    "voter": "0x6c4de74f5752960e991D7bf580fDE2cFc5E2CA59",
+    "created": 1647665212,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x64679cce95d102bb912dea329776c6fa113e2af2a938b1526a0b046328eb79d4",
+    "voter": "0x543b65d285d708B6f23d667a0Cc554fb22b458d7",
+    "created": 1647663781,
+    "choice": {
+      "1": 1,
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x43993f165966d8d2e8e7a7837fe245c57b98966423368d9ead909048102b83f7",
+    "voter": "0xe73E9A8e2616931fd3401874bb03f9b5C0e61CfF",
+    "created": 1647659724,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9c6ef759414a04f5709f519832e7d6dc30a0c763fd67ebb1928858d61fa0490f",
+    "voter": "0xfa483C6f280782714813C484Ea05BaB55e9f81ad",
+    "created": 1647653214,
+    "choice": {
+      "2": 3,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8ab025e6b56c39f3f5d5c13ee71858b3fcbf5e2e209ed8d96ee63150fd2de88f",
+    "voter": "0x7929fF721516111056b3b36259846F9B942400a9",
+    "created": 1647644889,
+    "choice": {
+      "2": 2,
+      "3": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x909257025203f66d95483a1fe4f65eecb4f797ec37d134c9d058d133e5f23c09",
+    "voter": "0xE4067ED66738dBDC7b8917703C8c380d898033F8",
+    "created": 1647635863,
+    "choice": {
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5cf2b0deb6abbb775ddbc0461143a9b107263dd10a87c020c5b3fba266906d6b",
+    "voter": "0x0F1d41cc51e97DC9d0CAd80DC681777EED3675E3",
+    "created": 1647631358,
+    "choice": {
+      "3": 3,
+      "4": 3,
+      "5": 3,
+      "6": 2,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x00611d92e8388529c75a28fd6a4f76269f345a9c8178f73780a7eb24999e5a2e",
+    "voter": "0x958c20A43F5206F186B0195cCB61Acb724b2EE1E",
+    "created": 1647629059,
+    "choice": {
+      "2": 4,
+      "3": 5,
+      "4": 2,
+      "5": 5,
+      "6": 5,
+      "7": 5
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmfYpuxfgPxAvRPzKNTqerhyq7yGroEevaip5BgBbjQtJA",
+    "voter": "0x74fa01a5D0ef8039f1E14F4d4C8f90e8602e07B4",
+    "created": 1647627668,
+    "choice": {
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x00ac880b3b04da65dab1dac187d17f108631879ef61ec199f44e3858ed1a4718",
+    "voter": "0x952198e93051D8157DeC65A9EE3982ff741bF4a1",
+    "created": 1647624931,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x885c6d2a3d8b3443c6905414ca228f7800673148935d39f108f10ebcd0439693",
+    "voter": "0x8C126eB5aDA6C61f5B48e9791d5D539576aF87Cb",
+    "created": 1647616751,
+    "choice": {
+      "3": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9060963543d85c41640a7d34d9af71b2e29a7ca5ce938ab8fc0e3cff9b8915ef",
+    "voter": "0xb464CA834796272E08Dc6460940B281B046a2cEe",
+    "created": 1647616292,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "6": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5de33c7a0b6a8eeff113fa1d65368e0fcf0fa104fa13908fc8ee1af2eeaea812",
+    "voter": "0x52A8d97577983706F91EcA67513a3412F155a166",
+    "created": 1647616291,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x421972e7c15a777a6d68a83e2015b2efd9ceac5fcc9282af27dd81f658fa20bd",
+    "voter": "0xf2720437a8491CBEDa7fc114bebA70378198D70d",
+    "created": 1647615453,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x77bf513a91bd32a6409c9dcfc2fc492ba434ff276e5bfd58e650442971189b29",
+    "voter": "0x4fa61F83bA1255462d04CdeFFADecaa411AD693e",
+    "created": 1647607216,
+    "choice": {
+      "3": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7998f69de274e828be1ff708b1dca93789320f052a928e619d1dd5bb1bdd5a3b",
+    "voter": "0xBA7e9Bb153F9c4C32903b721eB53B751E2c0bF12",
+    "created": 1647604730,
+    "choice": {
+      "3": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x626275007d3a97432eda66a8633c698f61353ba1d9b09c71299d3f1f9072f136",
+    "voter": "0x30005639bb4e10f781E7F9d52c49C26835630C23",
+    "created": 1647596953,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0a5aca0e96aa747662e0f539936c7af155d3533f459f7a4a35e7f077ea8200c7",
+    "voter": "0x128b7E7F0Bfa7CdA46bB4728A0DA88dBaA095026",
+    "created": 1647582692,
+    "choice": {
+      "1": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3954b16b25fc9d45e28e1e13de82ac046b0771c3cf643210a3dba323922b6207",
+    "voter": "0x6F16224bf1ed50A1A9E146339bF10D7F19367d80",
+    "created": 1647569527,
+    "choice": {
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x55309a7a0189a8b011eb5e43e746cf4f81a95ed2ece9fa82968b73228a997d25",
+    "voter": "0x8725F2ab39565e7726799a02bc353f8FBf1d507C",
+    "created": 1647567148,
+    "choice": {
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x44faf6bf5591e3bb113f9f27b227b3ba1cdd02388162823acf0e58600b8f728f",
+    "voter": "0x717c02129cb01b3C759EA960d75b48e8BABc8227",
+    "created": 1647567142,
+    "choice": {
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x39a789bc4ee24de5f6748c8f93125aa0ab04dc3b4c66bc78ad6e179d16f8bda1",
+    "voter": "0x47Ce377120ed597852839731BA7e9Ae301773385",
+    "created": 1647551772,
+    "choice": {
+      "4": 2,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf49bf7529dca60d63674a66128702c54dcfeb8efac0e5c4cd0960bee63b9782c",
+    "voter": "0xf1961bDe4da51C4e330460DCe7Af1014C458eCEB",
+    "created": 1647550587,
+    "choice": {
+      "1": 20,
+      "4": 20,
+      "6": 20,
+      "7": 40
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x415331c7a0497736c0e4eddbc2f450388610d4b4af521958be8171e918aa1ca5",
+    "voter": "0x4e4e018514c72776FE0F48bDC13aa1AA49E88f61",
+    "created": 1647548135,
+    "choice": {
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x44c4c14a5b737e075e9c5b22526ec70df9490d07843e02abf275e9beedfda69d",
+    "voter": "0x6764b343D13bAad9F80784e1BA075abFfAAa0202",
+    "created": 1647542079,
+    "choice": {
+      "1": 1,
+      "2": 5,
+      "4": 5,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1d0c6298318e58151d7eb90acfe931c1d6cea4cfc1a03628b21bd94e0e9005fe",
+    "voter": "0x7d157818367B83070c9D6bF42b05D49C4eAd69b9",
+    "created": 1647538575,
+    "choice": {
+      "3": 1,
+      "4": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x393b4a99151641b8f6aa5d29d22db82c9fe309044d4f4287d53417ea82152cf5",
+    "voter": "0xEe549CC0a0Ab1AEEa4bB326A1DE9fD1684dD83b6",
+    "created": 1647537635,
+    "choice": {
+      "2": 15,
+      "3": 12,
+      "4": 12,
+      "5": 20,
+      "6": 17,
+      "7": 19
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x28ea5b5557e8d3204a4db200dcfaf13f4bc419066758d46fe3d59c7028b648a2",
+    "voter": "0x2c84d8a2fFb283d295DE6eB5287A2AdDdA51b6eC",
+    "created": 1647534043,
+    "choice": {
+      "1": 10,
+      "3": 30,
+      "5": 10,
+      "6": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x94595405eec49d781ff9995d518897d2220829abd635df710049a8bb7c4fdb06",
+    "voter": "0x842BC271a1121B3ee77aBa9301c91d3104217d46",
+    "created": 1647532215,
+    "choice": {
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x060a9de53a85e2a2c2cbb9c2ab27979e3e0f4b02284eee4c79d567c3311f150c",
+    "voter": "0x4074FbEB67ca4e370cC04D2ec6789cc9A2D4358c",
+    "created": 1647530270,
+    "choice": {
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2ceba7be941ade427f86a27f7c4e05ee6d9d17fe3df3fd564c87e55e2de51e03",
+    "voter": "0x5b3A4FD425Ae1Cc99C8caC9632161956728c9370",
+    "created": 1647528890,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "6": 1,
+      "7": 6
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xb3730a25d448b24b3ca524f90c78a8205f98b3e298b4929970f6f3e19489ea18",
+    "voter": "0x522d634b6BFfb444FdbCdE5932738995A4cfd1F1",
+    "created": 1647520427,
+    "choice": {
+      "4": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x94f84ec82d58df8dd25ccaccbb490b7739b9be47529a6d01cdfd204d0e7727cb",
+    "voter": "0xDe4636287944cA28F8390Da22eb32Fa6E36BAd29",
+    "created": 1647515664,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xcde4f58a5f2f608d0390542c46daf7933ceaea2f88ce2fe109d23e47fb2afb95",
+    "voter": "0xF9910544073C78FD9186E5811c72CE088Fb92867",
+    "created": 1647514524,
+    "choice": {
+      "3": 1,
+      "5": 2,
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc934ce2901e3789f76e7afdf8ec0b6d2ff1e87797e5cae237ba94525932aeb97",
+    "voter": "0xA8371d8FcfB9F4705E4b9C273692933c21bEEa98",
+    "created": 1647514498,
+    "choice": {
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8f05eb36746ab76367d99ecb0b8a9a7ba73ff17197617ddce0296776909b0ec8",
+    "voter": "0xF7C5a0a318960A961AE4a138403b25bE10eB9CbA",
+    "created": 1647514428,
+    "choice": {
+      "3": 2,
+      "5": 2,
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd75554160c5ebae4c654796ac52727ce91cbd20f397f06d83709a7125d248801",
+    "voter": "0xb52fB9C7c4DFfC7e2019AE2698BCB7f0187bB87a",
+    "created": 1647509404,
+    "choice": {
+      "3": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa4bffea40502d0fddb5c628522c290e308c822037bfa450e756b69d076eadfbc",
+    "voter": "0xcfd1F6eCACBdFBE61e03e942bF677880a5cfAc0F",
+    "created": 1647505418,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xed43de969f0b4d511c070c3de2df90c55494db27beff897cfbcd20e25cf38de7",
+    "voter": "0x563A2B808897e9777a55f6c7E2a1F68638C00738",
+    "created": 1647497239,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa22d047667eb98f065e403690885c92e26d58aedc68d15130206250c5b76c2da",
+    "voter": "0xFfF6b41a29881fC97bD6E8778529B1E37597d94a",
+    "created": 1647496557,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmNesYWVjNAixSFdGbPbdtiwehuzEsuBRSEnyYQc6ewGHe",
+    "voter": "0xAe5499976FfD3e58Be47BDD51c787A5201D957f4",
+    "created": 1647494261,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0809c4702077075d571aead5d38176d47fc03cd51226e68d9bcaff8cb0fa5703",
+    "voter": "0xc74A9cF10221B145ee8AD4C2c293dF52Fd7D6CE7",
+    "created": 1647493821,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x83d4aa3a12be7f78fd8264209f0cf51a88a364dcf4c4685b3dc38d0375931efc",
+    "voter": "0xf2EB70e0c90CB9C8720CB374a8690cdC63E1680a",
+    "created": 1647493718,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5912fa418e91c29312d8b77129a0cc52bff61dbea6f71647c8e9f6322ba02169",
+    "voter": "0x2245bE89Fc8faB94ed982e859Aa3212A4e4eB7e5",
+    "created": 1647493186,
+    "choice": {
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf7fcf042a41abe426b1728bf32ef92c023551397525cf9ae851bf0076e4adcd1",
+    "voter": "0x5cAc4a6ff0C0c90053F0204e8CAF1b707BC307E6",
+    "created": 1647491549,
+    "choice": {
+      "4": 25,
+      "5": 25,
+      "7": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x458c66f2978a9b5733cbe227b05218f96cda1e39b93940f5fba771db3de37325",
+    "voter": "0x21b98f5698FD33d9cB58f6aB8d5ec58E803FCba2",
+    "created": 1647491433,
+    "choice": {
+      "1": 20,
+      "2": 20,
+      "3": 20,
+      "6": 20,
+      "7": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5a459edb0aaff69fbe3b294d3b72f4d7e32cf1ea723580bf66e9e6c6b194ccb9",
+    "voter": "0xb6ac0341Fcf3FB507A8208D34a97f13779e1393D",
+    "created": 1647486296,
+    "choice": {
+      "2": 60,
+      "3": 10,
+      "4": 10,
+      "5": 10,
+      "6": 10
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x29997d6742a4211bfad83a1ccd79fc84fdeb09d54a5d9811d660e3fc3b7825f1",
+    "voter": "0x39d1CB5Dff42a185C6d9308B94cdfE725F588461",
+    "created": 1647484566,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe067f50f99b8cf5153fb68f20737dba04a73bcd27fbbf217bf7aae1e48b8d62d",
+    "voter": "0x748522Ca2F61F724d2fA5e99823AdaAe04407050",
+    "created": 1647484018,
+    "choice": {
+      "1": 20,
+      "6": 30
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xab1ecff2cb20d506ff3220c626c0fdab698c10f9fd2d9b065c2a91065d4a15b1",
+    "voter": "0xD08CFaF162A96823B81fb53F4f8bd40ad123997D",
+    "created": 1647483923,
+    "choice": {
+      "6": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf581e67b4dee56237de0ee980b8d65ed11ba73abc652b3ba433852921c663807",
+    "voter": "0xa785c26A95a6CDfbE85edD71388a23854d441c36",
+    "created": 1647483729,
+    "choice": {
+      "1": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2db9f993ee23536b96ab73bd4ce055ebc10404b6148fdc1725e30c4169690342",
+    "voter": "0x285A6d35AF56C44e6b0A59411a34E1895842aDAA",
+    "created": 1647477897,
+    "choice": {
+      "3": 30,
+      "5": 40,
+      "7": 30
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x37cdfa42d8eb8f16daae590ba2fc1eaff4ff91ecf08aec13e61bf3c7f4629975",
+    "voter": "0x2a8Ea5210241dD709FDc85ecea70a7005096AC35",
+    "created": 1647473308,
+    "choice": {
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc27ee9b5264b9477453802c2d02261e88646311c8ea29121db396b7b1c60b2bb",
+    "voter": "0xD83551B29d0DA46C9b6d105EF359E23aaF46e764",
+    "created": 1647463874,
+    "choice": {
+      "6": 5
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7ba9700639465d49069339a8df4e3ebce84894c8185b97d17814411e2b1b77ed",
+    "voter": "0xBD19a3F0A9CaCE18513A1e2863d648D13975CB30",
+    "created": 1647463425,
+    "choice": {
+      "3": 20,
+      "4": 20,
+      "5": 20,
+      "6": 20,
+      "7": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x496860a683fee13e1695da346f85bdb0f856059e67fb5858e02a40f08f670387",
+    "voter": "0xBB8FB8fE5198f25D117C0e7B1b9C8260CB19C3C0",
+    "created": 1647457744,
+    "choice": {
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5a92c0363a68e6c802965f47cfae8586e4b478c28f97eebb16c46592642e2727",
+    "voter": "0xff32E57CEEd15C2E07e03984bBa66C220C06b13a",
+    "created": 1647456961,
+    "choice": {
+      "1": 3,
+      "2": 7,
+      "3": 12,
+      "4": 12,
+      "5": 20,
+      "6": 10,
+      "7": 26
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfe45964edc55314d2b63b61e01bf3491215142645fef89efe22c51c695b8e8f3",
+    "voter": "0x8C913F57Ca6507E5D6ED892661d918b29a4ba107",
+    "created": 1647456098,
+    "choice": {
+      "1": 1,
+      "4": 1,
+      "5": 2,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x93c4ecea9c3202cad71fd290097420c947ad18ce0e0923310c43d31d13cf3553",
+    "voter": "0x2d84CFB9cBA0E8E4d7511a88Cb7102A984fdb0bA",
+    "created": 1647455312,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf626864aad418e6331571e36cc8a36461ec1315007e3657b89a1aa0900e4c853",
+    "voter": "0xd3C808920D8fCcBeBd181Aae8D4FB2ACd1A433cD",
+    "created": 1647454590,
+    "choice": {
+      "5": 75,
+      "6": 25
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa94b46e3b53b0c3c8fa00bd6526ceba73406313b7de6db286c23fa7b738e0155",
+    "voter": "0x4A9A3815060C3Bd08fb4d44C9e74513874771b0C",
+    "created": 1647454135,
+    "choice": {
+      "3": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x81b4398ab499cf4944e3446d9935e4839f3fd43679dfddadbf450994a7ef8193",
+    "voter": "0x704Bd8255cC43A218889057b68c22cCD3416178E",
+    "created": 1647453485,
+    "choice": {
+      "3": 30,
+      "4": 30,
+      "5": 5,
+      "6": 5,
+      "7": 30
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe2825f6de065390630cd64f238590f2d79e0f96b6e06864704f2bbe5e359c4d7",
+    "voter": "0x186E20ae3530520C9F3E6C46F2f5d1062b784761",
+    "created": 1647450465,
+    "choice": {
+      "4": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xec6c489f3e95412bb18ca7d3a9e9588edd2a2fba733a99d82c1f26be470b7408",
+    "voter": "0xD663354A09aB4b0e67D077a540D77c2740E30290",
+    "created": 1647449223,
+    "choice": {
+      "4": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1839fffb7bd3c5ccf08ab8c70cec96a59544c688dab6761c9ef96f9c602103da",
+    "voter": "0x2D1E7B6E6284409e16991dE76d2A82847a7d61C5",
+    "created": 1647447895,
+    "choice": {
+      "3": 33,
+      "4": 33,
+      "7": 33
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3953a59454629aa1603654c1e210343d27e49565c4af82074e243611e9e34279",
+    "voter": "0x16458D6563e02eE371544096cEB89Dc32316C3dD",
+    "created": 1647445234,
+    "choice": {
+      "6": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xcddcde7d2dd86a5fd00ad88c5b85a5d1f5facfb785fa5617e689eae3c128f42d",
+    "voter": "0x8FaD37dFE228D08361385cda72F72bb20975a723",
+    "created": 1647443805,
+    "choice": {
+      "3": 50000,
+      "4": 46000
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3704906efb5934dd3f472f7aeeeb77aa75d9196a1929d820be4f1cb8787b323b",
+    "voter": "0x3B7eB1E5EeF4db567c0Fb58e35eab1B3332D5D89",
+    "created": 1647443750,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6c6859740c464b17ba343015b05af2631186b0070ac88d74aed1db59ef85b569",
+    "voter": "0x500F736F569b801e12cbdD5D8116EA0717512520",
+    "created": 1647443253,
+    "choice": {
+      "3": 10,
+      "4": 10,
+      "5": 40,
+      "6": 20,
+      "7": 10
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2c899dde5b23e23f5acfc0c23ab8bf33796feda24e6ff90897e67b737cb3f6fc",
+    "voter": "0xdfDf2D882D9ebce6c7EAc3DA9AB66cbfDa263781",
+    "created": 1647442969,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7b6e8a60203411d8908cf5cb345a21b24e44c56f42d98508372955985cdaa9a9",
+    "voter": "0x6C134832ba6b733419e27413176d2cf685075401",
+    "created": 1647440336,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x13635098039ce1cb4a9003c193eefe52a68bcb4d90c99232f7e495b5f77a2e4a",
+    "voter": "0xd91FCADCB0b820CD6d3E03f7a9Ca3ff12D258EDC",
+    "created": 1647439875,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x28158947af2167e0fc0bd13ebe5bab97054136148bc76b0f6e8ea39f3278f4c7",
+    "voter": "0xd4Dd02EdE4ad61B67110c2080C6e766e10922423",
+    "created": 1647439785,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe41d2e0a7cc07181cb2408d76e52b858cd8a401538b4f4b00f1b8010698cb6ab",
+    "voter": "0x9c8E159cF1939729b6c9d9D7e660555219cc3F41",
+    "created": 1647439769,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x063470d6332d8866bc1b91f58efa575103d31d233c6aeba258f10f2edca62cc5",
+    "voter": "0xf64c94A7887017729c569D4028EbE683717c0421",
+    "created": 1647439719,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x347ba9076953f9aebc10a9770aff71e9ef2059f33f0bc72cede6aa5cc0afa39a",
+    "voter": "0x04105242d1908BfEF51D90fEB7b936dD3B6c5835",
+    "created": 1647439690,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x048ca1c00b635bade8b5cd4c2232bee1ce434a2457b1c088a8a8215bfa13a229",
+    "voter": "0x28ca2d4bD040d6409d1B380e642587A71DABD71e",
+    "created": 1647439613,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4dda1df26adf59d55f1da62bb12f35d063a120c91a1de1e12dbf8d0845b61529",
+    "voter": "0xD1DFBD11d7BA0e78600f7c08AD15e29f4f6c82E9",
+    "created": 1647439591,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x07becb6701601d9a1ae4eac9edbce89f6c7ef3dfa1c0ca65ebf877cc89ab02e9",
+    "voter": "0xfcdEf5BfDa205Bd0e99bAa373FC66Ae80D4391Ff",
+    "created": 1647439554,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4a2ec677d09814b3ec50e11a3b1f59b8ae3a65443e59d629f67887a745af1f32",
+    "voter": "0x1496DE0E32061D5aD8a95D9CFC6587727a142454",
+    "created": 1647439515,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xbb427c1757d36f1f438f0e7e4508cfeb5622eaa2d60890f09e114584155855fd",
+    "voter": "0xc025be4229a46B3cfa074a038dA2E5B2Ef21fA06",
+    "created": 1647439456,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3cd3365d4ee227256ff002ec8777297681d3fa066ab8f1424fc1f71dd4ef69ed",
+    "voter": "0x06F3037A0f753C3fF2140F12A093e61245E5234f",
+    "created": 1647439443,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4927ca17882d7965f654415b7b704fc542bfcc9443f41960b78400e767854d20",
+    "voter": "0x907CA863e5C5d7f4229e19561adaaD4b788D2648",
+    "created": 1647439420,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x730035701eedc8affdbe8acdacdae6b54de4a8e919a6af20a6aa0897cc56cee4",
+    "voter": "0xadF670AD258B4Baa61590365f5bD888cCD466476",
+    "created": 1647439383,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x10f8d744aac7988c2b6681629d3157ceabb2a348947bb18c67cae79af359b3ae",
+    "voter": "0x381e4C6E6d83985024c23322aba6FB05C9C71C3f",
+    "created": 1647439291,
+    "choice": {
+      "3": 25,
+      "4": 25,
+      "5": 25,
+      "7": 25
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc34ee77035518f2fd8f9dfef421831696b5185196c5e9ca6b55933f606d581c6",
+    "voter": "0x1D55C586F21DeB83FAfe9Fb6507eF535dBDfB651",
+    "created": 1647439186,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4578dde354492498d612c056d88fc0dc994317d9d29e61fc1fe239a3f1cb506d",
+    "voter": "0x6ca3FCCB6c1a6F949b546C60e1347114970867a9",
+    "created": 1647439113,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8f7e00a0d79913859452e5b337ceae4125a621b5c497c9e11fec3e4e1d4e980a",
+    "voter": "0x5321f304c6f78f2639c87c531a5472dA44eE38Fb",
+    "created": 1647439062,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x06249ff37818a1dfb7779ad8246c5783a479a7bfa0d1a1c5575ed6c37914579e",
+    "voter": "0xC6E0Ce2584c236A7996267250CAea3858D0aA35D",
+    "created": 1647439012,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x69ca3be77809554c0f16df91fd442a486b3b98f1906d638e77723242484e3eab",
+    "voter": "0x12c80D709Bec16052025569352dADf943ae15886",
+    "created": 1647438969,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xbdf804ad9ad39867caeb8c2c8cbe1439a96cb7bd0f72c72dff3922ae46751a35",
+    "voter": "0x0E4fE12032df9d3242323caf57D40a75f5789eE7",
+    "created": 1647438931,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xce6c24eea41cc4b360ec4b31369cfb32a908b7556c7754645783743ab0f6838c",
+    "voter": "0x4F777E46C37fc4a2f70FdFB3a0A7C56C93EE82F0",
+    "created": 1647438887,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x45581879703c64dc59a41b6118cd45f4b4adda2ae8008208c53875872ddee5ea",
+    "voter": "0xfAdd555f1A8b444Dfc382910919e64C8AD86a461",
+    "created": 1647438841,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5f7461b1fa63f7664fa7b53d73118e33d46a13c13167e13d481068e1c33af558",
+    "voter": "0x90e97bD9F5fD775a4C2Aa4f26f762050cE6969C4",
+    "created": 1647438809,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7988f38bcab3450591e24414ff8438f73f05261b392502f73ddf41417f9a7294",
+    "voter": "0x1e54dbe42E212652CcAAB64EA70ACb7FF72e76E6",
+    "created": 1647438782,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x119da80c65dc697122e5384765e033045855f2678d7ec9ec4f00500ba8d9eaa6",
+    "voter": "0x7b9A7d69832F353e54D65188473DDe2a7789F612",
+    "created": 1647438779,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x96b420f5d122a9be28f9f4a9c3cf9fee57f634fd55cc4addb3ba847573f360ab",
+    "voter": "0xD245ac36DA768c396fc1b7438740D12FaD8b6aA4",
+    "created": 1647438738,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf7e4bca2ba660dff923bef3d0498cdebc7068d0c509dfcbc54736603b17f728c",
+    "voter": "0x7B2CE60A463f31B7AA4b842DdaF5EB8727AB656B",
+    "created": 1647438724,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2fc54229944d601381ed67cb7afb2cf7be21ab135ebc67c72fe7b1769308691b",
+    "voter": "0x01ecFa95fA86D9e94eAcb42CC0F892d43e191Caf",
+    "created": 1647438682,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfcec8bcf7701cf85694b2c34a6c39b181c98ebff4a8d70dbf1784a5f6c259c14",
+    "voter": "0x7b29520E790288835dA7c85e4DB6e4e870710D83",
+    "created": 1647438667,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6189cc271f3d832317db924199b7cd087188db21c01650d428a8f7af09c9048a",
+    "voter": "0x6Cf233CB7A0A1878Ef2d315F77e6c8B925f12cEC",
+    "created": 1647438621,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2ec4f57a4895c6a76d91591ffae08c405deb2f87afe25364ea93327cf52ea0d4",
+    "voter": "0xA0eEe1dA68A6B89A71E8EcF9E9bf889555d527C4",
+    "created": 1647438600,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xb9f5fcd8a7fd4bf784318c32e7920467b5a484ac2bda39c366b395d813d2755b",
+    "voter": "0x2bdD000643D993c51eFcac601Aadf49EcBf345f1",
+    "created": 1647438574,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x11da5afd23b6138216ba56c8b24fc0c9f6cd25ffa33ee4b84457af1c801985ce",
+    "voter": "0x7a282F06654514bD34A1Bb01EfCD94dFd71Ae5ca",
+    "created": 1647438555,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8a110654490890fd8255565ad9da8d4bb2f2da823e7f256bc0744c6e24274b86",
+    "voter": "0x3f7bed3d5745c2550f64aa97A4529406e555bCE6",
+    "created": 1647438521,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x73941d276e62ee8180f944676c51f52ff12a0965ba6b7b5dbe5e269f3d272bdb",
+    "voter": "0xC0005F8bD45349cC5D7C23ae4371231d3035B3da",
+    "created": 1647438392,
+    "choice": {
+      "1": 20,
+      "3": 20,
+      "4": 20,
+      "5": 20,
+      "7": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x79cb506c60fd6f5d9a981e3bf314ff7b9f33b4506740f1fccbaad4e0574abf15",
+    "voter": "0xEB035f0fD8059A6EecE8E28D64A8c75bA1000861",
+    "created": 1647438192,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8a31c3fa04882241b58d9c6d0e8decfafedac9878d43a9bced0f1e7e373df6a0",
+    "voter": "0xa12611Cd4B27a96A9A0Ec627a8d977Da0e1b6cB6",
+    "created": 1647438173,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe6621df4bac73135a7d24df2bfca853c51e4128ca3edc1052879f7d97eeb4365",
+    "voter": "0x35a20b5D8Bfbd674cBb9229cA91e012222F82E98",
+    "created": 1647437751,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x16858bf067607e3624a0b6c5377917795f67c1a72d71562b76a1a6962f909bec",
+    "voter": "0x699bEFEf574D30ce697147A61c2B0d7617F18C2a",
+    "created": 1647437701,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x01ed75212a87d0a825f2b511fb86743a35d20728795cde29bcb7c088d310927e",
+    "voter": "0x214865f51F3181C556513912F5014175121ecBe4",
+    "created": 1647437665,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa22fd0139a097d468ddc6ef85423e7ae62d7413d6c57d87ba4d4b7bf9d2f0a4d",
+    "voter": "0xB47116c96385aE3796d8BC25629B662d6Df58746",
+    "created": 1647437586,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc13c17679e6ea23f607f1f7eb09ce25c7567b44a3ac7510857545c11155d84f0",
+    "voter": "0x050dE5d3eef70A4685E1db962500F463939EfDB7",
+    "created": 1647437524,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x49449d93f412e740e8ab8010a277afb1b9c4cc714e14b13c04e0e062a5962cb5",
+    "voter": "0x3158EdE7ad7680Df78541Af3ca60b4D09DFcf41B",
+    "created": 1647437486,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe1a4eae574e9439d9a9f5345a17606ef473a3218b8b27c520633678677d504e3",
+    "voter": "0x8726d038c8BF67dDBd7d571895ECBa481D649997",
+    "created": 1647437357,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4d536b898b59e0d448d02f2b0298b6d9c777fb5dca48b98ebf6a9c8772c86a45",
+    "voter": "0xe77587e3a723B1d314c73f77e822b704A3fFB403",
+    "created": 1647437339,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x25408e1a239752b97ebd822e4c39ad6fa49c0ef9900fd6cee40d697e7ae8982f",
+    "voter": "0x166D720802F189a03F43F3B1132369B0FD9E1c93",
+    "created": 1647437297,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xec460763c73e164a5ad3f1fab562f53b883a42e1fa994835440b30777d7b3339",
+    "voter": "0x9FDEe2C1883d46A5C0C72630Da1EB7d70bf9c32e",
+    "created": 1647437209,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x788f905c56d07688847094a8812196bb106168c4ca7117fcae2ac4ef96660d83",
+    "voter": "0x3bf7F65D1847720D08c2bd0D8e2823ef049dab20",
+    "created": 1647437015,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1b855edef3569796d1f7aa94e35fab8219d6261af7fd093bb9eecb50964c013f",
+    "voter": "0xcB3cc201E8cE85370F2af36C74aBB5dA0ec9E1A3",
+    "created": 1647436986,
+    "choice": {
+      "3": 2,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa4ba3e142af18bf2e80d72e98301d117eed2b21fe4ec5f736e1711da8e44967c",
+    "voter": "0xB75d08B1Bc49F4e2B0e27c7F77aAc9BD49333d29",
+    "created": 1647436473,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7ae8d1050ba9c0734d40a3ec17a5968fb4167be9b9557c9578046ad4550d3b94",
+    "voter": "0x06FA22D76a0205F4972580E63090a97f1c788F67",
+    "created": 1647436453,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfa6abeeb700cc54c4e6095d7921af3ccc5b4f710d7cfbf60476b23fa98a797d4",
+    "voter": "0x22A6a40223D99A1112e9975FC4E4E41726a4805E",
+    "created": 1647436420,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0a32e13c3af2a92084ce12d5bb95b1edd4fb323c1bbce7acfc5d288a58e43373",
+    "voter": "0x41fb250fD5BE7cC6E818Bf7B54843735E8C64ABb",
+    "created": 1647436407,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xdd9e1c0020045d75e7183fda57e443efe49c3a59de576c54d649f667e63b06e9",
+    "voter": "0x3b74175fB78aF5Aa92e9Eb2c7e837F6d50882522",
+    "created": 1647436383,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0e2f2bbdb901e5c6d6711deff2466c57a1871afc5419e9c77f6f4f422f73f184",
+    "voter": "0x3712c3F2d2E2Bd0CecB6FA68b2E9F71d8029cc9E",
+    "created": 1647436354,
+    "choice": {
+      "3": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe04125ba1752bf17ff00f34d88a67618e5dab163a839c322d372f216ad76c430",
+    "voter": "0xa29FDDEc9C36BDD680D3f5867735ff8949a7F15D",
+    "created": 1647435518,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x20231e54b02e0b9ac1c54ff62b8ed63435ee72fcac990af384c7e80f8bfde4ee",
+    "voter": "0x5244736b3A8F898149aE33f013126A20cE7abc62",
+    "created": 1647435430,
+    "choice": {
+      "1": 1,
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xd78504cce57e2b7b02d9b9acc1739a846aa642c02d5d46cb98994bf2dab07b57",
+    "voter": "0x29ee39be789aDA5cBb2051f4bDd70Dd735Aed7d0",
+    "created": 1647435343,
+    "choice": {
+      "1": 1,
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9974af4838c5bd0c97d0b02e95ed92da4b3322e6dfcc9ba72b6040e2a5f9c7bd",
+    "voter": "0x8F2A0c6BDd5c1f61552558D2C0D2Afe6d3dC5272",
+    "created": 1647435159,
+    "choice": {
+      "1": 1,
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0295e6cbd66ab4f22b84870079b9325f2cc81f55c036e8626801d2cc58ae7e42",
+    "voter": "0x71213a9C9504E406d3242436A4bf69c6bfE74461",
+    "created": 1647435148,
+    "choice": {
+      "1": 1,
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x80d110439fb73960395e536acc60b18d68a14d136ae03208025ed09f1f4cee3d",
+    "voter": "0x078Ad5270b0240D8529f600f35A271Fc6E2b2bD8",
+    "created": 1647435090,
+    "choice": {
+      "1": 1,
+      "2": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0bd91e990a798c06e98b3252070b3665a94c159b1f1e51c585a84d85fed2c256",
+    "voter": "0x1EC1CcEF3e1735bdA3F4BA698e8a524AA7c93274",
+    "created": 1647434101,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xdcceb1fde53e028795588453bbdf8df935877f920f7c4cd8fc22c35cf774cf16",
+    "voter": "0x8027e2c148ec8E1dDEADcE62D149d47b3Bb8Ac99",
+    "created": 1647433978,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2574b6514030e1e63457610f0329015bf89409e6e11bd46041e005da410cd566",
+    "voter": "0xDD39C8DEAeacdcddE35Bd48A469349B9346fe7Fa",
+    "created": 1647433426,
+    "choice": {
+      "1": 10,
+      "2": 10,
+      "3": 10,
+      "4": 10,
+      "5": 10,
+      "6": 10,
+      "7": 10
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x51db6fe068090c2b6abe8109a76bd4dad0bc71da758769536b789119c6facdcd",
+    "voter": "0x1C15C39d0520a526e7957B86910fdCB8738A1CA4",
+    "created": 1647432934,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc43ce4b3a5fb7ad243f77b3e06d5b36ea36ae3ae290ff3f542a809796ed548f4",
+    "voter": "0x35B2A533F02234342d9352fb9Fbc1eE0C1703198",
+    "created": 1647431495,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x63c06fb5d8bb309a5d884260225de921a9f65f12d12762490d18fa0082719018",
+    "voter": "0x1AA963E68CFDE4dab1Df1E15E70B2BB4103c4848",
+    "created": 1647430983,
+    "choice": {
+      "3": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x1bfd982d63794404a23a8d95edf45a8c87eb6d2418244337de74baaf2a86e00b",
+    "voter": "0x28149E604Ae73682B7Aa52dc1E64bC673f54f6e2",
+    "created": 1647429970,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa0ffe9509849d9cd6d45eb2521b53f044da64135fdc944e6eae04f98da180da4",
+    "voter": "0x6f208B191a80f57A4Cc8574ee6b1e57Ddc6D1289",
+    "created": 1647426736,
+    "choice": {
+      "4": 1,
+      "5": 2,
+      "7": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3f0ab98a636aa826382413d7cad178e70c474e9d3a531b86feb8356eb9f2cdd5",
+    "voter": "0x47f882a155209F55D280EB36577c100A74DD32a1",
+    "created": 1647424662,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x555970a6bbcef17634eec66d80ddb3f78ffca625200778c6d494abd0a891d885",
+    "voter": "0x45B1340e79E02b4a1cAA59C6089f013766F110e2",
+    "created": 1647424028,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5805f71462aee14299f60222cedf6b1dbbca3d9fcd6d9f5753754dec278dd5f1",
+    "voter": "0xF0FB1762aC52dF2f2c3FF4B57c0008D1f353a8EF",
+    "created": 1647423588,
+    "choice": {
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x8db26a0e6070bdab3d8460e2cea5270d543b9754efdbb612e137a6f626633a60",
+    "voter": "0x75cD58A01883C6A115A1293C4Dd4CE67D11928f0",
+    "created": 1647422550,
+    "choice": {
+      "6": 3
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5257e918590136d6f889ab41e49a527e10b8cb4d32769fe27757fa8a11bde75c",
+    "voter": "0xf31DF2dcD4083ee57f0d33d386656cfBD1E859a1",
+    "created": 1647422194,
+    "choice": {
+      "2": 1,
+      "3": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2bc42f5e7505ea5969652312474d6fc4489269b7b7b640d5ec5e00cf09b29ab1",
+    "voter": "0xD7CfCCc63B5F0D5B772A500632A3E062490a7927",
+    "created": 1647422161,
+    "choice": {
+      "2": 1,
+      "3": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6bb5b00cc19ae337cf5026598c0e438d243d4b01f97300f0d138fde1ab72dcc5",
+    "voter": "0x28098745E9B687388E9598DD1b7Ce4b022491263",
+    "created": 1647421169,
+    "choice": {
+      "4": 20,
+      "5": 20,
+      "6": 20,
+      "7": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xf9ffd203f9d4619c2111d3868bbfa253b5ef5e06021aca61f57d2a45063f28a5",
+    "voter": "0xfdf3B3B1cfE5f4967DabA1719693d589Ba790c1c",
+    "created": 1647419197,
+    "choice": {
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4c3951c29fd82b0741904c6d7c551d98b1131ed846ac370bdf5d23258adf6e88",
+    "voter": "0x5D75f9541f1333909B528F74656A1E3C0606310A",
+    "created": 1647419183,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe8acb43dd9130f37c8def709bd659a63b103995b68c59b646e69cac5007f9bc6",
+    "voter": "0x13a9cF094C4F51fBE37665509B03e96C4C6993A0",
+    "created": 1647418408,
+    "choice": {
+      "1": 5,
+      "2": 5,
+      "3": 30,
+      "4": 5,
+      "5": 25,
+      "6": 5,
+      "7": 25
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6ab907c1bf9ec0d10b014c8c240971a5471aeaf0a4bea59fac7c4dd73466f927",
+    "voter": "0x8E5539996a21fa05f7e553Cb43D25F373BA6a1fA",
+    "created": 1647418141,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3a3cfb685615f171c93fd5599bdc1bce61a81e15875f3a50bbb1769da41dedb3",
+    "voter": "0x9eDa173B60B105d2E255A1f535f70dB2587eEFe0",
+    "created": 1647414435,
+    "choice": {
+      "6": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xea938195bd8a5cf62457558e98b04fa331d9436c92e4e9f156905a3b1dc04f2c",
+    "voter": "0x896002E29FE4CDa28A3ae139b0bf7bAc26B33a8C",
+    "created": 1647414347,
+    "choice": {
+      "2": 2,
+      "3": 3,
+      "4": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfab655c8f0d0a49a0d9a74a01c2aea2e7dd5d180a5f97cc32e4dffc37cd3bb0e",
+    "voter": "0x45208c10E922D932c0A638e7d8e92307fC73B40b",
+    "created": 1647414172,
+    "choice": {
+      "3": 50,
+      "4": 50
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xb81e82b41bd70ec1a24736136d00aa473197d6e39d5b1be7be67123246cc6764",
+    "voter": "0xB5A0Ae63Ac9925C17Fd9A47A942d061FB7262D4a",
+    "created": 1647414137,
+    "choice": {
+      "2": 20,
+      "4": 20,
+      "5": 40,
+      "6": 20
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xc51ebaef6b88dce33c72728865de8a02069a3047ac4e89f3dfb1acc2cba9f705",
+    "voter": "0x22ea3d7457E437d2730C63321b076EB7d1bFaD91",
+    "created": 1647413497,
+    "choice": {
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x09a98ce2814b1f367f1a4ee4f4232bc3cfee905a59e441b675f5f5893835d237",
+    "voter": "0x1C2eadccD8875b165cDFB86f56d97b14B525A2aC",
+    "created": 1647412658,
+    "choice": {
+      "3": 60000,
+      "5": 10000,
+      "7": 30000
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6cf722d6864c7205cbf0259e8a98f0d5786e3e37fcd76aeca54a7a981994ff86",
+    "voter": "0x3602111b951B582678ACcC4E0BBB4393e914d5Ae",
+    "created": 1647411490,
+    "choice": {
+      "1": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6952ffbcd936288164f5e81e6c7ab91ca9c074a682c4f37c72407ff56e1e9a38",
+    "voter": "0x74c46217C8f079F8164607CF62b105f3dF717904",
+    "created": 1647410516,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x78b8bc6f97697cd1f50ec0fb6f77c787ee69fa547c982c7f36c6de2888355049",
+    "voter": "0x31555Bfd9BE0A0c432E05Ec4ac34CD9606Cda71E",
+    "created": 1647410343,
+    "choice": {
+      "6": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x61d16b6ae2244f65078b6b5e1c59b74d6d8b9e5eb8cd919c4c18299aff0b3517",
+    "voter": "0xe7EddaA6bd37849a8A39CD963b1da137032C9146",
+    "created": 1647409843,
+    "choice": {
+      "1": 3,
+      "4": 2
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9ff27140dd4775f406059b4ebf7178502b928f2b9d7e15ef15c02855b9dd1578",
+    "voter": "0x8b104344F397aFC33Ee55C743a0FbD7d956201cD",
+    "created": 1647409418,
+    "choice": {
+      "4": 15
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfc9bb3f63e1fdc56bf3c00773b9117091494f9a271edaa4f8ff9a7ecda36e628",
+    "voter": "0x3E2c661B22f5AA4346a46BF4B09c76eA5EB9237e",
+    "created": 1647408071,
+    "choice": {
+      "3": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe47aa6a678e3f5e8063d44986fa3d5d6155875fa97e4012652efb164b90af6d1",
+    "voter": "0xc24Fe6f2bae027aeee47390be73D121f18F51bdB",
+    "created": 1647404099,
+    "choice": {
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xdca18203a9ad77384949c3ddc6480101716fd4beec3e2421c0dfea961208ba8c",
+    "voter": "0x75FD2BEA5C16F587565770250d638d967f982953",
+    "created": 1647400595,
+    "choice": {
+      "5": 11
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmT4ppTmfebsKYg1S8T6V93MPsSHPS39D8M5jaeruH6Zgd",
+    "voter": "0xaFFc125BeDcEeB034110c1939426A3948791ef18",
+    "created": 1647399984,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xdab6b5bc3343e5714b5543c5e0fcdf556d56e35432e8b9ca435e0079fff80780",
+    "voter": "0x23dB246031fd6F4e81B0814E9C1DC0901a18Da2D",
+    "created": 1647399966,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmYFFU7DbJvDytso12KQRjkT8NNF7zV6tdxAwU4pp599rj",
+    "voter": "0x86a587fB9770c604224D41077568598c9cAa376a",
+    "created": 1647399639,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0d1704687466ec9137064a59962386d4b3e66151cb2b23e814006551aa34a9e8",
+    "voter": "0xbeD732000F3EbdaA7C344ae53F5cD584D8D65e4F",
+    "created": 1647398668,
+    "choice": {
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7922e75f848456ce53a702100e025cdcafbfff4255b8b7b271cf9bdaeeeaf76b",
+    "voter": "0x5A27d268e830655E908a0a2C3B24F572695AF5e8",
+    "created": 1647397877,
+    "choice": {
+      "3": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x5ea4c79adc1a531285661a979eae011d16d51b31df3e2b7aa1ed4d4933e78025",
+    "voter": "0xc601173826faDCd4da7E21A8232Da01e7C1AbC5c",
+    "created": 1647397297,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xac9a537e91fe91b44203d12fadd42a106f24ec94314703790ae5e7118130871b",
+    "voter": "0x5fAB3283Fb108F23E0e77b342389E16de02A4146",
+    "created": 1647397279,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x4c5bdeacf9a2cf65f1d08c45056530593a7458bd7b8ffa87e5c2b38eac897590",
+    "voter": "0x65e9B33973691e3aD488C9e9871c67C730EF036d",
+    "created": 1647396254,
+    "choice": {
+      "1": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x74ac6039e5e30fcb66cd7b8cf975e87334fc7d827bbc5f4fc0f5bc73ef14fba3",
+    "voter": "0x4a0b630004E9B554C5fc8003394DcdCF84939D5c",
+    "created": 1647394376,
+    "choice": {
+      "1": 15,
+      "2": 15,
+      "3": 20,
+      "5": 20,
+      "7": 30
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfb9f81c009264cf8bd2a5519c0e7a035f5597f8b7f8874b2545b3a3730078053",
+    "voter": "0x5279f207AFC82CCF5847a98014D266cAE6016536",
+    "created": 1647394017,
+    "choice": {
+      "4": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xfbbba83029235a2b6c1887185c99d685db4b70f4a48641402f8ac3c0a06fb06a",
+    "voter": "0x06c4865ab16c9C760622f19a313a2E637E2e66a2",
+    "created": 1647393738,
+    "choice": {
+      "1": 15,
+      "2": 15,
+      "3": 15,
+      "4": 15,
+      "5": 15,
+      "6": 15,
+      "7": 15
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xa8324f7024bf3ce4da6b11071b881550fb7e6bbe3ab153c925fecd19ff93087b",
+    "voter": "0x3b59e42d9F33906fF58813f9bb8be58b185d22F2",
+    "created": 1647393728,
+    "choice": {
+      "3": 1,
+      "4": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xb8f2ace9522c4729c5053348d69ede46a493b6d58de9c5e6cd1766df595a52e2",
+    "voter": "0x1ccb144B700EC726d37Db38c617E154De6d9c0d0",
+    "created": 1647393711,
+    "choice": {
+      "3": 1,
+      "4": 1,
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x2a6e79984cd109b246ae650a53b7321b6e01775f2a6a1bf59d9dfab0258f7d64",
+    "voter": "0xED12D70AD87b64dCAE62953A8d69C743A12716c5",
+    "created": 1647393500,
+    "choice": {
+      "2": 30,
+      "3": 30,
+      "4": 30,
+      "6": 10
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x7772728fca03022fca34fd8ba6792c6a56be9f84fe09c7817b1da9958b5dfeb1",
+    "voter": "0x8460fb04836e5812E4396dE8F1C1de969DF2e8B0",
+    "created": 1647393330,
+    "choice": {
+      "3": 30,
+      "4": 30
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x6fcc3a493d094d688fa447f67f0852249e2fd67972ecc988e0448a28742b20d7",
+    "voter": "0x54e250eA9b59F4d627b7c35570E7AcD688916Ba6",
+    "created": 1647392998,
+    "choice": {
+      "5": 1,
+      "6": 3,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x94e0cda8c676abad835be60dbdcfa480136a4e4b52e32802ddef08c1aa7fb421",
+    "voter": "0xA6e538574467f4378A9821A5695e6b88FF1a997F",
+    "created": 1647392943,
+    "choice": {
+      "2": 15,
+      "3": 30,
+      "4": 30,
+      "5": 15,
+      "6": 15,
+      "7": 15
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0xe17235906ccb0b5914c3bf0b0a772aac012340e16e4ca66aec23d54f36b8bf61",
+    "voter": "0x52cbCF67e76b9537A92955C50C0BEcAc0ADdc006",
+    "created": 1647392557,
+    "choice": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "QmdywqZdZoGMTwfQUnoWH76uiqVo5gW5fD5qwLx7JRRh11",
+    "voter": "0x148b8432C706c8579Ea5088EF7462527868D7497",
+    "created": 1647392380,
+    "choice": {
+      "2": 9000,
+      "3": 9000,
+      "4": 9000,
+      "7": 9000
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x0f3b22ef794db844e589973ec5cbe6fa4ac5f458864b93c750f54e3e7adafb68",
+    "voter": "0xB04E6891e584F2884Ad2ee90b6545ba44F843c4A",
+    "created": 1647392161,
+    "choice": {
+      "5": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x3b32980b0a7d1884a5c88fa1af3d859846ce5a1c43d0e579d5938984dc4d0838",
+    "voter": "0x117e1EbB7D05545064850513021dF6ADe3C1690B",
+    "created": 1647391065,
+    "choice": {
+      "3": 100
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x01500416903dfe7f1f52846cf01ba9dac8b806bbc39de0001849927b3f4e7c76",
+    "voter": "0xB72eD8401892466Ea8aF528C1af1d0524bc5e105",
+    "created": 1647389818,
+    "choice": {
+      "7": 1
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  },
+  {
+    "id": "0x9203eb53f5af307b3f655dbc8a74140a6508240080ba073d55e2345036c0d6b6",
+    "voter": "0xBBC3d8108069B10a5859a08f31d140b9f357F73f",
+    "created": 1647389201,
+    "choice": {
+      "5": 6,
+      "6": 4
+    },
+    "__typename": "Vote",
+    "proposal": {
+      "id": "0xb93ef13c7f48841d50191124a6e76c3bdd099edc501b6325a495ee70db77fe5a",
+      "space": {
+        "id": "banklessvault.eth"
+      }
+    }
+  }
+]
