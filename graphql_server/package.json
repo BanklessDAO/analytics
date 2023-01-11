@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "apollo-server": "^2.25.1",
-    "class-validator": "^0.13.1",
+    "class-validator": "^0.14.0",
     "graphql": "^15.5.0",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
